@@ -5,15 +5,15 @@ from typing import TYPE_CHECKING, Tuple, Union
 import numpy as np
 import pygame
 
-from highway_env.road.lane import AbstractLane, LineType
-from highway_env.road.road import Road
-from highway_env.utils import Vector
-from highway_env.vehicle.graphics import VehicleGraphics
-from highway_env.vehicle.objects import Landmark, Obstacle, StopSign, YellowSignal
+from MixTrafficSimulation.road.lane import AbstractLane, LineType
+from MixTrafficSimulation.road.road import Road
+from MixTrafficSimulation.utils import Vector
+from MixTrafficSimulation.vehicle.graphics import VehicleGraphics
+from MixTrafficSimulation.vehicle.objects import Landmark, Obstacle, StopSign, YellowSignal
 
 
 if TYPE_CHECKING:
-    from highway_env.vehicle.objects import RoadObject
+    from MixTrafficSimulation.vehicle.objects import RoadObject
 
 PositionType = Union[Tuple[float, float], np.ndarray]
 

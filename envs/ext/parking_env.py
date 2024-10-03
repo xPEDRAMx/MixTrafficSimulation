@@ -5,16 +5,16 @@ from abc import abstractmethod
 import numpy as np
 from gymnasium import Env
 
-from highway_env.envs.common.abstract import AbstractEnv
-from highway_env.envs.common.observation import (
+from MixTrafficSimulation.envs.common.abstract import AbstractEnv
+from MixTrafficSimulation.envs.common.observation import (
     MultiAgentObservation,
     observation_factory,
 )
-from highway_env.road.lane import LineType, StraightLane
-from highway_env.road.road import Road, RoadNetwork
-from highway_env.vehicle.graphics import VehicleGraphics
-from highway_env.vehicle.kinematics import Vehicle
-from highway_env.vehicle.objects import Landmark, Obstacle
+from MixTrafficSimulation.road.lane import LineType, StraightLane
+from MixTrafficSimulation.road.road import Road, RoadNetwork
+from MixTrafficSimulation.vehicle.graphics import VehicleGraphics
+from MixTrafficSimulation.vehicle.kinematics import Vehicle
+from MixTrafficSimulation.vehicle.objects import Landmark, Obstacle
 
 
 class GoalEnv(Env):

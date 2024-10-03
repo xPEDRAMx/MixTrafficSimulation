@@ -10,15 +10,15 @@ from gymnasium import Wrapper
 from gymnasium.utils import RecordConstructorArgs
 from gymnasium.wrappers import RecordVideo
 
-from highway_env import utils
-from highway_env.envs.common.action import Action, ActionType, action_factory
-from highway_env.envs.common.finite_mdp import finite_mdp
-from highway_env.envs.common.graphics import EnvViewer
-from highway_env.envs.common.observation import ObservationType, observation_factory
-from highway_env.vehicle.behavior import IDMVehicle
-from highway_env.vehicle.kinematics import Vehicle
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.envs.common.action import Action, ActionType, action_factory
+from MixTrafficSimulation.envs.common.finite_mdp import finite_mdp
+from MixTrafficSimulation.envs.common.graphics import EnvViewer
+from MixTrafficSimulation.envs.common.observation import ObservationType, observation_factory
+from MixTrafficSimulation.vehicle.behavior import IDMVehicle
+from MixTrafficSimulation.vehicle.kinematics import Vehicle
 import csv
-from highway_env.pedestrian.Pedestrian import PedestrianGraphics
+from MixTrafficSimulation.pedestrian.Pedestrian import PedestrianGraphics
 
 Observation = TypeVar("Observation")
 
@@ -97,7 +97,7 @@ class AbstractEnv(gym.Env):
             "action": {"type": "DiscreteMetaAction"},
             "simulation_frequency": 15,  # [Hz]
             "policy_frequency": 1,  # [Hz]
-            "other_vehicles_type": "highway_env.vehicle.behavior.IDMVehicle",
+            "other_vehicles_type": "MixTrafficSimulation.vehicle.behavior.IDMVehicle",
             "screen_width": 600,  # [px]
             "screen_height": 150,  # [px]
             "centering_position": [0.3, 0.5],
@@ -442,7 +442,7 @@ class AbstractEnv(gym.Env):
         Change the type of all vehicles on the road
 
         :param vehicle_class_path: The path of the class of behavior for other vehicles
-                             Example: "highway_env.vehicle.behavior.IDMVehicle"
+                             Example: "MixTrafficSimulation.vehicle.behavior.IDMVehicle"
         :return: a new environment with modified behavior model for other vehicles
         """
         vehicle_class = utils.class_from_path(vehicle_class_path)

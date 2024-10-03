@@ -5,9 +5,9 @@ from typing import Callable
 import matplotlib.pyplot as plt
 import numpy as np
 
-from highway_env.road.road import Road
-from highway_env.utils import Vector
-from highway_env.vehicle.kinematics import Vehicle
+from MixTrafficSimulation.road.road import Road
+from MixTrafficSimulation.utils import Vector
+from MixTrafficSimulation.vehicle.kinematics import Vehicle
 
 
 def rk4(func: Callable, state: np.ndarray, dt: float = 0.01, t: float = 0, **kwargs):
@@ -264,7 +264,7 @@ def simulate(dt: float = 0.1) -> None:
     time = np.arange(0, 20, dt)
     vehicle = BicycleVehicle(road=None, position=[0, 5], speed=8.3)
     xx, uu = [], []
-    from highway_env.interval import LPV
+    from MixTrafficSimulation.interval import LPV
 
     A, B = vehicle.full_lateral_lpv_dynamics()
     K = -np.asarray(control.place(A, B, -np.arange(1, 5)))

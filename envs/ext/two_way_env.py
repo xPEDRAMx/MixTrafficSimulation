@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import numpy as np
 
-from highway_env import utils
-from highway_env.envs.common.abstract import AbstractEnv
-from highway_env.road.lane import LineType, StraightLane
-from highway_env.road.road import Road, RoadNetwork
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.envs.common.abstract import AbstractEnv
+from MixTrafficSimulation.road.lane import LineType, StraightLane
+from MixTrafficSimulation.road.road import Road, RoadNetwork
 
 
 class TwoWayEnv(AbstractEnv):

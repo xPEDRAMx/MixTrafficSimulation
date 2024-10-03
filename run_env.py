@@ -5,20 +5,22 @@ import pandas as pd
 import gymnasium as gym
 import sys
 sys.path.insert(0, "C:\\Users\\Pedram\\anaconda3\\Lib\\site-packages\\")
-import highway_env
-from highway_env import vehicle
-from highway_env import utils
+import MixTrafficSimulation
+from MixTrafficSimulation import vehicle
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.vehicle.behavior import IDMVehicle
+
 
 # Initialize the environment with 'human' render mode
-env = gym.make('midblock', render_mode='rgb_array',config={'action': {'type': 'NoAction'}})
+env = gym.make('intersection', render_mode='rgb_array',config={'action': {'type': 'NoAction'}})
 
 #env.unwrapped.toggle_traffic_signal(False)
-env.unwrapped.config["enable_pedestrians"] = False
+env.unwrapped.config["enable_pedestrians"] = True
 env.unwrapped.config["lanes_count"] = 3
 env.unwrapped.config["max_vehicles"] = 1
 env.unwrapped.config["duration"] = 5
 env.unwrapped.config["generation_interval"] = 3.0
-env.unwrapped.config["other_vehicles_type"] = "highway_env.vehicle.behavior.IDMVehicle"
+env.unwrapped.config["other_vehicles_type"] = "MixTrafficSimulation.vehicle.behavior.IDMVehicle"
 
 #TimeToCollisionObservation
 #env.unwrapped.config["other_vehicles_type"] = "highway_env.vehicle.behavior.IDMVehicle"

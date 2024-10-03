@@ -2,14 +2,14 @@ from __future__ import annotations
 
 import numpy as np
 
-from highway_env import utils
-from highway_env.envs.common.abstract import AbstractEnv
-from highway_env.road.lane import LineType, SineLane, StraightLane
-from highway_env.road.road import Road, RoadNetwork
-from highway_env.vehicle.controller import ControlledVehicle
-from highway_env.vehicle.objects import Obstacle
-from highway_env.envs.common.graphics import EnvViewer
-from highway_env.envs.common.graphics import FixedCameraEnvViewer
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.envs.common.abstract import AbstractEnv
+from MixTrafficSimulation.road.lane import LineType, SineLane, StraightLane
+from MixTrafficSimulation.road.road import Road, RoadNetwork
+from MixTrafficSimulation.vehicle.controller import ControlledVehicle
+from MixTrafficSimulation.vehicle.objects import Obstacle
+from MixTrafficSimulation.envs.common.graphics import EnvViewer
+from MixTrafficSimulation.envs.common.graphics import FixedCameraEnvViewer
 
 class MergeEnv(AbstractEnv):
     """

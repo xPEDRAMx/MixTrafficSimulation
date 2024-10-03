@@ -7,17 +7,17 @@ from typing import TYPE_CHECKING, Callable, Union
 import numpy as np
 from gymnasium import spaces
 
-from highway_env import utils
-from highway_env.utils import Vector
-from highway_env.vehicle.controller import MDPVehicle
-from highway_env.vehicle.dynamics import BicycleVehicle
-from highway_env.vehicle.kinematics import Vehicle
-from highway_env.vehicle import behavior
-from highway_env import vehicle
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.utils import Vector
+from MixTrafficSimulation.vehicle.controller import MDPVehicle
+from MixTrafficSimulation.vehicle.dynamics import BicycleVehicle
+from MixTrafficSimulation.vehicle.kinematics import Vehicle
+from MixTrafficSimulation.vehicle import behavior
+from MixTrafficSimulation import vehicle
 
 
 if TYPE_CHECKING:
-    from highway_env.envs.common.abstract import AbstractEnv
+    from MixTrafficSimulation.envs.common.abstract import AbstractEnv
 
 Action = Union[int, np.ndarray]
 
@@ -38,7 +38,7 @@ class ActionType:
         """
         The class of a vehicle able to execute the action.
 
-        Must return a subclass of :py:class:`highway_env.vehicle.kinematics.Vehicle`.
+        Must return a subclass of :py:class:`MixTrafficSimulation.vehicle.kinematics.Vehicle`.
         """
         raise NotImplementedError
 
@@ -47,7 +47,7 @@ class ActionType:
         Execute the action on the ego-vehicle.
 
         Most of the action mechanics are actually implemented in vehicle.act(action), where
-        vehicle is an instance of the specified :py:class:`highway_env.envs.common.action.ActionType.vehicle_class`.
+        vehicle is an instance of the specified :py:class:`MixTrafficSimulation.envs.common.action.ActionType.vehicle_class`.
         Must some pre-processing can be applied to the action based on the ActionType configurations.
 
         :param action: the action to execute

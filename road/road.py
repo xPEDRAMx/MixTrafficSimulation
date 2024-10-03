@@ -5,12 +5,12 @@ from typing import TYPE_CHECKING, List, Tuple
 
 import numpy as np
 
-from highway_env.road.lane import AbstractLane, LineType, StraightLane, lane_from_config
-from highway_env.vehicle.objects import Landmark
+from MixTrafficSimulation.road.lane import AbstractLane, LineType, StraightLane, lane_from_config
+from MixTrafficSimulation.vehicle.objects import Landmark
 
 
 if TYPE_CHECKING:
-    from highway_env.vehicle import kinematics, objects
+    from MixTrafficSimulation.vehicle import kinematics, objects
 
 logger = logging.getLogger(__name__)
 

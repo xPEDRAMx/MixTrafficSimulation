@@ -2,17 +2,17 @@ from __future__ import annotations
 
 import numpy as np
 
-from highway_env import utils
-from highway_env.envs.common.abstract import AbstractEnv
-from highway_env.road.lane import AbstractLane, CircularLane, LineType, StraightLane, CrosswalkLane
-from highway_env.road.regulation import RegulatedRoad
-from highway_env.road.road import RoadNetwork
-from highway_env.vehicle.kinematics import Vehicle
-from highway_env.envs.common.graphics import EnvViewer
-from highway_env.envs.common.graphics import FixedCameraEnvViewer
-from highway_env.vehicle.objects import StopSign, YellowSignal
-from highway_env.pedestrian.Pedestrian import Pedestrian
-from highway_env.pedestrian.Pedestrian import PedestrianGraphics
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.envs.common.abstract import AbstractEnv
+from MixTrafficSimulation.road.lane import AbstractLane, CircularLane, LineType, StraightLane, CrosswalkLane
+from MixTrafficSimulation.road.regulation import RegulatedRoad
+from MixTrafficSimulation.road.road import RoadNetwork
+from MixTrafficSimulation.vehicle.kinematics import Vehicle
+from MixTrafficSimulation.envs.common.graphics import EnvViewer
+from MixTrafficSimulation.envs.common.graphics import FixedCameraEnvViewer
+from MixTrafficSimulation.vehicle.objects import StopSign, YellowSignal
+from MixTrafficSimulation.pedestrian.Pedestrian import Pedestrian
+from MixTrafficSimulation.pedestrian.Pedestrian import PedestrianGraphics
 import time
 
 

@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import numpy as np
 
-from highway_env import utils
-from highway_env.envs.common.action import Action
-from highway_env.envs.highway_env import HighwayEnv
-from highway_env.road.lane import CircularLane
-from highway_env.road.road import Road, RoadNetwork
-from highway_env.vehicle.controller import ControlledVehicle
-from highway_env.vehicle.kinematics import Vehicle
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.envs.common.action import Action
+from MixTrafficSimulation.envs.highway_env import HighwayEnv
+from MixTrafficSimulation.road.lane import CircularLane
+from MixTrafficSimulation.road.road import Road, RoadNetwork
+from MixTrafficSimulation.vehicle.controller import ControlledVehicle
+from MixTrafficSimulation.vehicle.kinematics import Vehicle
 
 
 class ExitEnv(HighwayEnv):

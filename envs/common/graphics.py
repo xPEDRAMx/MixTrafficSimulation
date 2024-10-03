@@ -7,18 +7,18 @@ import numpy as np
 import pygame
 
 
-from highway_env.envs.common.action import (
+from MixTrafficSimulation.envs.common.action import (
     ActionType,
     ContinuousAction,
     DiscreteMetaAction,
 )
-from highway_env.road.graphics import RoadGraphics, WorldSurface
-from highway_env.vehicle.graphics import VehicleGraphics
-from highway_env.pedestrian.Pedestrian import PedestrianGraphics
+from MixTrafficSimulation.road.graphics import RoadGraphics, WorldSurface
+from MixTrafficSimulation.vehicle.graphics import VehicleGraphics
+from MixTrafficSimulation.pedestrian.Pedestrian import PedestrianGraphics
 
 if TYPE_CHECKING:
-    from highway_env.envs import AbstractEnv
-    from highway_env.envs.common.abstract import Action
+    from MixTrafficSimulation.envs import AbstractEnv
+    from MixTrafficSimulation.envs.common.abstract import Action
 
 
 class EnvViewer:
@@ -38,7 +38,7 @@ class EnvViewer:
         self.directory = None
 
         pygame.init()
-        pygame.display.set_caption("Highway-env")
+        pygame.display.set_caption("MixTrafficSimulation")
         panel_size = (self.config["screen_width"], self.config["screen_height"])
 
         # A display is not mandatory to draw things. Ignoring the display.set_mode()
@@ -156,7 +156,7 @@ class EnvViewer:
         if self.SAVE_IMAGES and self.directory:
             pygame.image.save(
                 self.sim_surface,
-                str(self.directory / f"highway-env_{self.frame}.png"),
+                str(self.directory / f"MixTrafficSimulations_{self.frame}.png"),
             )
             self.frame += 1
 
@@ -250,7 +250,7 @@ class ObservationGraphics:
 
     @classmethod
     def display(cls, obs, sim_surface):
-        from highway_env.envs.common.observation import LidarObservation
+        from MixTrafficSimulation.envs.common.observation import LidarObservation
 
         if isinstance(obs, LidarObservation):
             cls.display_grid(obs, sim_surface)

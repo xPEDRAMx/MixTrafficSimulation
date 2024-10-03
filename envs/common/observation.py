@@ -8,16 +8,16 @@ import numpy as np
 import pandas as pd
 from gymnasium import spaces
 
-from highway_env import utils
-from highway_env.envs.common.finite_mdp import compute_ttc_grid
-from highway_env.envs.common.graphics import EnvViewer
-from highway_env.road.lane import AbstractLane
-from highway_env.utils import Vector
-from highway_env.vehicle.kinematics import Vehicle
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.envs.common.finite_mdp import compute_ttc_grid
+from MixTrafficSimulation.envs.common.graphics import EnvViewer
+from MixTrafficSimulation.road.lane import AbstractLane
+from MixTrafficSimulation.utils import Vector
+from MixTrafficSimulation.vehicle.kinematics import Vehicle
 
 
 if TYPE_CHECKING:
-    from highway_env.envs.common.abstract import AbstractEnv
+    from MixTrafficSimulation.envs.common.abstract import AbstractEnv
 
 
 class ObservationType:

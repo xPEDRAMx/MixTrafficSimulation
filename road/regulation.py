@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import numpy as np
 
-from highway_env import utils
-from highway_env.road.road import Road, RoadNetwork
-from highway_env.vehicle.controller import ControlledVehicle, MDPVehicle
-from highway_env.vehicle.kinematics import Vehicle
-from highway_env.vehicle.objects import Obstacle
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.road.road import Road, RoadNetwork
+from MixTrafficSimulation.vehicle.controller import ControlledVehicle, MDPVehicle
+from MixTrafficSimulation.vehicle.kinematics import Vehicle
+from MixTrafficSimulation.vehicle.objects import Obstacle
 
 
 class RegulatedRoad(Road):

@@ -4,9 +4,9 @@ from abc import ABCMeta, abstractmethod
 
 import numpy as np
 
-from highway_env import utils
-from highway_env.road.spline import LinearSpline2D
-from highway_env.utils import Vector, class_from_path, get_class_path, wrap_to_pi
+from MixTrafficSimulation import utils
+from MixTrafficSimulation.road.spline import LinearSpline2D
+from MixTrafficSimulation.utils import Vector, class_from_path, get_class_path, wrap_to_pi
 
 
 class AbstractLane:

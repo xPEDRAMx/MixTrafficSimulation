@@ -6,8 +6,8 @@ from typing import Callable
 import numpy as np
 from numpy.linalg import LinAlgError
 
-from highway_env.road.lane import AbstractLane
-from highway_env.utils import Interval, Matrix, Vector
+from MixTrafficSimulation.road.lane import AbstractLane
+from MixTrafficSimulation.utils import Interval, Matrix, Vector
 
 
 def intervals_product(a: Interval, b: Interval) -> np.ndarray:

@@ -5,9 +5,9 @@ from collections import deque
 
 import numpy as np
 
-from highway_env.road.road import Road
-from highway_env.utils import Vector
-from highway_env.vehicle.objects import RoadObject
+from MixTrafficSimulation.road.road import Road
+from MixTrafficSimulation.utils import Vector
+from MixTrafficSimulation.vehicle.objects import RoadObject
 
 
 class Vehicle(RoadObject):

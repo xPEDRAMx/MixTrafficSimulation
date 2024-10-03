@@ -5,12 +5,12 @@ from typing import TYPE_CHECKING, Sequence, Tuple
 
 import numpy as np
 
-from highway_env import utils
+from MixTrafficSimulation import utils
 
 
 if TYPE_CHECKING:
-    from highway_env.road.lane import AbstractLane
-    from highway_env.road.road import Road
+    from MixTrafficSimulation.road.lane import AbstractLane
+    from MixTrafficSimulation.road.road import Road
 
 LaneIndex = Tuple[str, str, int]
 

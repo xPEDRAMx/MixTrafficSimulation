@@ -6,15 +6,15 @@ from typing import TYPE_CHECKING
 import numpy as np
 import pygame
 
-from highway_env.utils import Vector
-from highway_env.vehicle.behavior import IDMVehicle, LinearVehicle
-from highway_env.vehicle.controller import MDPVehicle
-from highway_env.vehicle.dynamics import BicycleVehicle
-from highway_env.vehicle.kinematics import Vehicle
+from MixTrafficSimulation.utils import Vector
+from MixTrafficSimulation.vehicle.behavior import IDMVehicle, LinearVehicle
+from MixTrafficSimulation.vehicle.controller import MDPVehicle
+from MixTrafficSimulation.vehicle.dynamics import BicycleVehicle
+from MixTrafficSimulation.vehicle.kinematics import Vehicle
 
 
 if TYPE_CHECKING:
-    from highway_env.road.graphics import WorldSurface
+    from MixTrafficSimulation.road.graphics import WorldSurface
 
 
 class VehicleGraphics:

@@ -4,10 +4,10 @@ from typing import Callable
 
 import numpy as np
 
-from highway_env.road.road import LaneIndex, Road, Route
-from highway_env.utils import Vector, confidence_polytope, is_consistent_dataset
-from highway_env.vehicle.behavior import LinearVehicle
-from highway_env.vehicle.uncertainty.prediction import IntervalVehicle, Polytope
+from MixTrafficSimulation.road.road import LaneIndex, Road, Route
+from MixTrafficSimulation.utils import Vector, confidence_polytope, is_consistent_dataset
+from MixTrafficSimulation.vehicle.behavior import LinearVehicle
+from MixTrafficSimulation.vehicle.uncertainty.prediction import IntervalVehicle, Polytope
 
 
 class RegressionVehicle(IntervalVehicle):
