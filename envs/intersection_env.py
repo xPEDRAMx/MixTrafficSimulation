@@ -417,51 +417,6 @@ class IntersectionEnv(AbstractEnv):
         )
 
     ########################################################### PEDS ##############################################
-    def _create_pedestrians(self):
-        """Create and place pedestrians at the defined areas around the crosswalks."""
-
-        # Check if pedestrians are enabled in the configuration
-        if not self.config.get("enable_pedestrians", True):
-            return  # Do not create pedestrians if they are disabled
-
-        # Define the areas for spawning pedestrians
-        # Each area is defined as [xmin, xmax, ymin, ymax]
-        areas = [
-            [self.traffic_signals[0].position[0] - 12, self.traffic_signals[0].position[0] - 10,
-             self.traffic_signals[1].position[1] - 2, self.traffic_signals[1].position[1] + 2], # NS Start Area
-
-            [self.traffic_signals[2].position[0] - 12, self.traffic_signals[2].position[0] - 10,
-             self.traffic_signals[3].position[1] - 2, self.traffic_signals[3].position[1] + 2],  # NS End Area
-
-            [self.traffic_signals[4].position[0], self.traffic_signals[4].position[0],
-             self.traffic_signals[5].position[1] - 16, self.traffic_signals[5].position[1] - 12],  # EW Start Area
-
-            [self.traffic_signals[6].position[0], self.traffic_signals[6].position[0],
-             self.traffic_signals[7].position[1] - 16, self.traffic_signals[7].position[1] - 12]  # EW End Area
-        ]
-        print (areas)
-
-        # Print the locations of the spawn areas
-        print("Spawn areas:")
-        for idx, area in enumerate(areas):
-            print(f"Area {idx + 1}: {area}")
-
-        # Create a pedestrian for each defined area
-        for _ in range(8):  # Adjust this if you want more pedestrians
-            # Randomly choose an area
-            area = areas[np.random.randint(0, len(areas))]
-
-            # Randomly generate a pedestrian position within the chosen area
-            pedestrian_position = np.array([
-                np.random.uniform(area[0], area[1]),  # Random x within area
-                np.random.uniform(area[2], area[3])  # Random y within area
-            ])
-
-            velocity = np.zeros(2)  # Initial velocity
-            desired_velocity = np.array([1.0, 0.0])  # Desired speed towards the right
-            pedestrian = Pedestrian(pedestrian_position, velocity, desired_velocity)
-            self.pedestrians.append(pedestrian)  # Add pedestrians to the list
-            print(f"Created pedestrian at position {pedestrian_position}")  # Debugging: Log pedestrian creation
 
     def _create_pedestrians(self):
         """Create and place pedestrians at the defined areas around the crosswalks."""
@@ -519,6 +474,10 @@ class IntersectionEnv(AbstractEnv):
             self.pedestrians.append(pedestrian)  # Add pedestrians to the list
             print(
                 f"Created pedestrian at position {pedestrian_position} moving towards {destination_position}")  # Debugging: Log pedestrian creation
+
+        # Set the pedestrians list for each pedestrian
+        for pedestrian in self.pedestrians:
+            pedestrian.set_pedestrians(self.pedestrians)
 
     ########################################################### MAKE ROADS ##############################################
     def _make_one_lane_road(self) -> None:

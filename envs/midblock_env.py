@@ -203,30 +203,35 @@ class MidblockEnv(AbstractEnv):
             return  # Do not create pedestrians if they are disabled
 
         # Define two areas for spawning pedestrians: origin and destination
-        origin_area = [120, 130, -6, -8]  # Spawn area for starting
-        destination_area = [120, 130, 12, 16]  # Destination area
+        origin_area = [120, 130, 6, 8]  # Spawn area for starting
+        destination_area = [120, 130, -12, -16]  # Destination area
 
         print("Spawn areas:")
         print(f"Origin Area: {origin_area}")
         print(f"Destination Area: {destination_area}")
 
-        for _ in range(1):  # Adjust for the desired number of pedestrians
+        for _ in range(8):  # Adjust for the desired number of pedestrians
             # Randomly generate a pedestrian position in the origin area
             pedestrian_position = np.array([
-                np.random.uniform(origin_area[0], origin_area[1]),  # Random x within origin area
-                np.random.uniform(origin_area[2], origin_area[3])  # Random y within origin area
+                np.random.uniform(origin_area[0], origin_area[1]),
+                np.random.uniform(origin_area[2], origin_area[3])
             ])
 
             # Randomly select a destination within the destination area
             destination_position = np.array([
-                np.random.uniform(destination_area[0], destination_area[1]),  # Random x within destination area
-                np.random.uniform(destination_area[2], destination_area[3])  # Random y within destination area
+                np.random.uniform(destination_area[0], destination_area[1]),
+                np.random.uniform(destination_area[2], destination_area[3])
             ])
 
             # Create pedestrian with position and destination
             pedestrian = Pedestrian(position=pedestrian_position, destination=destination_position)
             self.pedestrians.append(pedestrian)  # Add pedestrians to the list
-            print(f"Created pedestrian at position {pedestrian_position} with destination {destination_position}")
+
+        # Set the pedestrians list for each pedestrian
+        for pedestrian in self.pedestrians:
+            pedestrian.set_pedestrians(self.pedestrians)
+
+        print(f"Created {len(self.pedestrians)} pedestrians.")
 
 
 class HighwayEnvFast(MidblockEnv):
