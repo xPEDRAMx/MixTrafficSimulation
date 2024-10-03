@@ -15,28 +15,55 @@ from MixTrafficSimulation.envs.common.graphics import FixedCameraEnvViewer
 
 Observation = np.ndarray
 
+
+
 class MidblockEnv(AbstractEnv):
     """
     A highway driving environment.
+
     The vehicle is driving on a straight highway with several lanes, and is rewarded for reaching a high speed,
-    staying on the rightmost lanes, and avoiding collisions.
+    staying on the rightmost lanes and avoiding collisions.
     """
 
-    def __init__(self, config=None):
-        super().__init__(config)
-        # Initialize the pedestrians attribute as an empty list in the constructor
-        self.pedestrians = []  # Ensure pedestrians attribute exists
-        self.vehicle_creation_counter = 0  # Vehicle creation counter
+    def __init__(self, render_mode=None, **kwargs):
+        super().__init__(**kwargs)
+        self.render_mode = render_mode  # Store the render_mode
+        self.pedestrians = []  # Initialize the pedestrians attribute
+        self.vehicle_creation_counter = 0
+
+    @classmethod
+    def default_config(cls) -> dict:
+        config = super().default_config()
+        config.update(
+            {
+                "observation": {"type": "Kinematics"},
+                "action": {
+                    "type": "DiscreteMetaAction",
+                },
+                "lanes_count": 4,
+                "vehicles_count": 50,
+                "controlled_vehicles": 1,
+                "initial_lane_id": None,
+                "duration": 40,  # [s]
+                "ego_spacing": 2,
+                "vehicles_density": 1,
+                "collision_reward": -1,  # The reward received when colliding with a vehicle.
+                "right_lane_reward": 0.1,  # The reward received when driving on the right-most lanes, linearly mapped to
+                # zero for other lanes.
+                "high_speed_reward": 0.4,  # The reward received when driving at full speed, linearly mapped to zero for
+                # lower speeds according to config["reward_speed_range"].
+                "lane_change_reward": 0,  # The reward received at each lane change action.
+                "reward_speed_range": [20, 30],
+                "normalize_reward": True,
+                "offroad_terminal": False,
+            }
+        )
+        return config
 
     def _reset(self) -> None:
         self._create_road()
         self.vehicle_creation_counter = 0  # Reset the vehicle creation counter
         self._create_vehicles(initial=True)
-
-        # Ensure pedestrians are created if enabled in the config
-        if self.config.get("enable_pedestrians", True):
-            self.pedestrians = []  # Clear pedestrians list before creating new ones
-            self._create_pedestrians()  # Create pedestrians if needed
 
     def _create_road(self) -> None:
         """Create a road composed of straight adjacent lanes."""
@@ -65,7 +92,7 @@ class MidblockEnv(AbstractEnv):
             vehicle = Vehicle.create_random(
                 self.road,
                 speed=25,
-                lane_id=lane_id,
+                lane_id=lane_id,  # This should be an ID that is valid within your road system
                 spacing=self.config["ego_spacing"]
             )
             # Set position with calculated y position
@@ -77,7 +104,27 @@ class MidblockEnv(AbstractEnv):
 
             if initial:
                 self.controlled_vehicles.append(vehicle)
-            #print(f"Added new vehicle at position: {vehicle.position}, speed: {vehicle.speed}, in lane: {lane_id}")
+            print(f"Added new vehicle at position: {vehicle.position}, speed: {vehicle.speed}, in lane: {lane_id}")
+
+    def step(self, action):
+        obs, reward, done, truncated, info = super().step(action)
+
+        # Increment the vehicle creation counter and check if it's time to add more vehicles
+        self.vehicle_creation_counter += 1
+        if self.vehicle_creation_counter >= 10:  # Create a new vehicle every 10 steps
+            self._create_vehicles()
+            self.vehicle_creation_counter = 0  # Reset the counter
+
+        # Check if it's time to create pedestrians
+        if self.time % 5 == 0:  # Example condition to create pedestrians periodically
+            self._create_pedestrians()
+
+        return obs, reward, done, truncated, info
+
+    def _reset(self):
+        self._create_road()
+        self.vehicle_creation_counter = 0  # Reset the vehicle creation counter
+        self._create_vehicles(initial=True)
 
     def _reward(self, action: Action) -> float:
         """
@@ -108,6 +155,7 @@ class MidblockEnv(AbstractEnv):
             if isinstance(self.vehicle, ControlledVehicle)
             else self.vehicle.lane_index[2]
         )
+        # Use forward speed rather than speed, see https://github.com/eleurent/highway-env/issues/268
         forward_speed = self.vehicle.speed * np.cos(self.vehicle.heading)
         scaled_speed = utils.lmap(
             forward_speed, self.config["reward_speed_range"], [0, 1]
@@ -133,49 +181,52 @@ class MidblockEnv(AbstractEnv):
 
     def render(self, mode='human'):
         """Override the render method to render pedestrians and crosswalks."""
-        lanes_count = self.config.get("lanes_count")
+        lanes_count = self.config.get("lanes_count")  # Get the number of lanes from the config
+        # Use the custom FixedCameraEnvViewer
         if self.viewer is None:
             self.viewer = FixedCameraEnvViewer(self)
 
         # Set bounds for the camera
         self.viewer.set_bounds(-200, 200, -200, 200)
-        self.viewer.set_window_position(100, lanes_count * (2) - 2)
+        self.viewer.set_window_position(100, lanes_count*(2)-2)
 
         # Render road, vehicles, etc.
         super().render()
 
-        if self.config.get("enable_pedestrians", True) and not self.viewer.offscreen:
-            if self.pedestrians:
+        # Check if pedestrians are enabled before rendering them
+        if self.config.get("enable_pedestrians", True):
+            if hasattr(self, 'pedestrians') and self.pedestrians:
                 PedestrianGraphics.display(self.pedestrians, self.viewer.sim_surface, offscreen=self.viewer.offscreen)
 
-    def _create_pedestrians(self) -> None:
-        """Create and place pedestrians at the defined areas around the crosswalks."""
+    def _create_pedestrians(self):
         if not self.config.get("enable_pedestrians", True):
-            return
+            return  # Do not create pedestrians if they are disabled
 
-        areas = [[100, 110, 0, 8]]  # Example area for pedestrian spawn
+        # Define two areas for spawning pedestrians: origin and destination
+        origin_area = [120, 130, -6, -8]  # Spawn area for starting
+        destination_area = [120, 130, 12, 16]  # Destination area
 
-        for _ in range(8):
-            area = areas[np.random.randint(0, len(areas))]
+        print("Spawn areas:")
+        print(f"Origin Area: {origin_area}")
+        print(f"Destination Area: {destination_area}")
+
+        for _ in range(1):  # Adjust for the desired number of pedestrians
+            # Randomly generate a pedestrian position in the origin area
             pedestrian_position = np.array([
-                np.random.uniform(area[0], area[1]),
-                np.random.uniform(area[2], area[3])
+                np.random.uniform(origin_area[0], origin_area[1]),  # Random x within origin area
+                np.random.uniform(origin_area[2], origin_area[3])  # Random y within origin area
             ])
 
-            velocity = np.zeros(2)
-            desired_velocity = np.array([1.0, 0.0])
-            pedestrian = Pedestrian(pedestrian_position, velocity, desired_velocity)
-            self.pedestrians.append(pedestrian)
-            print(f"Created pedestrian at position {pedestrian_position}")
+            # Randomly select a destination within the destination area
+            destination_position = np.array([
+                np.random.uniform(destination_area[0], destination_area[1]),  # Random x within destination area
+                np.random.uniform(destination_area[2], destination_area[3])  # Random y within destination area
+            ])
 
-    def step(self, action):
-        obs, reward, done, truncated, info = super().step(action)
-        self.vehicle_creation_counter += 1
-        print ("YES")
-        if self.vehicle_creation_counter >= 10:
-            self._create_vehicles()
-            self.vehicle_creation_counter = 0
-        return obs, reward, done, truncated, info
+            # Create pedestrian with position and destination
+            pedestrian = Pedestrian(position=pedestrian_position, destination=destination_position)
+            self.pedestrians.append(pedestrian)  # Add pedestrians to the list
+            print(f"Created pedestrian at position {pedestrian_position} with destination {destination_position}")
 
 
 class HighwayEnvFast(MidblockEnv):

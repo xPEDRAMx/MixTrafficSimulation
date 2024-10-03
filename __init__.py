@@ -114,5 +114,10 @@ def _register_highway_envs():
     # u_turn_env.py
     register(id="u-turn-v0", entry_point="MixTrafficSimulation.envs.u_turn_env:UTurnEnv")
 
+    register(
+        id="midblock",
+        entry_point="MixTrafficSimulation.envs.midblock_env:MidblockEnv",
+    )
+
 
 _register_highway_envs()

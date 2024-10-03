@@ -4,7 +4,7 @@ logging.getLogger('gymnasium').setLevel(logging.ERROR)
 import pandas as pd
 import gymnasium as gym
 import sys
-sys.path.insert(0, "C:\\Users\\Pedram\\anaconda3\\Lib\\site-packages\\")
+sys.path.insert(0, "C:\\git\\")
 import MixTrafficSimulation
 from MixTrafficSimulation import vehicle
 from MixTrafficSimulation import utils
@@ -17,7 +17,7 @@ env = gym.make('intersection', render_mode='rgb_array',config={'action': {'type'
 #env.unwrapped.toggle_traffic_signal(False)
 env.unwrapped.config["enable_pedestrians"] = True
 env.unwrapped.config["lanes_count"] = 3
-env.unwrapped.config["max_vehicles"] = 1
+env.unwrapped.config["max_vehicles"] = 30
 env.unwrapped.config["duration"] = 5
 env.unwrapped.config["generation_interval"] = 3.0
 env.unwrapped.config["other_vehicles_type"] = "MixTrafficSimulation.vehicle.behavior.IDMVehicle"
