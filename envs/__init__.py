@@ -18,14 +18,6 @@ from MixTrafficSimulation.envs.two_way_env import TwoWayEnv
 from MixTrafficSimulation.envs.u_turn_env import UTurnEnv
 from MixTrafficSimulation.envs.midblock_env import MidblockEnv, HighwayEnvFast
 
-
-from gymnasium.envs.registration import register
-
-register(
-    id='midblock',  # Unique identifier for the environment
-    entry_point='highway_env.envs.midblock_env:MidblockEnv',  # Path to the MidblockEnv class
-)
-
 __all__ = [
     "ExitEnv",
     "HighwayEnv",
@@ -43,4 +35,5 @@ __all__ = [
     "TwoWayEnv",
     "UTurnEnv",
     "MidblockEnv",
+    "PlazaEnv",
 ]

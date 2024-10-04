@@ -12,10 +12,10 @@ from MixTrafficSimulation.vehicle.behavior import IDMVehicle
 
 
 # Initialize the environment with 'human' render mode
-env = gym.make('intersection', render_mode='rgb_array',config={'action': {'type': 'NoAction'}})
+env = gym.make('roundabout', render_mode='rgb_array',config={'action': {'type': 'NoAction'}})
 
-#env.unwrapped.toggle_traffic_signal(False)
-env.unwrapped.config["enable_pedestrians"] = True
+#env.unwrapped.toggle_traffic_signal(True)
+#env.unwrapped.config["enable_pedestrians"] = True
 env.unwrapped.config["lanes_count"] = 3
 env.unwrapped.config["max_vehicles"] = 30
 env.unwrapped.config["duration"] = 5

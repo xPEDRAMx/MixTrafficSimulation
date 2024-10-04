@@ -119,5 +119,10 @@ def _register_highway_envs():
         entry_point="MixTrafficSimulation.envs.midblock_env:MidblockEnv",
     )
 
+    register(
+        id="plaza",
+        entry_point="MixTrafficSimulation.envs.plaza_env:PlazaEnv",
+    )
+
 
 _register_highway_envs()

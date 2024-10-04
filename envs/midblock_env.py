@@ -203,14 +203,14 @@ class MidblockEnv(AbstractEnv):
             return  # Do not create pedestrians if they are disabled
 
         # Define two areas for spawning pedestrians: origin and destination
-        origin_area = [120, 130, 6, 8]  # Spawn area for starting
-        destination_area = [120, 130, -12, -16]  # Destination area
+        origin_area = [120, 130, 8, 12]  # Spawn area for starting
+        destination_area = [130, 140, -4,-8]  # Destination area
 
         print("Spawn areas:")
         print(f"Origin Area: {origin_area}")
         print(f"Destination Area: {destination_area}")
 
-        for _ in range(8):  # Adjust for the desired number of pedestrians
+        for _ in range(2):  # Adjust for the desired number of pedestrians
             # Randomly generate a pedestrian position in the origin area
             pedestrian_position = np.array([
                 np.random.uniform(origin_area[0], origin_area[1]),

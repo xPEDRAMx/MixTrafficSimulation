@@ -14,11 +14,9 @@ from MixTrafficSimulation.vehicle.objects import StopSign, YellowSignal
 from MixTrafficSimulation.pedestrian.Pedestrian import Pedestrian
 from MixTrafficSimulation.pedestrian.Pedestrian import PedestrianGraphics
 import time
-from MixTrafficSimulation.signal.signal import TrafficSignal
 
-class IntersectionEnv(AbstractEnv):
-    ACTIONS: dict[int, str] = {0: "SLOWER", 1: "IDLE", 2: "FASTER"}
-    ACTIONS_INDEXES = {v: k for k, v in ACTIONS.items()}
+class PlazaEnv(AbstractEnv):
+    
 
     def __init__(self, config=None, render_mode: str = None):
         self.traffic_signal_active = True  # Initialize here first
@@ -97,14 +95,6 @@ class IntersectionEnv(AbstractEnv):
         if current_time - self.last_pedestrian_spawn_time > self.pedestrian_spawn_interval:
             self._create_pedestrians()  # Call the method to create pedestrians
             self.last_pedestrian_spawn_time = current_time
-
-        # Check if traffic signals are active and update their state
-        if self.traffic_signal_active:
-            TrafficSignal.update_phase(dt)  # Update traffic signal phase with the same time step
-
-            for signal in self.traffic_signals:
-                signal.update()  # Update each signal based on the current phase
-                signal.apply_state_change()  # Add or remove signal based on the state
 
         # Clear vehicles and spawn new ones if needed
         self._clear_vehicles()
@@ -191,17 +181,10 @@ class IntersectionEnv(AbstractEnv):
         self._make_road()
         self._make_vehicles(self.config["initial_vehicle_count"])
         self._create_pedestrians()  # Create pedestrians
-        self.config["screen_width"] = 600  # Adjust width as needed
-        self.config["screen_height"] = 600  # Adjust height as needed
+        self.config["screen_width"] = 800  # Adjust width as needed
+        self.config["screen_height"] = 800  # Adjust height as needed
 
-    def _make_road(self) -> None:
-        # Fetch the lanes_count from the configuration and use it to decide the function to call
-        lanes_count = self.config.get("lanes_count", 2)  # Default to 2 lanes if not set
 
-        if lanes_count == 1:
-            self._make_one_lane_road()
-        else:
-            self._make_two_lane_road()
 
     def _make_vehicles(self, n_vehicles: int = 10) -> None:
         """
@@ -331,36 +314,14 @@ class IntersectionEnv(AbstractEnv):
         # Check if pedestrians are enabled in the configuration
         if not self.config.get("enable_pedestrians", True):
             return  # Do not create pedestrians if they are disabled
-        
-        lanes_count = self.config.get("lanes_count", 2)  # Default to 2 lanes if not set
 
-        if lanes_count == 1:
-            areas = [
-                # NS Start Area
-                [self.traffic_signals[0].position[0] - 6, self.traffic_signals[0].position[0] ,
-                 self.traffic_signals[0].position[1] - 2, self.traffic_signals[0].position[1] + 2],
-                [self.traffic_signals[1].position[0] , self.traffic_signals[1].position[0] ,
-                 self.traffic_signals[1].position[1] - 2, self.traffic_signals[1].position[1] + 2],
-                [self.traffic_signals[2].position[0] , self.traffic_signals[2].position[0] ,
-                  self.traffic_signals[2].position[1] - 2, self.traffic_signals[2].position[1] + 2],
-                [self.traffic_signals[3].position[0] , self.traffic_signals[3].position[0] ,
-                 self.traffic_signals[3].position[1] - 2, self.traffic_signals[3].position[1] + 2]]
-        else:
-            
         # Define the areas for spawning pedestrians
-            areas = [
-                # NS Start Area
-                [self.traffic_signals[0].position[0] - 12, self.traffic_signals[0].position[0] - 10,
-                 self.traffic_signals[0].position[1] - 2, self.traffic_signals[0].position[1] + 2],
-                # NS End Area
-                [self.traffic_signals[2].position[0] + 10, self.traffic_signals[2].position[0] + 12,
-                 self.traffic_signals[2].position[1] - 2, self.traffic_signals[2].position[1] + 2],
-                # EW Start Area
-                [self.traffic_signals[4].position[0] - 2, self.traffic_signals[4].position[0] + 2,
-                 self.traffic_signals[4].position[1] - 12, self.traffic_signals[4].position[1] - 10],
-                # EW End Area
-                [self.traffic_signals[6].position[0] - 2, self.traffic_signals[6].position[0] + 2,
-                 self.traffic_signals[6].position[1] + 10, self.traffic_signals[6].position[1] + 12]]
+        areas = [
+            # EW Start Area
+            [20,30,40,50],
+            # EW End Area
+            [0,10,20,30]
+        ]
 
         # Print the locations of the spawn areas
         print("Spawn areas:")
@@ -368,7 +329,7 @@ class IntersectionEnv(AbstractEnv):
             print(f"Area {idx + 1}: {area}")
 
         # Create a pedestrian for each defined area
-        for _ in range(2):  # Adjust this if you want more pedestrians
+        for _ in range(8):  # Adjust this if you want more pedestrians
             # Randomly choose an origin area
             origin_area = areas[np.random.randint(0, len(areas))]
 
@@ -401,7 +362,9 @@ class IntersectionEnv(AbstractEnv):
             pedestrian.set_pedestrians(self.pedestrians)
 
     ########################################################### MAKE ROADS ##############################################
-    def _make_one_lane_road(self) -> None:
+    
+
+    def _make_road(self) -> None:
 
         location_for_the_signals = []
         """
@@ -421,8 +384,8 @@ class IntersectionEnv(AbstractEnv):
         lane_width = AbstractLane.DEFAULT_WIDTH
         right_turn_radius = lane_width + 5  # [m}
         left_turn_radius = right_turn_radius + lane_width  # [m}
-        outer_distance = right_turn_radius + lane_width / 2
-        access_length = 50 + 50  # [m]
+        outer_distance = 45
+        access_length = 40  # [m]
 
         net = RoadNetwork()
         n, c, s = LineType.NONE, LineType.CONTINUOUS, LineType.STRIPED
@@ -438,6 +401,7 @@ class IntersectionEnv(AbstractEnv):
                 [lane_width / 2, access_length + outer_distance]
             )
             end = rotation @ np.array([lane_width / 2, outer_distance])
+            print(f"o{corner},ir{corner}")
             net.add_lane(
                 "o" + str(corner),
                 "ir" + str(corner),
@@ -445,61 +409,14 @@ class IntersectionEnv(AbstractEnv):
                     start, end, line_types=[s, c], priority=priority, speed_limit=10
                 ),
             )
-            # Right turn
-            r_center = rotation @ (np.array([outer_distance, outer_distance]))
-            net.add_lane(
-                "ir" + str(corner),
-                "il" + str((corner - 1) % 4),
-                CircularLane(
-                    r_center,
-                    right_turn_radius,
-                    angle + np.radians(180),
-                    angle + np.radians(270),
-                    line_types=[n, c],
-                    priority=priority,
-                    speed_limit=10,
-                ),
-            )
-            # Left turn
-            l_center = rotation @ (
-                np.array(
-                    [
-                        -left_turn_radius + lane_width / 2,
-                        left_turn_radius - lane_width / 2,
-                    ]
-                )
-            )
-            net.add_lane(
-                "ir" + str(corner),
-                "il" + str((corner + 1) % 4),
-                CircularLane(
-                    l_center,
-                    left_turn_radius,
-                    angle + np.radians(0),
-                    angle + np.radians(-90),
-                    clockwise=False,
-                    line_types=[n, n],
-                    priority=priority - 1,
-                    speed_limit=10,
-                ),
-            )
-            # Straight
-            start = rotation @ np.array([lane_width / 2, outer_distance])
-            end = rotation @ np.array([lane_width / 2, -outer_distance])
-            net.add_lane(
-                "ir" + str(corner),
-                "il" + str((corner + 2) % 4),
-                StraightLane(
-                    start, end, line_types=[s, n], priority=priority, speed_limit=10
-                ),
-            )
-            location_for_the_signals.append(start)  # Append end to the list
+           
 
             # Exit
             start = rotation @ np.flip(
                 [lane_width / 2, access_length + outer_distance], axis=0
             )
             end = rotation @ np.flip([lane_width / 2, outer_distance], axis=0)
+            print(f" il{(corner - 1) % 4},o{(corner - 1) % 4}")
             net.add_lane(
                 "il" + str((corner - 1) % 4),
                 "o" + str((corner - 1) % 4),
@@ -512,253 +429,39 @@ class IntersectionEnv(AbstractEnv):
             network=net,
             np_random=self.np_random,
             record_history=self.config["show_trajectories"],)
-        if self.traffic_signal_active:
-            # After the existing road creation code
-            ns_positions = [location_for_the_signals[0], location_for_the_signals[2]]  # North-South signals
-            ew_positions = [location_for_the_signals[1], location_for_the_signals[3]]
-    
-            self.traffic_signals = []
-            for position in ns_positions:
-                signal = TrafficSignal(road, position, orientation="ns")  # North-South signals
-                road.objects.append(signal)
-                self.traffic_signals.append(signal)
-    
-            for position in ew_positions:
-                signal = TrafficSignal(road, position, orientation="ew")  # East-West signals
-                road.objects.append(signal)
-                self.traffic_signals.append(signal)
-    
-                # Add crosswalks after the road and signals have been set up
-            self.add_crosswalks(road, ns_positions, ew_positions)
+
         self.road = road
+        
+    def _spawn_vehicle(
+        self,
+        longitudinal: float = 0,
+        position_deviation: float = 1.0,
+        speed_deviation: float = 1.0,
+        spawn_probability: float = 0.6,
+        go_straight: bool = False,
+    ) -> None:
+        if self.np_random.uniform() > spawn_probability:
+            return
 
-    def _make_two_lane_road(self) -> None:
-
-        location_for_the_signals = []
-        """
-        Make a 4-way intersection with two lanes in each direction.
-
-        The horizontal road has the right of way. More precisely, the levels of priority are:
-            - 3 for horizontal straight lanes and right-turns
-            - 1 for vertical straight lanes and right-turns
-            - 2 for horizontal left-turns
-            - 0 for vertical left-turns
-
-        The code for nodes in the road network is:
-        (o:outer | i:inner + [r:right, l:left]) + (0:south | 1:west | 2:north | 3:east)
-
-        :return: the intersection road
-        """
-        lane_width = AbstractLane.DEFAULT_WIDTH
-        right_turn_radius = 2 * lane_width + 5  # Adjusted to account for two lanes
-        left_turn_radius = right_turn_radius + 2 * lane_width  # Adjusted for two lanes
-        outer_distance = right_turn_radius + lane_width  # Account for lane width
-        access_length = 50 + 50  # [m]
-
-        net = RoadNetwork()
-        n, c, s = LineType.NONE, LineType.CONTINUOUS, LineType.STRIPED
-        for corner in range(4):
-            angle = np.radians(90 * corner)
-            is_horizontal = corner % 2
-            priority = 3 if is_horizontal else 1
-            rotation = np.array(
-                [[np.cos(angle), -np.sin(angle)], [np.sin(angle), np.cos(angle)]]
-            )
-
-            # Incoming: add the two lanes manually
-            # First incoming lane
-            start_lane_1 = rotation @ np.array(
-                [(lane_width / 2), access_length + outer_distance]
-            )
-            end_lane_1 = rotation @ np.array([(lane_width / 2), outer_distance])
-            net.add_lane(
-                "o" + str(corner),
-                "ir" + str(corner),
-                StraightLane(
-                    start_lane_1, end_lane_1, line_types=[c, s], priority=priority, speed_limit=10),)
-
-            # Second incoming lane
-            start_lane_2 = rotation @ np.array(
-                [(lane_width / 2) + lane_width, access_length + outer_distance])
-            end_lane_2 = rotation @ np.array([(lane_width / 2) + lane_width, outer_distance])
-
-            net.add_lane(
-                "o" + str(corner),
-                "ir" + str(corner),
-                StraightLane(
-                    start_lane_2, end_lane_2, line_types=[n, c], priority=priority, speed_limit=10),)
-
-            # Right turn: update for two-lane configuration
-            r_center = rotation @ np.array([outer_distance + lane_width / 2, outer_distance + lane_width / 2])
-            net.add_lane(
-                "ir" + str(corner),
-                "il" + str((corner - 1) % 4),
-                CircularLane(
-                    r_center,
-                    right_turn_radius + 0 * lane_width,  # Adjust radius for second lane
-                    angle + np.radians(180),
-                    angle + np.radians(270),
-                    line_types=[n, c],
-                    priority=priority,
-                    speed_limit=10,
-                ),
-            )
-            net.add_lane(
-                "ir" + str(corner),
-                "il" + str((corner - 1) % 4),
-                CircularLane(
-                    r_center,
-                    right_turn_radius + 1 * lane_width,  # Adjust radius for second lane
-                    angle + np.radians(180),
-                    angle + np.radians(270),
-                    line_types=[n, n],
-                    priority=priority,
-                    speed_limit=10,
-                ),
-            )
-
-            # Left turn: update for two-lane configuration
-            l_center = rotation @ np.array([-left_turn_radius + lane_width/2, left_turn_radius - lane_width/2])
-            net.add_lane(
-                "ir" + str(corner),
-                "il" + str((corner + 1) % 4),
-                CircularLane(
-                    l_center,
-                    left_turn_radius + 0 * lane_width,  # Adjust radius for second lane
-                    angle + np.radians(0),
-                    angle + np.radians(-90),
-                    clockwise=False,
-                    line_types=[n, n],
-                    priority=priority - 1,
-                    speed_limit=10,),)
-
-            net.add_lane(
-                "ir" + str(corner),
-                "il" + str((corner + 1) % 4),
-                CircularLane(
-                    l_center,
-                    left_turn_radius + 1 * lane_width,  # Adjust radius for second lane
-                    angle + np.radians(0),
-                    angle + np.radians(-90),
-                    clockwise=False,
-                    line_types=[n, n],
-                    priority=priority - 1,
-                    speed_limit=10,),)
-
-            # Straight lanes for crossing the intersection
-            # First straight lane
-            start_straight_1 = rotation @ np.array([(lane_width / 2), outer_distance])
-            end_straight_1 = rotation @ np.array([(lane_width / 2), -outer_distance])
-            net.add_lane(
-                "ir" + str(corner),
-                "il" + str((corner + 2) % 4),
-                StraightLane(
-                    start_straight_1, end_straight_1, line_types=[n, n], priority=priority, speed_limit=10),)
-            location_for_the_signals.append(start_straight_1)  # Append start position for signals
-            # Second straight lane
-            start_straight_2 = rotation @ np.array([(lane_width / 2) + lane_width, outer_distance])
-            end_straight_2 = rotation @ np.array([(lane_width / 2) + lane_width, -outer_distance])
-            net.add_lane(
-                "ir" + str(corner),
-                "il" + str((corner + 2) % 4),
-                StraightLane(
-                    start_straight_2, end_straight_2, line_types=[n, n], priority=priority, speed_limit=10),)
-            location_for_the_signals.append(start_straight_2)  # Append start position for signals
-
-            # Exit lanes
-            # First exit lane
-            start_exit_1 = rotation @ np.flip(
-                [(lane_width / 2), access_length + outer_distance], axis=0
-            )
-            end_exit_1 = rotation @ np.flip([(lane_width / 2), outer_distance], axis=0)
-            net.add_lane(
-                "il" + str((corner - 1) % 4),
-                "o" + str((corner - 1) % 4),
-                StraightLane(
-                    end_exit_1, start_exit_1, line_types=[n, s], priority=priority, speed_limit=10
-                ),
-            )
-
-            # Second exit lane
-            start_exit_2 = rotation @ np.flip(
-                [(lane_width / 2) + lane_width, access_length + outer_distance], axis=0
-            )
-            end_exit_2 = rotation @ np.flip([(lane_width / 2) + lane_width, outer_distance], axis=0)
-            net.add_lane(
-                "il" + str((corner - 1) % 4),
-                "o" + str((corner - 1) % 4),
-                StraightLane(
-                    end_exit_2, start_exit_2, line_types=[n, c], priority=priority, speed_limit=10
-                ),
-            )
-
-        road = RegulatedRoad(
-            network=net,
-            np_random=self.np_random,
-            record_history=self.config["show_trajectories"],)
-
-        if self.traffic_signal_active:
-            ns_positions = [location_for_the_signals[0], location_for_the_signals[1], location_for_the_signals[4],
-                            location_for_the_signals[5]]  # North-South signals
-            ew_positions = [location_for_the_signals[2], location_for_the_signals[3], location_for_the_signals[6],
-                            location_for_the_signals[7]]
-            self.traffic_signals = []
-
-            # Create North-South traffic signals
-            for position in ns_positions:
-                signal = TrafficSignal(road, position, orientation="ns")  # North-South signals
-                road.objects.append(signal)
-                self.traffic_signals.append(signal)
-
-            # Create East-West traffic signals
-            for position in ew_positions:
-                signal = TrafficSignal(road, position, orientation="ew")  # East-West signals
-                road.objects.append(signal)
-                self.traffic_signals.append(signal)
-
-            # Add crosswalks after the road and signals have been set up
-            self.add_crosswalks(road, ns_positions, ew_positions)
-        self.road = road
-
-
-
-    def add_crosswalks(self, road: RegulatedRoad, ns_positions: list[np.ndarray],
-                       ew_positions: list[np.ndarray]) -> None:
-        """Add crosswalks to the road network at the signal locations."""
-
-        lane_width = AbstractLane.DEFAULT_WIDTH  # Get the lane width to adjust crosswalk size
-        # Add crosswalks for north-south signal positions
-        crosswalk_ids = []  # Keep track of the crosswalk lane IDs
-        for i, position in enumerate(ns_positions):
-            crosswalk_start = np.array([position[0] - 2, position[1]])
-            crosswalk_end = np.array([position[0] + 2, position[1]])
-            crosswalk = CrosswalkLane(crosswalk_start, crosswalk_end, stripe_length=1.5, gap=0.1, width=lane_width)
-
-            # Assign crosswalk lane to the road network
-            start_id = f"crosswalk_ns_start_{i}"
-            end_id = f"crosswalk_ns_end_{i}"
-            crosswalk.add_to_road(road.network, start_id, end_id)
-            crosswalk_ids.append((start_id, end_id))  # Track the IDs
-
-        # Add crosswalks for east-west signal positions
-        for i, position in enumerate(ew_positions):
-            crosswalk_start = np.array([position[0], position[1] - 2])
-            crosswalk_end = np.array([position[0], position[1] + 2])
-            crosswalk = CrosswalkLane(crosswalk_start, crosswalk_end, stripe_length=2.0, gap=1.0, width=lane_width)
-
-            # Assign crosswalk lane to the road network
-            start_id = f"crosswalk_ew_start_{i}"
-            end_id = f"crosswalk_ew_end_{i}"
-            crosswalk.add_to_road(road.network, start_id, end_id)
-            crosswalk_ids.append((start_id, end_id))  # Track the IDs
-
-        # Remove the crosswalk lanes from the road network to prevent vehicle interaction
-        for start_id, end_id in crosswalk_ids:
-            if start_id in road.network.graph:
-                del road.network.graph[start_id]
-            if end_id in road.network.graph:
-                del road.network.graph[end_id]
-
+        route = self.np_random.choice(range(4), size=2, replace=False)
+        route[1] = (route[0] + 2) % 4 if go_straight else route[1]
+        vehicle_type = utils.class_from_path(self.config["other_vehicles_type"])
+        vehicle = vehicle_type.make_on_lane(
+            self.road,
+            ("o" + str(route[0]), "ir" + str(route[0]), 0),
+            longitudinal=(
+                longitudinal + 5 + self.np_random.normal() * position_deviation
+            ),
+            speed=8 + self.np_random.normal() * speed_deviation,
+        )
+        for v in self.road.vehicles:
+            if np.linalg.norm(v.position - vehicle.position) < 15:
+                return
+        vehicle.plan_route_to("o" + str(route[1]))
+        vehicle.randomize_behavior()
+        self.road.vehicles.append(vehicle)
+        return vehicle
+    
     ##################################################### added ######################################################
     def render(self, mode='human'):
         """Override the render method to render pedestrians and crosswalks."""
@@ -782,7 +485,7 @@ class IntersectionEnv(AbstractEnv):
 
 ####################################################################################################################
 
-class MultiAgentIntersectionEnv(IntersectionEnv):
+class MultiAgentIntersectionEnv(PlazaEnv):
     @classmethod
     def default_config(cls) -> dict:
         config = super().default_config()
@@ -806,7 +509,7 @@ class MultiAgentIntersectionEnv(IntersectionEnv):
         return config
 
 
-class ContinuousIntersectionEnv(IntersectionEnv):
+class ContinuousIntersectionEnv(PlazaEnv):
     def __init__(self, config=None, render_mode: str = None):
         # Call parent class constructor
         super().__init__(config, render_mode)

@@ -45,6 +45,9 @@ class IDMVehicle(ControlledVehicle):
     LANE_CHANGE_MAX_BRAKING_IMPOSED = 2.0  # [m/s2]
     LANE_CHANGE_DELAY = 0.5  # [s]
 
+    def set_route(self, destination):
+        # Assuming the route could be a list of coordinates or a simple tuple
+        self.route = destination  # Store the destination as the vehicle's route
     def __init__(
         self,
         road: Road,
