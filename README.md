@@ -1,5 +1,5 @@
 # MixTrafficSimulation
-The MixTrafficSimulation is a microscopic simulation designed to capture the dynamics and interactions that arise among heterogeneous road users within a shared environment.
+The MixTrafficSimulation is a multi-dimensional microscopic simulation designed to capture the dynamics and interactions that arise among heterogeneous road users within a shared environment.
 
 The repository is being continuously updated and completed every day. Feel free to ask any questions in the meantime.
 
