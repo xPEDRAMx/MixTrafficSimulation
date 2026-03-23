@@ -25,6 +25,9 @@ class Pedestrian:
         self.vehicles = []
         self.crosswalk_id = crosswalk_id
         self.crossing_state = "approach"
+        self.crosswalk_signal_allows = True
+        self.curb_wait_progress = 0.2
+        self.crossing_start_progress = 0.25
 
         # Vehicle-awareness parameters
         self.ttc_wait_threshold = 3.0
@@ -42,6 +45,10 @@ class Pedestrian:
     def set_vehicles(self, vehicles):
         """Set nearby vehicles for interaction forces and wait/go decisions."""
         self.vehicles = vehicles
+
+    def set_crosswalk_signal(self, allows_crossing: bool):
+        """Set whether the pedestrian's assigned crosswalk currently has WALK."""
+        self.crosswalk_signal_allows = bool(allows_crossing)
 
     def _crossing_progress(self):
         path = self.destination - self.start_position
@@ -144,10 +151,16 @@ class Pedestrian:
         desired_velocity = direction / np.linalg.norm(direction) if np.linalg.norm(direction) > 0 else np.zeros(2)
 
         nearest_vehicle, nearest_ttc, nearest_distance, rel_dir = self._nearest_approaching_vehicle()
-        at_curb = self._crossing_progress() < 0.1
+        progress = self._crossing_progress()
+        at_curb = self.curb_wait_progress <= progress < self.crossing_start_progress
         if at_curb:
-            self.crossing_state = "wait" if nearest_ttc < self.ttc_wait_threshold else "cross"
-        elif self._crossing_progress() < 1.0:
+            should_wait_for_gap = nearest_ttc < self.ttc_wait_threshold
+            should_wait_for_signal = not self.crosswalk_signal_allows
+            self.crossing_state = "wait" if (should_wait_for_gap or should_wait_for_signal) else "cross"
+        elif progress < self.curb_wait_progress:
+            # Keep approaching curb regardless of signal.
+            self.crossing_state = "approach"
+        elif progress < 1.0:
             self.crossing_state = "cross"
 
         if self.crossing_state == "wait":

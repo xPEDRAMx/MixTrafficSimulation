@@ -19,6 +19,7 @@ from MixTrafficSimulation.signal.signal import TrafficSignal
 class IntersectionEnv(AbstractEnv):
     ACTIONS: dict[int, str] = {0: "SLOWER", 1: "IDLE", 2: "FASTER"}
     ACTIONS_INDEXES = {v: k for k, v in ACTIONS.items()}
+    SIGNAL_STOP_OFFSET = 3.0  # [m] place signal before crosswalk on approach lane
 
     def __init__(self, config=None, render_mode: str = None):
         self.traffic_signal_active = True  # Initialize here first
@@ -107,11 +108,48 @@ class IntersectionEnv(AbstractEnv):
                 signal.update()  # Update each signal based on the current phase
                 signal.apply_state_change()  # Add or remove signal based on the state
 
+        self._update_pedestrian_signal_permissions()
+
         # Clear vehicles and spawn new ones if needed
         self._clear_vehicles()
         self._spawn_vehicle(spawn_probability=self.config["spawn_probability"])
 
         return obs, reward, terminated, truncated, info
+
+    def _allowed_pedestrian_crosswalk_ids(self) -> set[int]:
+        """
+        Return crosswalk ids that currently have WALK permission.
+        Mapping from intersection crosswalk ids:
+            0: north  (west <-> east)
+            1: south  (west <-> east)
+            2: west   (north <-> south)
+            3: east   (north <-> south)
+        """
+        if not self.traffic_signal_active:
+            return {0, 1, 2, 3}
+
+        phase = TrafficSignal.current_phase
+        # If NS vehicles have green, EW vehicles are red, so west/east crosswalks can walk.
+        if phase == "ns":
+            return {2, 3}
+        # If EW vehicles have green, NS vehicles are red, so north/south crosswalks can walk.
+        if phase == "ew":
+            return {0, 1}
+        # During yellow/all-red keep pedestrians waiting for safety.
+        return set()
+
+    def _update_pedestrian_signal_permissions(self) -> None:
+        allowed_ids = self._allowed_pedestrian_crosswalk_ids()
+        for pedestrian in getattr(self, "pedestrians", []):
+            crosswalk_tag = getattr(pedestrian, "crosswalk_id", "")
+            if not isinstance(crosswalk_tag, str) or not crosswalk_tag.startswith("intersection_crosswalk_"):
+                pedestrian.set_crosswalk_signal(True)
+                continue
+            try:
+                crosswalk_idx = int(crosswalk_tag.rsplit("_", 1)[-1])
+            except ValueError:
+                crosswalk_idx = -1
+            pedestrian.set_crosswalk_signal(crosswalk_idx in allowed_ids)
 
     def _reward(self, action: int) -> float:
         """Aggregated reward, for cooperative agents."""
@@ -192,6 +230,7 @@ class IntersectionEnv(AbstractEnv):
         self._make_road()
         self._make_vehicles(self.config["initial_vehicle_count"])
         self._create_pedestrians()  # Create pedestrians
+        self._update_pedestrian_signal_permissions()
         self.config["screen_width"] = 600  # Adjust width as needed
         self.config["screen_height"] = 600  # Adjust height as needed
 
@@ -333,15 +372,20 @@ class IntersectionEnv(AbstractEnv):
         if not hasattr(self, "traffic_signals") or not self.traffic_signals:
             return
 
-        signal_positions = np.array([signal.position for signal in self.traffic_signals])
-        x_min, x_max = np.min(signal_positions[:, 0]), np.max(signal_positions[:, 0])
-        y_min, y_max = np.min(signal_positions[:, 1]), np.max(signal_positions[:, 1])
+        # Use true crosswalk anchors when available for better alignment.
+        if hasattr(self, "ped_crosswalk_anchor_positions") and self.ped_crosswalk_anchor_positions:
+            anchor_positions = np.array(self.ped_crosswalk_anchor_positions)
+        else:
+            anchor_positions = np.array([signal.position for signal in self.traffic_signals])
+
+        x_min, x_max = np.min(anchor_positions[:, 0]), np.max(anchor_positions[:, 0])
+        y_min, y_max = np.min(anchor_positions[:, 1]), np.max(anchor_positions[:, 1])
 
         # Keep pedestrians very close to crosswalk lines:
         # - approach offset: small shift before/after the curb
         # - line jitter: tiny variation along the crosswalk width
         approach_offset = 2.0
-        line_jitter = 1.0
+        line_jitter = 0.35
 
         crosswalk_pairs = [
             # North crosswalk: west <-> east
@@ -387,7 +431,8 @@ class IntersectionEnv(AbstractEnv):
     ########################################################### MAKE ROADS ##############################################
     def _make_one_lane_road(self) -> None:
 
-        location_for_the_signals = []
+        signal_positions = []
+        crosswalk_anchor_positions = []
         """
         Make an 4-way intersection.
 
@@ -477,7 +522,14 @@ class IntersectionEnv(AbstractEnv):
                     start, end, line_types=[s, n], priority=priority, speed_limit=10
                 ),
             )
-            location_for_the_signals.append(start)  # Append end to the list
+            # Anchor for crosswalk centerline at intersection edge.
+            crosswalk_anchor_positions.append(start)
+
+            # Place signal on incoming lane, just before the crosswalk/intersection entry.
+            incoming_direction = start - (rotation @ np.array([lane_width / 2, access_length + outer_distance]))
+            incoming_direction = incoming_direction / max(np.linalg.norm(incoming_direction), 1e-6)
+            signal_position = start - incoming_direction * self.SIGNAL_STOP_OFFSET
+            signal_positions.append(signal_position)
 
             # Exit
             start = rotation @ np.flip(
@@ -498,27 +550,33 @@ class IntersectionEnv(AbstractEnv):
             record_history=self.config["show_trajectories"],)
         if self.traffic_signal_active:
             # After the existing road creation code
-            ns_positions = [location_for_the_signals[0], location_for_the_signals[2]]  # North-South signals
-            ew_positions = [location_for_the_signals[1], location_for_the_signals[3]]
+            ns_signal_positions = [signal_positions[0], signal_positions[2]]
+            ew_signal_positions = [signal_positions[1], signal_positions[3]]
+            ns_crosswalk_positions = [crosswalk_anchor_positions[0], crosswalk_anchor_positions[2]]
+            ew_crosswalk_positions = [crosswalk_anchor_positions[1], crosswalk_anchor_positions[3]]
     
             self.traffic_signals = []
-            for position in ns_positions:
+            for position in ns_signal_positions:
                 signal = TrafficSignal(road, position, orientation="ns")  # North-South signals
                 road.objects.append(signal)
                 self.traffic_signals.append(signal)
     
-            for position in ew_positions:
+            for position in ew_signal_positions:
                 signal = TrafficSignal(road, position, orientation="ew")  # East-West signals
                 road.objects.append(signal)
                 self.traffic_signals.append(signal)
     
-                # Add crosswalks after the road and signals have been set up
-            self.add_crosswalks(road, ns_positions, ew_positions)
+            # Add crosswalks from fixed crosswalk anchors, not signal positions.
+            self.add_crosswalks(road, ns_crosswalk_positions, ew_crosswalk_positions)
+            self.ped_crosswalk_anchor_positions = (
+                ns_crosswalk_positions + ew_crosswalk_positions
+            )
         self.road = road
 
     def _make_two_lane_road(self) -> None:
 
-        location_for_the_signals = []
+        signal_positions = []
+        crosswalk_anchor_positions = []
         """
         Make a 4-way intersection with two lanes in each direction.
 
@@ -638,7 +696,12 @@ class IntersectionEnv(AbstractEnv):
                 "il" + str((corner + 2) % 4),
                 StraightLane(
                     start_straight_1, end_straight_1, line_types=[n, n], priority=priority, speed_limit=10),)
-            location_for_the_signals.append(start_straight_1)  # Append start position for signals
+            # Place signal before crosswalk along lane 1 incoming direction.
+            incoming_dir_1 = end_lane_1 - start_lane_1
+            incoming_dir_1 = incoming_dir_1 / max(np.linalg.norm(incoming_dir_1), 1e-6)
+            signal_position_1 = end_lane_1 - incoming_dir_1 * self.SIGNAL_STOP_OFFSET
+            signal_positions.append(signal_position_1)
+            crosswalk_anchor_positions.append(start_straight_1)
             # Second straight lane
             start_straight_2 = rotation @ np.array([(lane_width / 2) + lane_width, outer_distance])
             end_straight_2 = rotation @ np.array([(lane_width / 2) + lane_width, -outer_distance])
@@ -647,7 +710,12 @@ class IntersectionEnv(AbstractEnv):
                 "il" + str((corner + 2) % 4),
                 StraightLane(
                     start_straight_2, end_straight_2, line_types=[n, n], priority=priority, speed_limit=10),)
-            location_for_the_signals.append(start_straight_2)  # Append start position for signals
+            # Place signal before crosswalk along lane 2 incoming direction.
+            incoming_dir_2 = end_lane_2 - start_lane_2
+            incoming_dir_2 = incoming_dir_2 / max(np.linalg.norm(incoming_dir_2), 1e-6)
+            signal_position_2 = end_lane_2 - incoming_dir_2 * self.SIGNAL_STOP_OFFSET
+            signal_positions.append(signal_position_2)
+            crosswalk_anchor_positions.append(start_straight_2)
 
             # Exit lanes
             # First exit lane
@@ -682,26 +750,39 @@ class IntersectionEnv(AbstractEnv):
             record_history=self.config["show_trajectories"],)
 
         if self.traffic_signal_active:
-            ns_positions = [location_for_the_signals[0], location_for_the_signals[1], location_for_the_signals[4],
-                            location_for_the_signals[5]]  # North-South signals
-            ew_positions = [location_for_the_signals[2], location_for_the_signals[3], location_for_the_signals[6],
-                            location_for_the_signals[7]]
+            ns_signal_positions = [signal_positions[0], signal_positions[1], signal_positions[4], signal_positions[5]]
+            ew_signal_positions = [signal_positions[2], signal_positions[3], signal_positions[6], signal_positions[7]]
+            ns_crosswalk_positions = [
+                crosswalk_anchor_positions[0],
+                crosswalk_anchor_positions[1],
+                crosswalk_anchor_positions[4],
+                crosswalk_anchor_positions[5],
+            ]
+            ew_crosswalk_positions = [
+                crosswalk_anchor_positions[2],
+                crosswalk_anchor_positions[3],
+                crosswalk_anchor_positions[6],
+                crosswalk_anchor_positions[7],
+            ]
             self.traffic_signals = []
 
             # Create North-South traffic signals
-            for position in ns_positions:
+            for position in ns_signal_positions:
                 signal = TrafficSignal(road, position, orientation="ns")  # North-South signals
                 road.objects.append(signal)
                 self.traffic_signals.append(signal)
 
             # Create East-West traffic signals
-            for position in ew_positions:
+            for position in ew_signal_positions:
                 signal = TrafficSignal(road, position, orientation="ew")  # East-West signals
                 road.objects.append(signal)
                 self.traffic_signals.append(signal)
 
-            # Add crosswalks after the road and signals have been set up
-            self.add_crosswalks(road, ns_positions, ew_positions)
+            # Add crosswalks from fixed crosswalk anchors, not signal positions.
+            self.add_crosswalks(road, ns_crosswalk_positions, ew_crosswalk_positions)
+            self.ped_crosswalk_anchor_positions = (
+                ns_crosswalk_positions + ew_crosswalk_positions
+            )
         self.road = road
 
 
