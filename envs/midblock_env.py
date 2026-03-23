@@ -56,6 +56,7 @@ class MidblockEnv(AbstractEnv):
                 "reward_speed_range": [20, 30],
                 "normalize_reward": True,
                 "offroad_terminal": False,
+                "other_vehicles_type": "MixTrafficSimulation.vehicle.behavior.PedestrianAwareIDMVehicle",
             }
         )
         return config
@@ -97,12 +98,15 @@ class MidblockEnv(AbstractEnv):
             )
             # Set position with calculated y position
             vehicle.position = np.array([start_position_x + i * spacing, y_position])
-            vehicle = self.action_type.vehicle_class(
-                self.road, vehicle.position, vehicle.heading, vehicle.speed
-            )
+
+            # Use configured background vehicle behavior for traffic vehicles.
+            vehicle_class = other_vehicles_type
+            if initial and i < self.config.get("controlled_vehicles", 1):
+                vehicle_class = self.action_type.vehicle_class
+            vehicle = vehicle_class(self.road, vehicle.position, vehicle.heading, vehicle.speed)
             self.road.vehicles.append(vehicle)
 
-            if initial:
+            if initial and i < self.config.get("controlled_vehicles", 1):
                 self.controlled_vehicles.append(vehicle)
             print(f"Added new vehicle at position: {vehicle.position}, speed: {vehicle.speed}, in lane: {lane_id}")
 

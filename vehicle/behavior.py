@@ -577,6 +577,71 @@ class DefensiveVehicle(LinearVehicle):
         2.0,
     ]
 
+class PedestrianAwareIDMVehicle(IDMVehicle):
+    """
+    IDM vehicle with an extra pedestrian-aware braking layer.
+
+    The longitudinal acceleration is first computed by IDM, then clipped with a
+    conservative braking command when a pedestrian is detected in front of the
+    vehicle inside a conflict zone.
+    """
+
+    PEDESTRIAN_DETECTION_DISTANCE = 35.0  # [m]
+    PEDESTRIAN_LATERAL_THRESHOLD = 5.0  # [m]
+    PEDESTRIAN_TTC_THRESHOLD = 3.0  # [s]
+    PEDESTRIAN_MIN_GAP = 6.0  # [m]
+    PEDESTRIAN_BRAKE_BUFFER = 1.0  # [m/s^2]
+
+    def acceleration(
+        self,
+        ego_vehicle: ControlledVehicle,
+        front_vehicle: Vehicle = None,
+        rear_vehicle: Vehicle = None,
+    ) -> float:
+        base_acc = super().acceleration(ego_vehicle, front_vehicle, rear_vehicle)
+        ped_brake_acc, hazard_found = self._pedestrian_braking_acceleration()
+        commanded = min(base_acc, ped_brake_acc)
+        if hazard_found:
+            # Never command reverse in pedestrian-yield mode.
+            commanded = max(commanded, -max(self.speed, 0.0))
+        return commanded
+
+    def _pedestrian_braking_acceleration(self) -> tuple[float, bool]:
+        pedestrians = getattr(self.road, "pedestrians", []) or []
+        if not pedestrians:
+            return self.ACC_MAX, False
+
+        heading = np.array([np.cos(self.heading), np.sin(self.heading)])
+        min_required_brake = self.ACC_MAX
+        hazard_found = False
+
+        for pedestrian in pedestrians:
+            rel = pedestrian.position - self.position
+            longitudinal = float(np.dot(rel, heading))
+            lateral = float(np.linalg.norm(rel - longitudinal * heading))
+            if longitudinal <= 0:
+                continue
+            if longitudinal > self.PEDESTRIAN_DETECTION_DISTANCE:
+                continue
+            if lateral > self.PEDESTRIAN_LATERAL_THRESHOLD:
+                continue
+
+            ped_speed = np.linalg.norm(getattr(pedestrian, "velocity", np.zeros(2)))
+            closing_speed = max(self.speed - ped_speed, 0.0)
+            ttc = longitudinal / max(closing_speed, 1e-3)
+            if ttc > self.PEDESTRIAN_TTC_THRESHOLD and longitudinal > self.PEDESTRIAN_MIN_GAP:
+                continue
+
+            hazard_found = True
+            safe_distance = max(longitudinal - self.PEDESTRIAN_MIN_GAP, 0.1)
+            required_decel = (max(self.speed, 0.0) ** 2) / (2 * safe_distance)
+            required_decel += self.PEDESTRIAN_BRAKE_BUFFER
+            min_required_brake = min(min_required_brake, required_decel)
+
+        if not hazard_found:
+            return self.ACC_MAX, False
+        return -min(min_required_brake, self.ACC_MAX), True
+
 ################################################################### added ##########################################################
 class HellyVehicle(IDMVehicle):
     """

@@ -57,7 +57,12 @@ def run_simulation(
     cfg = env.unwrapped.config
     cfg["duration"] = duration
     cfg["enable_pedestrians"] = enable_pedestrians
-    cfg["other_vehicles_type"] = "MixTrafficSimulation.vehicle.behavior.IDMVehicle"
+    if env_id in {"intersection-v1", "intersection-multi-agent-v1", "midblock"}:
+        cfg["other_vehicles_type"] = (
+            "MixTrafficSimulation.vehicle.behavior.PedestrianAwareIDMVehicle"
+        )
+    else:
+        cfg["other_vehicles_type"] = "MixTrafficSimulation.vehicle.behavior.IDMVehicle"
     if use_manual:
         cfg["manual_control"] = True
 

@@ -68,6 +68,7 @@ class IntersectionEnv(AbstractEnv):
                 "reward_speed_range": [7.0, 9.0],
                 "normalize_reward": False,
                 "offroad_terminal": False,
+                "other_vehicles_type": "MixTrafficSimulation.vehicle.behavior.PedestrianAwareIDMVehicle",
             }
         )
         return config
@@ -326,77 +327,55 @@ class IntersectionEnv(AbstractEnv):
     ########################################################### PEDS ##############################################
 
     def _create_pedestrians(self):
-        """Create and place pedestrians at the defined areas around the crosswalks."""
-
-        # Check if pedestrians are enabled in the configuration
+        """Create pedestrians aligned with crosswalk corridors (no diagonal/mid-street crossing)."""
         if not self.config.get("enable_pedestrians", True):
-            return  # Do not create pedestrians if they are disabled
-        
-        lanes_count = self.config.get("lanes_count", 2)  # Default to 2 lanes if not set
+            return
+        if not hasattr(self, "traffic_signals") or not self.traffic_signals:
+            return
 
-        if lanes_count == 1:
-            areas = [
-                # NS Start Area
-                [self.traffic_signals[0].position[0] - 6, self.traffic_signals[0].position[0] ,
-                 self.traffic_signals[0].position[1] - 2, self.traffic_signals[0].position[1] + 2],
-                [self.traffic_signals[1].position[0] , self.traffic_signals[1].position[0] ,
-                 self.traffic_signals[1].position[1] - 2, self.traffic_signals[1].position[1] + 2],
-                [self.traffic_signals[2].position[0] , self.traffic_signals[2].position[0] ,
-                  self.traffic_signals[2].position[1] - 2, self.traffic_signals[2].position[1] + 2],
-                [self.traffic_signals[3].position[0] , self.traffic_signals[3].position[0] ,
-                 self.traffic_signals[3].position[1] - 2, self.traffic_signals[3].position[1] + 2]]
-        else:
-            
-        # Define the areas for spawning pedestrians
-            areas = [
-                # NS Start Area
-                [self.traffic_signals[0].position[0] - 12, self.traffic_signals[0].position[0] - 10,
-                 self.traffic_signals[0].position[1] - 2, self.traffic_signals[0].position[1] + 2],
-                # NS End Area
-                [self.traffic_signals[2].position[0] + 10, self.traffic_signals[2].position[0] + 12,
-                 self.traffic_signals[2].position[1] - 2, self.traffic_signals[2].position[1] + 2],
-                # EW Start Area
-                [self.traffic_signals[4].position[0] - 2, self.traffic_signals[4].position[0] + 2,
-                 self.traffic_signals[4].position[1] - 12, self.traffic_signals[4].position[1] - 10],
-                # EW End Area
-                [self.traffic_signals[6].position[0] - 2, self.traffic_signals[6].position[0] + 2,
-                 self.traffic_signals[6].position[1] + 10, self.traffic_signals[6].position[1] + 12]]
+        signal_positions = np.array([signal.position for signal in self.traffic_signals])
+        x_min, x_max = np.min(signal_positions[:, 0]), np.max(signal_positions[:, 0])
+        y_min, y_max = np.min(signal_positions[:, 1]), np.max(signal_positions[:, 1])
 
-        # Print the locations of the spawn areas
-        print("Spawn areas:")
-        for idx, area in enumerate(areas):
-            print(f"Area {idx + 1}: {area}")
+        # Keep pedestrians very close to crosswalk lines:
+        # - approach offset: small shift before/after the curb
+        # - line jitter: tiny variation along the crosswalk width
+        approach_offset = 2.0
+        line_jitter = 1.0
 
-        # Create a pedestrian for each defined area
-        for _ in range(2):  # Adjust this if you want more pedestrians
-            # Randomly choose an origin area
-            origin_area = areas[np.random.randint(0, len(areas))]
+        crosswalk_pairs = [
+            # North crosswalk: west <-> east
+            (
+                np.array([x_min - approach_offset, y_max + np.random.uniform(-line_jitter, line_jitter)]),
+                np.array([x_max + approach_offset, y_max + np.random.uniform(-line_jitter, line_jitter)]),
+            ),
+            # South crosswalk: west <-> east
+            (
+                np.array([x_min - approach_offset, y_min + np.random.uniform(-line_jitter, line_jitter)]),
+                np.array([x_max + approach_offset, y_min + np.random.uniform(-line_jitter, line_jitter)]),
+            ),
+            # West crosswalk: north <-> south
+            (
+                np.array([x_min + np.random.uniform(-line_jitter, line_jitter), y_max + approach_offset]),
+                np.array([x_min + np.random.uniform(-line_jitter, line_jitter), y_min - approach_offset]),
+            ),
+            # East crosswalk: north <-> south
+            (
+                np.array([x_max + np.random.uniform(-line_jitter, line_jitter), y_max + approach_offset]),
+                np.array([x_max + np.random.uniform(-line_jitter, line_jitter), y_min - approach_offset]),
+            ),
+        ]
 
-            # Randomly choose a different destination area
-            while True:
-                destination_area = areas[np.random.randint(0, len(areas))]
-                if destination_area != origin_area:  # Ensure origin and destination are different
-                    break
+        for _ in range(2):
+            start, end = crosswalk_pairs[np.random.randint(0, len(crosswalk_pairs))]
+            if np.random.rand() < 0.5:
+                pedestrian_position, destination_position = start, end
+            else:
+                pedestrian_position, destination_position = end, start
 
-            # Randomly generate a pedestrian position within the chosen origin area
-            pedestrian_position = np.array([
-                np.random.uniform(origin_area[0], origin_area[1]),  # Random x within origin area
-                np.random.uniform(origin_area[2], origin_area[3])  # Random y within origin area
-            ])
-
-            # Randomly generate a destination position within the chosen destination area
-            destination_position = np.array([
-                np.random.uniform(destination_area[0], destination_area[1]),  # Random x within destination area
-                np.random.uniform(destination_area[2], destination_area[3])  # Random y within destination area
-            ])
-
-            # Create pedestrian with calculated origin and destination
             pedestrian = Pedestrian(pedestrian_position, destination_position)
-            self.pedestrians.append(pedestrian)  # Add pedestrians to the list
-            print(
-                f"Created pedestrian at position {pedestrian_position} moving towards {destination_position}")  # Debugging: Log pedestrian creation
+            self.pedestrians.append(pedestrian)
 
-        # Set the pedestrians list for each pedestrian
         for pedestrian in self.pedestrians:
             pedestrian.set_pedestrians(self.pedestrians)
 

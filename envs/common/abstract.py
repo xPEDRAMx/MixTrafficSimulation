@@ -331,6 +331,13 @@ class AbstractEnv(gym.Env):
         frames = int(self.config["simulation_frequency"] // self.config["policy_frequency"])
 
         for frame in range(frames):
+            # Expose pedestrians to vehicle behavior models through the road object.
+            self.road.pedestrians = (
+                getattr(self, "pedestrians", [])
+                if self.config.get("enable_pedestrians", False)
+                else []
+            )
+
             # Forward action to the vehicle
             if (
                     action is not None
@@ -346,8 +353,8 @@ class AbstractEnv(gym.Env):
             self.road.step(1 / self.config["simulation_frequency"])
 
             # Only update pedestrians if they are enabled and initialized
-            if self.config.get("enable_pedestrians", False) and self.pedestrians is not None:
-                for pedestrian in self.pedestrians:
+            if self.config.get("enable_pedestrians", False):
+                for pedestrian in getattr(self, "pedestrians", []):
                     pedestrian.calculate_social_force()  # Calculate social forces
                     pedestrian.step(1 / self.config["simulation_frequency"])  # Step pedestrians
 

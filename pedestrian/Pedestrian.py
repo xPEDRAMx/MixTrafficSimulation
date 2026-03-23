@@ -39,8 +39,9 @@ class Pedestrian:
                 # Repulsive force if within personal space
                 if distance < self.personal_space:  # Interaction distance threshold
                     # Calculate a repulsive force based on the size and personal space
-                    overlap = self.personal_space - distance + self.radius + other.radius
-                    repulsive_force = (overlap / distance) * (diff / distance)  # Normalize and scale
+                    safe_distance = max(distance, 1e-3)
+                    overlap = self.personal_space - safe_distance + self.radius + other.radius
+                    repulsive_force = (overlap / safe_distance) * (diff / safe_distance)  # Normalize and scale
                     self.force += repulsive_force
 
     def step(self, dt):
@@ -48,6 +49,10 @@ class Pedestrian:
         self.calculate_social_force()  # Calculate forces considering the set pedestrians
         self.velocity += self.force * dt / self.mass
         self.position += self.velocity * dt
+
+        # Keep state numerically stable for rendering/simulation.
+        self.velocity = np.nan_to_num(self.velocity, nan=0.0, posinf=0.0, neginf=0.0)
+        self.position = np.nan_to_num(self.position, nan=0.0, posinf=0.0, neginf=0.0)
 
         # Check if the pedestrian has reached the destination
         if np.linalg.norm(self.position - self.destination) < 0.5:  # Within 0.5 meters of the destination
@@ -76,8 +81,12 @@ class PedestrianGraphics:
     @classmethod
     def display_pedestrian(cls, pedestrian, surface, offscreen=False):
         """Draw an individual pedestrian."""
+        if not np.isfinite(pedestrian.position).all():
+            return
         # Convert world coordinates to pixel coordinates
         pix_x, pix_y = surface.pos2pix(pedestrian.position[0], pedestrian.position[1])
+        if not (np.isfinite(pix_x) and np.isfinite(pix_y)):
+            return
         # Draw the pedestrian as a small circle
         color = (255, 0, 0)  # Red for pedestrians
         radius = 3  # Adjust the size for better visibility
