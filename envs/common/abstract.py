@@ -354,7 +354,9 @@ class AbstractEnv(gym.Env):
 
             # Only update pedestrians if they are enabled and initialized
             if self.config.get("enable_pedestrians", False):
+                vehicles = getattr(self.road, "vehicles", [])
                 for pedestrian in getattr(self, "pedestrians", []):
+                    pedestrian.set_vehicles(vehicles)
                     pedestrian.calculate_social_force()  # Calculate social forces
                     pedestrian.step(1 / self.config["simulation_frequency"])  # Step pedestrians
 

@@ -57,6 +57,10 @@ class MidblockEnv(AbstractEnv):
                 "normalize_reward": True,
                 "offroad_terminal": False,
                 "other_vehicles_type": "MixTrafficSimulation.vehicle.behavior.PedestrianAwareIDMVehicle",
+                "pedestrian_spawn_interval_s": 15.0,
+                "pedestrian_spawn_batch_min": 1,
+                "pedestrian_spawn_batch_max": 3,
+                "pedestrian_sidewalk_buffer": 14.0,
             }
         )
         return config
@@ -64,6 +68,10 @@ class MidblockEnv(AbstractEnv):
     def _reset(self) -> None:
         self._create_road()
         self.vehicle_creation_counter = 0  # Reset the vehicle creation counter
+        self.last_pedestrian_spawn_time = -float(
+            self.config.get("pedestrian_spawn_interval_s", 6.0)
+        )
+        self.pedestrians = []
         self._create_vehicles(initial=True)
 
     def _create_road(self) -> None:
@@ -120,14 +128,20 @@ class MidblockEnv(AbstractEnv):
             self.vehicle_creation_counter = 0  # Reset the counter
 
         # Check if it's time to create pedestrians
-        if self.time % 5 == 0:  # Example condition to create pedestrians periodically
+        spawn_interval_s = float(self.config.get("pedestrian_spawn_interval_s", 6.0))
+        if self.time - self.last_pedestrian_spawn_time >= spawn_interval_s:
             self._create_pedestrians()
+            self.last_pedestrian_spawn_time = self.time
 
         return obs, reward, done, truncated, info
 
     def _reset(self):
         self._create_road()
         self.vehicle_creation_counter = 0  # Reset the vehicle creation counter
+        self.last_pedestrian_spawn_time = -float(
+            self.config.get("pedestrian_spawn_interval_s", 15.0)
+        )
+        self.pedestrians = []
         self._create_vehicles(initial=True)
 
     def _reward(self, action: Action) -> float:
@@ -206,15 +220,41 @@ class MidblockEnv(AbstractEnv):
         if not self.config.get("enable_pedestrians", True):
             return  # Do not create pedestrians if they are disabled
 
-        # Define two areas for spawning pedestrians: origin and destination
-        origin_area = [120, 130, 8, 12]  # Spawn area for starting
-        destination_area = [130, 140, -4,-8]  # Destination area
+        lanes_count = self.config.get("lanes_count", 4)
+        lane_width = 4.0
+        crosswalk_x_center = 130.0
+        crosswalk_x_jitter = 2.0
+        sidewalk_buffer = float(self.config.get("pedestrian_sidewalk_buffer", 14.0))
+        sidewalk_depth = 4.0
+        batch_min = int(self.config.get("pedestrian_spawn_batch_min", 1))
+        batch_max = int(self.config.get("pedestrian_spawn_batch_max", 3))
+        if batch_min > batch_max:
+            batch_min, batch_max = batch_max, batch_min
+
+        # Approximate roadway vertical extent from lane layout used in this env.
+        road_top = 2.0
+        road_bottom = -(lanes_count - 1) * lane_width - 2.0
+
+        # Define two areas for spawning pedestrians with sidewalk buffer.
+        origin_area = [
+            crosswalk_x_center - crosswalk_x_jitter,
+            crosswalk_x_center + crosswalk_x_jitter,
+            road_top + sidewalk_buffer,
+            road_top + sidewalk_buffer + sidewalk_depth,
+        ]
+        destination_area = [
+            crosswalk_x_center - crosswalk_x_jitter,
+            crosswalk_x_center + crosswalk_x_jitter,
+            road_bottom - sidewalk_buffer - sidewalk_depth,
+            road_bottom - sidewalk_buffer,
+        ]
 
         print("Spawn areas:")
         print(f"Origin Area: {origin_area}")
         print(f"Destination Area: {destination_area}")
 
-        for _ in range(2):  # Adjust for the desired number of pedestrians
+        batch_size = int(np.random.randint(batch_min, batch_max + 1))
+        for _ in range(batch_size):
             # Randomly generate a pedestrian position in the origin area
             pedestrian_position = np.array([
                 np.random.uniform(origin_area[0], origin_area[1]),
@@ -228,7 +268,16 @@ class MidblockEnv(AbstractEnv):
             ])
 
             # Create pedestrian with position and destination
-            pedestrian = Pedestrian(position=pedestrian_position, destination=destination_position)
+            pedestrian = Pedestrian(
+                position=pedestrian_position,
+                destination=destination_position,
+                crosswalk_id="midblock_crosswalk_main",
+            )
+            # Midblock-specific conservative crossing behavior
+            pedestrian.ttc_wait_threshold = 5.0
+            pedestrian.ttc_emergency_threshold = 2.5
+            pedestrian.vehicle_perception_range = 60.0
+            pedestrian.conflict_path_width = 12.0
             self.pedestrians.append(pedestrian)  # Add pedestrians to the list
 
         # Set the pedestrians list for each pedestrian

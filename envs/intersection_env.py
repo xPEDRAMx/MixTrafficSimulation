@@ -367,13 +367,18 @@ class IntersectionEnv(AbstractEnv):
         ]
 
         for _ in range(2):
-            start, end = crosswalk_pairs[np.random.randint(0, len(crosswalk_pairs))]
+            crosswalk_idx = np.random.randint(0, len(crosswalk_pairs))
+            start, end = crosswalk_pairs[crosswalk_idx]
             if np.random.rand() < 0.5:
                 pedestrian_position, destination_position = start, end
             else:
                 pedestrian_position, destination_position = end, start
 
-            pedestrian = Pedestrian(pedestrian_position, destination_position)
+            pedestrian = Pedestrian(
+                pedestrian_position,
+                destination_position,
+                crosswalk_id=f"intersection_crosswalk_{crosswalk_idx}",
+            )
             self.pedestrians.append(pedestrian)
 
         for pedestrian in self.pedestrians:
