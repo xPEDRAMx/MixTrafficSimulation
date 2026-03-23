@@ -103,6 +103,7 @@ class AbstractEnv(gym.Env):
             "centering_position": [0.3, 0.5],
             "scaling": 5.5,
             "show_trajectories": False,
+            "log_trajectories": False,
             "render_agent": True,
             "offscreen_rendering": os.environ.get("OFFSCREEN_RENDERING", "0") == "1",
             "manual_control": False,
@@ -245,7 +246,8 @@ class AbstractEnv(gym.Env):
         terminated = self._is_terminated()
         truncated = self._is_truncated()
         info = self._info(obs, action)
-        self.log_trajectories() #added
+        if self.config.get("log_trajectories", False):
+            self.log_trajectories() #added
 
         if self.render_mode == "human":
             self.render()

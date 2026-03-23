@@ -135,15 +135,6 @@ class MidblockEnv(AbstractEnv):
 
         return obs, reward, done, truncated, info
 
-    def _reset(self):
-        self._create_road()
-        self.vehicle_creation_counter = 0  # Reset the vehicle creation counter
-        self.last_pedestrian_spawn_time = -float(
-            self.config.get("pedestrian_spawn_interval_s", 15.0)
-        )
-        self.pedestrians = []
-        self._create_vehicles(initial=True)
-
     def _reward(self, action: Action) -> float:
         """
         The reward is defined to foster driving at high speed, on the rightmost lanes, and to avoid collisions.
@@ -253,18 +244,18 @@ class MidblockEnv(AbstractEnv):
         print(f"Origin Area: {origin_area}")
         print(f"Destination Area: {destination_area}")
 
-        batch_size = int(np.random.randint(batch_min, batch_max + 1))
+        batch_size = int(self.np_random.integers(batch_min, batch_max + 1))
         for _ in range(batch_size):
             # Randomly generate a pedestrian position in the origin area
             pedestrian_position = np.array([
-                np.random.uniform(origin_area[0], origin_area[1]),
-                np.random.uniform(origin_area[2], origin_area[3])
+                self.np_random.uniform(origin_area[0], origin_area[1]),
+                self.np_random.uniform(origin_area[2], origin_area[3])
             ])
 
             # Randomly select a destination within the destination area
             destination_position = np.array([
-                np.random.uniform(destination_area[0], destination_area[1]),
-                np.random.uniform(destination_area[2], destination_area[3])
+                self.np_random.uniform(destination_area[0], destination_area[1]),
+                self.np_random.uniform(destination_area[2], destination_area[3])
             ])
 
             # Create pedestrian with position and destination

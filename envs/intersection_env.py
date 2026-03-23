@@ -13,7 +13,6 @@ from MixTrafficSimulation.envs.common.graphics import FixedCameraEnvViewer
 from MixTrafficSimulation.vehicle.objects import StopSign, YellowSignal
 from MixTrafficSimulation.pedestrian.Pedestrian import Pedestrian
 from MixTrafficSimulation.pedestrian.Pedestrian import PedestrianGraphics
-import time
 from MixTrafficSimulation.signal.signal import TrafficSignal
 
 class IntersectionEnv(AbstractEnv):
@@ -26,7 +25,7 @@ class IntersectionEnv(AbstractEnv):
         super().__init__(config)  # Call the parent class constructor after initialization
         self.render_mode = render_mode  # Store the render mode
         self.pedestrians = []
-        self.last_pedestrian_spawn_time = 0  # Initialize last spawn time
+        self.last_pedestrian_spawn_time = 0.0
         self.pedestrian_spawn_interval = 1  # Spawn a pedestrian every second
 
     @classmethod
@@ -70,6 +69,7 @@ class IntersectionEnv(AbstractEnv):
                 "normalize_reward": False,
                 "offroad_terminal": False,
                 "other_vehicles_type": "MixTrafficSimulation.vehicle.behavior.PedestrianAwareIDMVehicle",
+                "render_crosswalk_lines": False,
             }
         )
         return config
@@ -95,10 +95,9 @@ class IntersectionEnv(AbstractEnv):
         # Calculate the time step for this frame
         dt = 1 / self.config["simulation_frequency"]
 
-        current_time = time.time()
-        if current_time - self.last_pedestrian_spawn_time > self.pedestrian_spawn_interval:
+        if self.time - self.last_pedestrian_spawn_time >= self.pedestrian_spawn_interval:
             self._create_pedestrians()  # Call the method to create pedestrians
-            self.last_pedestrian_spawn_time = current_time
+            self.last_pedestrian_spawn_time = self.time
 
         # Check if traffic signals are active and update their state
         if self.traffic_signal_active:
@@ -227,6 +226,7 @@ class IntersectionEnv(AbstractEnv):
         """Reset the environment and create vehicles and pedestrians."""
         # Ensure pedestrians list is re-initialized before creating pedestrians
         self.pedestrians = []  # Initialize the pedestrians list
+        self.last_pedestrian_spawn_time = 0.0
         self._make_road()
         self._make_vehicles(self.config["initial_vehicle_count"])
         self._create_pedestrians()  # Create pedestrians
@@ -305,7 +305,7 @@ class IntersectionEnv(AbstractEnv):
 
             self.road.vehicles.append(ego_vehicle)
             self.controlled_vehicles.append(ego_vehicle)
-            for v in self.road.vehicles:  # Prevent early collisions
+            for v in list(self.road.vehicles):  # Prevent early collisions
                 if (
                     v is not ego_vehicle
                     and np.linalg.norm(v.position - ego_vehicle.position) < 20
@@ -390,30 +390,30 @@ class IntersectionEnv(AbstractEnv):
         crosswalk_pairs = [
             # North crosswalk: west <-> east
             (
-                np.array([x_min - approach_offset, y_max + np.random.uniform(-line_jitter, line_jitter)]),
-                np.array([x_max + approach_offset, y_max + np.random.uniform(-line_jitter, line_jitter)]),
+                np.array([x_min - approach_offset, y_max + self.np_random.uniform(-line_jitter, line_jitter)]),
+                np.array([x_max + approach_offset, y_max + self.np_random.uniform(-line_jitter, line_jitter)]),
             ),
             # South crosswalk: west <-> east
             (
-                np.array([x_min - approach_offset, y_min + np.random.uniform(-line_jitter, line_jitter)]),
-                np.array([x_max + approach_offset, y_min + np.random.uniform(-line_jitter, line_jitter)]),
+                np.array([x_min - approach_offset, y_min + self.np_random.uniform(-line_jitter, line_jitter)]),
+                np.array([x_max + approach_offset, y_min + self.np_random.uniform(-line_jitter, line_jitter)]),
             ),
             # West crosswalk: north <-> south
             (
-                np.array([x_min + np.random.uniform(-line_jitter, line_jitter), y_max + approach_offset]),
-                np.array([x_min + np.random.uniform(-line_jitter, line_jitter), y_min - approach_offset]),
+                np.array([x_min + self.np_random.uniform(-line_jitter, line_jitter), y_max + approach_offset]),
+                np.array([x_min + self.np_random.uniform(-line_jitter, line_jitter), y_min - approach_offset]),
             ),
             # East crosswalk: north <-> south
             (
-                np.array([x_max + np.random.uniform(-line_jitter, line_jitter), y_max + approach_offset]),
-                np.array([x_max + np.random.uniform(-line_jitter, line_jitter), y_min - approach_offset]),
+                np.array([x_max + self.np_random.uniform(-line_jitter, line_jitter), y_max + approach_offset]),
+                np.array([x_max + self.np_random.uniform(-line_jitter, line_jitter), y_min - approach_offset]),
             ),
         ]
 
         for _ in range(2):
-            crosswalk_idx = np.random.randint(0, len(crosswalk_pairs))
+            crosswalk_idx = int(self.np_random.integers(0, len(crosswalk_pairs)))
             start, end = crosswalk_pairs[crosswalk_idx]
-            if np.random.rand() < 0.5:
+            if self.np_random.uniform() < 0.5:
                 pedestrian_position, destination_position = start, end
             else:
                 pedestrian_position, destination_position = end, start
@@ -566,8 +566,9 @@ class IntersectionEnv(AbstractEnv):
                 road.objects.append(signal)
                 self.traffic_signals.append(signal)
     
-            # Add crosswalks from fixed crosswalk anchors, not signal positions.
-            self.add_crosswalks(road, ns_crosswalk_positions, ew_crosswalk_positions)
+            if self.config.get("render_crosswalk_lines", False):
+                # Add crosswalks from fixed crosswalk anchors, not signal positions.
+                self.add_crosswalks(road, ns_crosswalk_positions, ew_crosswalk_positions)
             self.ped_crosswalk_anchor_positions = (
                 ns_crosswalk_positions + ew_crosswalk_positions
             )
@@ -778,8 +779,9 @@ class IntersectionEnv(AbstractEnv):
                 road.objects.append(signal)
                 self.traffic_signals.append(signal)
 
-            # Add crosswalks from fixed crosswalk anchors, not signal positions.
-            self.add_crosswalks(road, ns_crosswalk_positions, ew_crosswalk_positions)
+            if self.config.get("render_crosswalk_lines", False):
+                # Add crosswalks from fixed crosswalk anchors, not signal positions.
+                self.add_crosswalks(road, ns_crosswalk_positions, ew_crosswalk_positions)
             self.ped_crosswalk_anchor_positions = (
                 ns_crosswalk_positions + ew_crosswalk_positions
             )
@@ -789,33 +791,62 @@ class IntersectionEnv(AbstractEnv):
 
     def add_crosswalks(self, road: RegulatedRoad, ns_positions: list[np.ndarray],
                        ew_positions: list[np.ndarray]) -> None:
-        """Add crosswalks to the road network at the signal locations."""
+        """Add lightweight street-only crosswalk line segments."""
 
-        lane_width = AbstractLane.DEFAULT_WIDTH  # Get the lane width to adjust crosswalk size
-        # Add crosswalks for north-south signal positions
-        crosswalk_ids = []  # Keep track of the crosswalk lane IDs
-        for i, position in enumerate(ns_positions):
-            crosswalk_start = np.array([position[0] - 2, position[1]])
-            crosswalk_end = np.array([position[0] + 2, position[1]])
-            crosswalk = CrosswalkLane(crosswalk_start, crosswalk_end, stripe_length=1.5, gap=0.1, width=lane_width)
+        lane_width = AbstractLane.DEFAULT_WIDTH
+        stripe_width = lane_width * 0.25
+        crosswalk_ids = []
+        ns_positions_arr = np.array(ns_positions)
+        ew_positions_arr = np.array(ew_positions)
+        edge_inset = lane_width * 0.5
 
-            # Assign crosswalk lane to the road network
-            start_id = f"crosswalk_ns_start_{i}"
-            end_id = f"crosswalk_ns_end_{i}"
+        def _local_x_bounds_for_y(y_value: float) -> tuple[float, float]:
+            # Use EW anchors closest in y to avoid spanning into off-street areas.
+            order = np.argsort(np.abs(ew_positions_arr[:, 1] - y_value))
+            k = max(2, min(4, len(order)))
+            xs = ew_positions_arr[order[:k], 0]
+            return float(np.min(xs) + edge_inset), float(np.max(xs) - edge_inset)
+
+        def _local_y_bounds_for_x(x_value: float) -> tuple[float, float]:
+            # Use NS anchors closest in x to avoid spanning into off-street areas.
+            order = np.argsort(np.abs(ns_positions_arr[:, 0] - x_value))
+            k = max(2, min(4, len(order)))
+            ys = ns_positions_arr[order[:k], 1]
+            return float(np.min(ys) + edge_inset), float(np.max(ys) - edge_inset)
+
+        def _add_crosswalk_segment(start: np.ndarray, end: np.ndarray, prefix: str, idx: int, twin: int):
+            # Use simple sparse stripes for faster rendering.
+            crosswalk = CrosswalkLane(start, end, stripe_length=1.0, gap=1.0, width=lane_width)
+            start_id = f"{prefix}_start_{idx}_{twin}"
+            end_id = f"{prefix}_end_{idx}_{twin}"
             crosswalk.add_to_road(road.network, start_id, end_id)
-            crosswalk_ids.append((start_id, end_id))  # Track the IDs
+            crosswalk_ids.append((start_id, end_id))
 
-        # Add crosswalks for east-west signal positions
-        for i, position in enumerate(ew_positions):
-            crosswalk_start = np.array([position[0], position[1] - 2])
-            crosswalk_end = np.array([position[0], position[1] + 2])
-            crosswalk = CrosswalkLane(crosswalk_start, crosswalk_end, stripe_length=2.0, gap=1.0, width=lane_width)
+        # North/South crosswalks: short horizontal segments over street only.
+        for i, position in enumerate(ns_positions_arr):
+            for twin_idx, y_shift in enumerate((-stripe_width / 2.0, stripe_width / 2.0)):
+                y = float(position[1] + y_shift)
+                x_left, x_right = _local_x_bounds_for_y(y)
+                _add_crosswalk_segment(
+                    np.array([x_left, y]),
+                    np.array([x_right, y]),
+                    "crosswalk_ns",
+                    i,
+                    twin_idx,
+                )
 
-            # Assign crosswalk lane to the road network
-            start_id = f"crosswalk_ew_start_{i}"
-            end_id = f"crosswalk_ew_end_{i}"
-            crosswalk.add_to_road(road.network, start_id, end_id)
-            crosswalk_ids.append((start_id, end_id))  # Track the IDs
+        # East/West crosswalks: short vertical segments over street only.
+        for i, position in enumerate(ew_positions_arr):
+            for twin_idx, x_shift in enumerate((-stripe_width / 2.0, stripe_width / 2.0)):
+                x = float(position[0] + x_shift)
+                y_bottom, y_top = _local_y_bounds_for_x(x)
+                _add_crosswalk_segment(
+                    np.array([x, y_bottom]),
+                    np.array([x, y_top]),
+                    "crosswalk_ew",
+                    i,
+                    twin_idx,
+                )
 
         # Remove the crosswalk lanes from the road network to prevent vehicle interaction
         for start_id, end_id in crosswalk_ids:

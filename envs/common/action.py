@@ -211,6 +211,9 @@ class NoAction(ActionType):
         """Does nothing, the IDMVehicle actions will be followed automatically."""
         pass
 
+    def get_available_actions(self):
+        return [0]
+
 ###########################################################################################################################
 
 

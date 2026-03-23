@@ -5,6 +5,7 @@ from pathlib import Path
 from tkinter import BooleanVar, DoubleVar, IntVar, StringVar, Tk, messagebox, ttk
 
 import gymnasium as gym
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # Allow running as `python run_env.py` from inside this directory.
@@ -30,6 +31,73 @@ AVAILABLE_ENVS = [
 CONTROL_MODES = ["NoAction (autopilot)", "Random", "Ego Manual (keyboard)"]
 
 
+def collect_agents_xy(base_env, traces: dict[str, dict[str, list[tuple[float, float]]]]) -> None:
+    """Collect current x-y points for all agents grouped by agent id."""
+    vehicles = getattr(getattr(base_env, "road", None), "vehicles", []) or []
+    pedestrians = getattr(base_env, "pedestrians", []) or []
+
+    for vehicle in vehicles:
+        if hasattr(vehicle, "position"):
+            raw_id = getattr(vehicle, "id", None)
+            agent_id = f"veh_{raw_id}" if raw_id is not None else f"veh_{id(vehicle)}"
+            traces["vehicles"].setdefault(agent_id, []).append(
+                (float(vehicle.position[0]), float(vehicle.position[1]))
+            )
+    for pedestrian in pedestrians:
+        if hasattr(pedestrian, "position"):
+            raw_id = getattr(pedestrian, "id", None)
+            agent_id = (
+                f"ped_{raw_id}" if raw_id is not None else f"ped_{id(pedestrian)}"
+            )
+            traces["pedestrians"].setdefault(agent_id, []).append(
+                (float(pedestrian.position[0]), float(pedestrian.position[1]))
+            )
+
+
+def show_agents_xy_popup(traces: dict[str, dict[str, list[tuple[float, float]]]]) -> None:
+    """Show a popup figure with x-y trajectories (line per agent id)."""
+    vehicle_traces = traces.get("vehicles", {})
+    ped_traces = traces.get("pedestrians", {})
+    if not vehicle_traces and not ped_traces:
+        return
+
+    plt.figure("Agents XY", figsize=(7, 6))
+    plt.clf()
+
+    all_ids = list(vehicle_traces.keys()) + list(ped_traces.keys())
+    cmap = plt.get_cmap("tab20", max(len(all_ids), 1))
+    id_to_color = {agent_id: cmap(i) for i, agent_id in enumerate(all_ids)}
+
+    for agent_id, points in vehicle_traces.items():
+        if len(points) < 2:
+            continue
+        xs = [p[0] for p in points]
+        ys = [p[1] for p in points]
+        plt.plot(xs, ys, color=id_to_color[agent_id], linewidth=1.3, alpha=0.9)
+
+    for agent_id, points in ped_traces.items():
+        if len(points) < 2:
+            continue
+        xs = [p[0] for p in points]
+        ys = [p[1] for p in points]
+        plt.plot(
+            xs,
+            ys,
+            color=id_to_color[agent_id],
+            linewidth=1.0,
+            linestyle="--",
+            alpha=0.9,
+        )
+
+    plt.xlabel("x")
+    plt.ylabel("y")
+    plt.title("Agent Trajectories (Color by ID)")
+    plt.grid(True, alpha=0.3)
+    plt.axis("equal")
+    plt.tight_layout()
+    plt.show(block=False)
+
+
 def run_simulation(
     env_id: str = "roundabout-v0",
     steps: int = 100,
@@ -41,6 +109,7 @@ def run_simulation(
     render_mode: str = "human",
     enable_pedestrians: bool = False,
     control_mode: str = "NoAction (autopilot)",
+    stop_event=None,
 ) -> None:
     use_no_action = control_mode == "NoAction (autopilot)"
     use_manual = control_mode == "Ego Manual (keyboard)"
@@ -53,6 +122,7 @@ def run_simulation(
         make_config["manual_control"] = True
 
     env = gym.make(env_id, render_mode=render_mode, config=make_config)
+    traces = {"vehicles": {}, "pedestrians": {}}
 
     cfg = env.unwrapped.config
     cfg["duration"] = duration
@@ -77,18 +147,22 @@ def run_simulation(
         cfg["generation_interval"] = generation_interval
 
     env.reset()
+    collect_agents_xy(env.unwrapped if hasattr(env, "unwrapped") else env, traces)
 
     if hasattr(env.unwrapped, "road") and env.unwrapped.road and env.unwrapped.road.network:
         for lane in env.unwrapped.road.network.lanes_list():
             lane.speed_limit = speed_limit
 
     for _ in range(steps):
+        if stop_event is not None and stop_event.is_set():
+            break
         action = "NoAction" if use_no_action else env.action_space.sample()
         try:
             _, _, done, truncated, _ = env.step(action)
         except Exception:
             # Fallback for envs that do not support string NoAction.
             _, _, done, truncated, _ = env.step(env.action_space.sample())
+        collect_agents_xy(env.unwrapped if hasattr(env, "unwrapped") else env, traces)
         env.render()
         if done or truncated:
             break
@@ -107,6 +181,7 @@ def run_simulation(
         base_env.save_trajectories_csv(str(trajectories_path))
         df = pd.read_csv(trajectories_path)
         utils.plot_time_x_for_each_lane_and_id(df)
+    show_agents_xy_popup(traces)
 
 
 def launch_ui() -> None:
@@ -174,31 +249,156 @@ def launch_ui() -> None:
     row += 1
 
     frame.columnconfigure(1, weight=1)
+    sim_state = {
+        "running": False,
+        "stop": False,
+        "step": 0,
+        "max_steps": 0,
+        "env": None,
+        "traces": {"vehicles": {}, "pedestrians": {}},
+    }
 
     def on_run() -> None:
-        status_label.config(text="Simulation running... UI will pause until finished.")
-        root.update_idletasks()
+        if sim_state["running"]:
+            status_label.config(text="Simulation already running.")
+            return
+
         try:
-            run_simulation(
-                env_id=env_var.get(),
-                steps=steps_var.get(),
-                duration=duration_var.get(),
-                lanes_count=lanes_var.get(),
-                max_vehicles=vehicles_var.get(),
-                generation_interval=generation_var.get(),
-                speed_limit=speed_var.get(),
-                render_mode=render_var.get(),
-                enable_pedestrians=pedestrians_var.get(),
-                control_mode=control_mode_var.get(),
-            )
-            status_label.config(text="Done. CSV outputs written to outputs/.")
-        except Exception as exc:  # pragma: no cover - runtime safety for UI path
+            use_no_action = control_mode_var.get() == "NoAction (autopilot)"
+            use_manual = control_mode_var.get() == "Ego Manual (keyboard)"
+            make_config = {}
+            if use_no_action:
+                make_config["action"] = {"type": "NoAction"}
+            elif use_manual:
+                make_config["action"] = {"type": "DiscreteMetaAction"}
+                make_config["manual_control"] = True
+
+            env = gym.make(env_var.get(), render_mode=render_var.get(), config=make_config)
+            cfg = env.unwrapped.config
+            cfg["duration"] = duration_var.get()
+            cfg["enable_pedestrians"] = pedestrians_var.get()
+            if env_var.get() in {"intersection-v1", "intersection-multi-agent-v1", "midblock"}:
+                cfg["other_vehicles_type"] = (
+                    "MixTrafficSimulation.vehicle.behavior.PedestrianAwareIDMVehicle"
+                )
+            else:
+                cfg["other_vehicles_type"] = "MixTrafficSimulation.vehicle.behavior.IDMVehicle"
+            if use_manual:
+                cfg["manual_control"] = True
+            if "lanes_count" in cfg:
+                cfg["lanes_count"] = lanes_var.get()
+            if "max_vehicles" in cfg:
+                cfg["max_vehicles"] = vehicles_var.get()
+            if "vehicles_count" in cfg:
+                cfg["vehicles_count"] = vehicles_var.get()
+            if "generation_interval" in cfg:
+                cfg["generation_interval"] = generation_var.get()
+
+            env.reset()
+            if hasattr(env.unwrapped, "road") and env.unwrapped.road and env.unwrapped.road.network:
+                for lane in env.unwrapped.road.network.lanes_list():
+                    lane.speed_limit = speed_var.get()
+        except Exception as exc:
             messagebox.showerror("Simulation error", str(exc))
             status_label.config(text=f"Failed: {exc}")
+            return
 
-    ttk.Button(frame, text="Run Simulation", command=on_run).grid(
-        row=row, column=0, columnspan=2, pady=6
+        sim_state.update(
+            {
+                "running": True,
+                "stop": False,
+                "step": 0,
+                "max_steps": int(steps_var.get()),
+                "env": env,
+                "traces": {"vehicles": {}, "pedestrians": {}},
+            }
+        )
+        collect_agents_xy(env.unwrapped if hasattr(env, "unwrapped") else env, sim_state["traces"])
+        run_button.config(state="disabled")
+        terminate_button.config(state="normal")
+        status_label.config(text="Simulation running...")
+
+        def finalize(stopped: bool) -> None:
+            try:
+                env = sim_state["env"]
+                if env is None:
+                    return
+                env.close()
+                base_env = env.unwrapped if hasattr(env, "unwrapped") else env
+                output_dir = project_root / "outputs"
+                output_dir.mkdir(parents=True, exist_ok=True)
+                vehicle_info_path = output_dir / "vehicle_info.csv"
+                trajectories_path = output_dir / "trajectories.csv"
+                if hasattr(base_env, "save_vehicle_info_csv"):
+                    base_env.save_vehicle_info_csv(str(vehicle_info_path))
+                if hasattr(base_env, "save_trajectories_csv"):
+                    base_env.save_trajectories_csv(str(trajectories_path))
+                    df = pd.read_csv(trajectories_path)
+                    utils.plot_time_x_for_each_lane_and_id(df)
+                show_agents_xy_popup(sim_state["traces"])
+                status_label.config(
+                    text="Stopped. CSV outputs written to outputs/."
+                    if stopped
+                    else "Done. CSV outputs written to outputs/."
+                )
+            except Exception as exc:
+                messagebox.showerror("Simulation error", str(exc))
+                status_label.config(text=f"Failed: {exc}")
+            finally:
+                sim_state.update({"running": False, "env": None})
+                run_button.config(state="normal")
+                terminate_button.config(state="disabled")
+
+        def step_once() -> None:
+            if not sim_state["running"]:
+                return
+            env = sim_state["env"]
+            try:
+                # Keep Tk responsive while simulation is active.
+                root.update_idletasks()
+                use_no_action = control_mode_var.get() == "NoAction (autopilot)"
+                action = "NoAction" if use_no_action else env.action_space.sample()
+                try:
+                    _, _, done, truncated, _ = env.step(action)
+                except Exception:
+                    _, _, done, truncated, _ = env.step(env.action_space.sample())
+                collect_agents_xy(
+                    env.unwrapped if hasattr(env, "unwrapped") else env,
+                    sim_state["traces"],
+                )
+                env.render()
+            except Exception as exc:
+                messagebox.showerror("Simulation error", str(exc))
+                status_label.config(text=f"Failed: {exc}")
+                finalize(stopped=False)
+                return
+
+            sim_state["step"] += 1
+            should_stop = (
+                sim_state["stop"]
+                or done
+                or truncated
+                or sim_state["step"] >= sim_state["max_steps"]
+            )
+            if should_stop:
+                finalize(stopped=sim_state["stop"])
+            else:
+                # Small delay prevents UI starvation and keeps Terminate clickable.
+                root.after(20, step_once)
+
+        root.after(1, step_once)
+
+    def on_terminate() -> None:
+        if sim_state["running"]:
+            sim_state["stop"] = True
+            status_label.config(text="Stopping simulation...")
+
+    run_button = ttk.Button(frame, text="Run Simulation", command=on_run)
+    run_button.grid(row=row, column=0, pady=6, sticky="ew")
+    terminate_button = ttk.Button(
+        frame, text="Terminate", command=on_terminate, state="disabled"
     )
+    terminate_button.grid(row=row, column=1, pady=6, sticky="ew")
     root.mainloop()
 
 
