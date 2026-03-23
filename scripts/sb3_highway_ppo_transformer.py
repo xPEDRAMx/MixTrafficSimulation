@@ -1,4 +1,6 @@
 import functools
+import sys
+from pathlib import Path
 
 import gymnasium as gym
 import numpy as np
@@ -14,8 +16,13 @@ from stable_baselines3.common.vec_env import SubprocVecEnv
 from torch.distributions import Categorical
 from torch.nn import functional as F
 
-import highway_env  # noqa: F401
-from highway_env.utils import lmap
+# Allow running from scripts/ while importing local package.
+package_parent = Path(__file__).resolve().parents[2]
+if str(package_parent) not in sys.path:
+    sys.path.insert(0, str(package_parent))
+
+import MixTrafficSimulation  # noqa: F401
+from MixTrafficSimulation.utils import lmap
 
 
 # ==================================

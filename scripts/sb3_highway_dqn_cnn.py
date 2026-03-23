@@ -1,13 +1,20 @@
 import gymnasium as gym
 from stable_baselines3 import DQN
 from stable_baselines3.common.vec_env import DummyVecEnv, VecVideoRecorder
+from pathlib import Path
+import sys
 
-import highway_env  # noqa: F401
+# Allow running from scripts/ while importing local package.
+package_parent = Path(__file__).resolve().parents[2]
+if str(package_parent) not in sys.path:
+    sys.path.insert(0, str(package_parent))
+
+import MixTrafficSimulation  # noqa: F401
 
 
 def train_env():
     env = gym.make(
-        "highway-fast-v0",
+        "highway-v0",
         config={
             "observation": {
                 "type": "GrayscaleObservation",

@@ -1,0 +1,1768 @@
+vehicle,attribute,value
+IDMVehicle #288: [2188.62874821    0.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #288: [2188.62874821    0.        ],position,[2188.62874821    0.        ]
+IDMVehicle #288: [2188.62874821    0.        ],ACC_MAX,8.0
+IDMVehicle #288: [2188.62874821    0.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #288: [2188.62874821    0.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #288: [2188.62874821    0.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #288: [2188.62874821    0.        ],DELTA,4.0
+IDMVehicle #288: [2188.62874821    0.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #288: [2188.62874821    0.        ],DELTA_SPEED,5
+IDMVehicle #288: [2188.62874821    0.        ],DISTANCE_WANTED,10.0
+IDMVehicle #288: [2188.62874821    0.        ],HISTORY_SIZE,30
+IDMVehicle #288: [2188.62874821    0.        ],KP_A,1.6666666666666667
+IDMVehicle #288: [2188.62874821    0.        ],KP_HEADING,5.0
+IDMVehicle #288: [2188.62874821    0.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #288: [2188.62874821    0.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #288: [2188.62874821    0.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #288: [2188.62874821    0.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #288: [2188.62874821    0.        ],LENGTH,5.0
+IDMVehicle #288: [2188.62874821    0.        ],MAX_SPEED,40.0
+IDMVehicle #288: [2188.62874821    0.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #288: [2188.62874821    0.        ],MIN_SPEED,-40.0
+IDMVehicle #288: [2188.62874821    0.        ],POLITENESS,0.0
+IDMVehicle #288: [2188.62874821    0.        ],TAU_ACC,0.6
+IDMVehicle #288: [2188.62874821    0.        ],TAU_HEADING,0.2
+IDMVehicle #288: [2188.62874821    0.        ],TAU_LATERAL,0.6
+IDMVehicle #288: [2188.62874821    0.        ],TAU_PURSUIT,0.1
+IDMVehicle #288: [2188.62874821    0.        ],TIME_WANTED,1.5
+IDMVehicle #288: [2188.62874821    0.        ],WIDTH,2.0
+IDMVehicle #288: [2188.62874821    0.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #288: [2188.62874821    0.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #288: [2188.62874821    0.        ],check_collisions,True
+IDMVehicle #288: [2188.62874821    0.        ],collidable,True
+IDMVehicle #288: [2188.62874821    0.        ],crashed,False
+IDMVehicle #288: [2188.62874821    0.        ],destination,[2188.62874821    0.        ]
+IDMVehicle #288: [2188.62874821    0.        ],destination_direction,[0. 0.]
+IDMVehicle #288: [2188.62874821    0.        ],diagonal,5.385164807134504
+IDMVehicle #288: [2188.62874821    0.        ],direction,[1. 0.]
+IDMVehicle #288: [2188.62874821    0.        ],enable_lane_change,True
+IDMVehicle #288: [2188.62874821    0.        ],heading,0.0
+IDMVehicle #288: [2188.62874821    0.        ],history,"deque([], maxlen=30)"
+IDMVehicle #288: [2188.62874821    0.        ],hit,False
+IDMVehicle #288: [2188.62874821    0.        ],impact,
+IDMVehicle #288: [2188.62874821    0.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95c70>
+IDMVehicle #288: [2188.62874821    0.        ],lane_index,"('2', '3', 0)"
+IDMVehicle #288: [2188.62874821    0.        ],lane_offset,[1688.62874821    0.            0.        ]
+IDMVehicle #288: [2188.62874821    0.        ],log,[]
+IDMVehicle #288: [2188.62874821    0.        ],on_road,False
+IDMVehicle #288: [2188.62874821    0.        ],position,[2188.62874821    0.        ]
+IDMVehicle #288: [2188.62874821    0.        ],prediction_type,constant_steering
+IDMVehicle #288: [2188.62874821    0.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #288: [2188.62874821    0.        ],route,
+IDMVehicle #288: [2188.62874821    0.        ],solid,True
+IDMVehicle #288: [2188.62874821    0.        ],speed,19.999999999999996
+IDMVehicle #288: [2188.62874821    0.        ],target_lane_index,"('2', '3', 0)"
+IDMVehicle #288: [2188.62874821    0.        ],target_speed,25
+IDMVehicle #288: [2188.62874821    0.        ],timer,0.4
+IDMVehicle #288: [2188.62874821    0.        ],velocity,[20.  0.]
+IDMVehicle #720: [422.5431907   8.       ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #720: [422.5431907   8.       ],position,[422.5431907   8.       ]
+IDMVehicle #720: [422.5431907   8.       ],ACC_MAX,8.0
+IDMVehicle #720: [422.5431907   8.       ],COMFORT_ACC_MAX,8.0
+IDMVehicle #720: [422.5431907   8.       ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #720: [422.5431907   8.       ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #720: [422.5431907   8.       ],DELTA,4.0
+IDMVehicle #720: [422.5431907   8.       ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #720: [422.5431907   8.       ],DELTA_SPEED,5
+IDMVehicle #720: [422.5431907   8.       ],DISTANCE_WANTED,10.0
+IDMVehicle #720: [422.5431907   8.       ],HISTORY_SIZE,30
+IDMVehicle #720: [422.5431907   8.       ],KP_A,1.6666666666666667
+IDMVehicle #720: [422.5431907   8.       ],KP_HEADING,5.0
+IDMVehicle #720: [422.5431907   8.       ],KP_LATERAL,1.6666666666666667
+IDMVehicle #720: [422.5431907   8.       ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #720: [422.5431907   8.       ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #720: [422.5431907   8.       ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #720: [422.5431907   8.       ],LENGTH,5.0
+IDMVehicle #720: [422.5431907   8.       ],MAX_SPEED,40.0
+IDMVehicle #720: [422.5431907   8.       ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #720: [422.5431907   8.       ],MIN_SPEED,-40.0
+IDMVehicle #720: [422.5431907   8.       ],POLITENESS,0.0
+IDMVehicle #720: [422.5431907   8.       ],TAU_ACC,0.6
+IDMVehicle #720: [422.5431907   8.       ],TAU_HEADING,0.2
+IDMVehicle #720: [422.5431907   8.       ],TAU_LATERAL,0.6
+IDMVehicle #720: [422.5431907   8.       ],TAU_PURSUIT,0.1
+IDMVehicle #720: [422.5431907   8.       ],TIME_WANTED,1.5
+IDMVehicle #720: [422.5431907   8.       ],WIDTH,2.0
+IDMVehicle #720: [422.5431907   8.       ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #720: [422.5431907   8.       ],action,"{'steering': 0.0, 'acceleration': -2.7373098984540117e-38}"
+IDMVehicle #720: [422.5431907   8.       ],check_collisions,True
+IDMVehicle #720: [422.5431907   8.       ],collidable,True
+IDMVehicle #720: [422.5431907   8.       ],crashed,True
+IDMVehicle #720: [422.5431907   8.       ],destination,[1000.    0.]
+IDMVehicle #720: [422.5431907   8.       ],destination_direction,[ 0.99990405 -0.01385252]
+IDMVehicle #720: [422.5431907   8.       ],diagonal,5.385164807134504
+IDMVehicle #720: [422.5431907   8.       ],direction,[1. 0.]
+IDMVehicle #720: [422.5431907   8.       ],enable_lane_change,False
+IDMVehicle #720: [422.5431907   8.       ],heading,0.0
+IDMVehicle #720: [422.5431907   8.       ],history,"deque([], maxlen=30)"
+IDMVehicle #720: [422.5431907   8.       ],hit,False
+IDMVehicle #720: [422.5431907   8.       ],impact,[0. 0.]
+IDMVehicle #720: [422.5431907   8.       ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95b20>
+IDMVehicle #720: [422.5431907   8.       ],lane_index,"('1', '2', 2)"
+IDMVehicle #720: [422.5431907   8.       ],lane_offset,[22.5431907  0.         0.       ]
+IDMVehicle #720: [422.5431907   8.       ],log,[]
+IDMVehicle #720: [422.5431907   8.       ],on_road,True
+IDMVehicle #720: [422.5431907   8.       ],position,[422.5431907   8.       ]
+IDMVehicle #720: [422.5431907   8.       ],prediction_type,constant_steering
+IDMVehicle #720: [422.5431907   8.       ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #720: [422.5431907   8.       ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #720: [422.5431907   8.       ],solid,True
+IDMVehicle #720: [422.5431907   8.       ],speed,2.1898479187632094e-38
+IDMVehicle #720: [422.5431907   8.       ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #720: [422.5431907   8.       ],target_speed,19.2
+IDMVehicle #720: [422.5431907   8.       ],timer,100.13878121023444
+IDMVehicle #720: [422.5431907   8.       ],velocity,[2.18984792e-38 0.00000000e+00]
+IDMVehicle #912: [423.65562254   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #912: [423.65562254   8.        ],position,[423.65562254   8.        ]
+IDMVehicle #912: [423.65562254   8.        ],ACC_MAX,8.0
+IDMVehicle #912: [423.65562254   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #912: [423.65562254   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #912: [423.65562254   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #912: [423.65562254   8.        ],DELTA,4.0
+IDMVehicle #912: [423.65562254   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #912: [423.65562254   8.        ],DELTA_SPEED,5
+IDMVehicle #912: [423.65562254   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #912: [423.65562254   8.        ],HISTORY_SIZE,30
+IDMVehicle #912: [423.65562254   8.        ],KP_A,1.6666666666666667
+IDMVehicle #912: [423.65562254   8.        ],KP_HEADING,5.0
+IDMVehicle #912: [423.65562254   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #912: [423.65562254   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #912: [423.65562254   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #912: [423.65562254   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #912: [423.65562254   8.        ],LENGTH,5.0
+IDMVehicle #912: [423.65562254   8.        ],MAX_SPEED,40.0
+IDMVehicle #912: [423.65562254   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #912: [423.65562254   8.        ],MIN_SPEED,-40.0
+IDMVehicle #912: [423.65562254   8.        ],POLITENESS,0.0
+IDMVehicle #912: [423.65562254   8.        ],TAU_ACC,0.6
+IDMVehicle #912: [423.65562254   8.        ],TAU_HEADING,0.2
+IDMVehicle #912: [423.65562254   8.        ],TAU_LATERAL,0.6
+IDMVehicle #912: [423.65562254   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #912: [423.65562254   8.        ],TIME_WANTED,1.5
+IDMVehicle #912: [423.65562254   8.        ],WIDTH,2.0
+IDMVehicle #912: [423.65562254   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #912: [423.65562254   8.        ],action,"{'steering': 0.0, 'acceleration': -2.350209497932454e-39}"
+IDMVehicle #912: [423.65562254   8.        ],check_collisions,True
+IDMVehicle #912: [423.65562254   8.        ],collidable,True
+IDMVehicle #912: [423.65562254   8.        ],crashed,True
+IDMVehicle #912: [423.65562254   8.        ],destination,[1000.    0.]
+IDMVehicle #912: [423.65562254   8.        ],destination_direction,[ 0.99990368 -0.01387925]
+IDMVehicle #912: [423.65562254   8.        ],diagonal,5.385164807134504
+IDMVehicle #912: [423.65562254   8.        ],direction,[1. 0.]
+IDMVehicle #912: [423.65562254   8.        ],enable_lane_change,False
+IDMVehicle #912: [423.65562254   8.        ],heading,0.0
+IDMVehicle #912: [423.65562254   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #912: [423.65562254   8.        ],hit,False
+IDMVehicle #912: [423.65562254   8.        ],impact,[0. 0.]
+IDMVehicle #912: [423.65562254   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95b20>
+IDMVehicle #912: [423.65562254   8.        ],lane_index,"('1', '2', 2)"
+IDMVehicle #912: [423.65562254   8.        ],lane_offset,[23.65562254  0.          0.        ]
+IDMVehicle #912: [423.65562254   8.        ],log,[]
+IDMVehicle #912: [423.65562254   8.        ],on_road,True
+IDMVehicle #912: [423.65562254   8.        ],position,[423.65562254   8.        ]
+IDMVehicle #912: [423.65562254   8.        ],prediction_type,constant_steering
+IDMVehicle #912: [423.65562254   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #912: [423.65562254   8.        ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #912: [423.65562254   8.        ],solid,True
+IDMVehicle #912: [423.65562254   8.        ],speed,1.880167598345963e-39
+IDMVehicle #912: [423.65562254   8.        ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #912: [423.65562254   8.        ],target_speed,19.2
+IDMVehicle #912: [423.65562254   8.        ],timer,100.36159580284104
+IDMVehicle #912: [423.65562254   8.        ],velocity,[1.8801676e-39 0.0000000e+00]
+IDMVehicle #816: [525.79022551   3.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #816: [525.79022551   3.        ],position,[525.79022551   3.        ]
+IDMVehicle #816: [525.79022551   3.        ],ACC_MAX,8.0
+IDMVehicle #816: [525.79022551   3.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #816: [525.79022551   3.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #816: [525.79022551   3.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #816: [525.79022551   3.        ],DELTA,4.0
+IDMVehicle #816: [525.79022551   3.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #816: [525.79022551   3.        ],DELTA_SPEED,5
+IDMVehicle #816: [525.79022551   3.        ],DISTANCE_WANTED,10.0
+IDMVehicle #816: [525.79022551   3.        ],HISTORY_SIZE,30
+IDMVehicle #816: [525.79022551   3.        ],KP_A,1.6666666666666667
+IDMVehicle #816: [525.79022551   3.        ],KP_HEADING,5.0
+IDMVehicle #816: [525.79022551   3.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #816: [525.79022551   3.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #816: [525.79022551   3.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #816: [525.79022551   3.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #816: [525.79022551   3.        ],LENGTH,5.0
+IDMVehicle #816: [525.79022551   3.        ],MAX_SPEED,40.0
+IDMVehicle #816: [525.79022551   3.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #816: [525.79022551   3.        ],MIN_SPEED,-40.0
+IDMVehicle #816: [525.79022551   3.        ],POLITENESS,0.0
+IDMVehicle #816: [525.79022551   3.        ],TAU_ACC,0.6
+IDMVehicle #816: [525.79022551   3.        ],TAU_HEADING,0.2
+IDMVehicle #816: [525.79022551   3.        ],TAU_LATERAL,0.6
+IDMVehicle #816: [525.79022551   3.        ],TAU_PURSUIT,0.1
+IDMVehicle #816: [525.79022551   3.        ],TIME_WANTED,1.5
+IDMVehicle #816: [525.79022551   3.        ],WIDTH,2.0
+IDMVehicle #816: [525.79022551   3.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #816: [525.79022551   3.        ],action,"{'steering': 0.0, 'acceleration': -1.2349661475155857e-40}"
+IDMVehicle #816: [525.79022551   3.        ],check_collisions,True
+IDMVehicle #816: [525.79022551   3.        ],collidable,True
+IDMVehicle #816: [525.79022551   3.        ],crashed,True
+IDMVehicle #816: [525.79022551   3.        ],destination,[1000.    0.]
+IDMVehicle #816: [525.79022551   3.        ],destination_direction,[ 0.99997999 -0.00632619]
+IDMVehicle #816: [525.79022551   3.        ],diagonal,5.385164807134504
+IDMVehicle #816: [525.79022551   3.        ],direction,[1. 0.]
+IDMVehicle #816: [525.79022551   3.        ],enable_lane_change,False
+IDMVehicle #816: [525.79022551   3.        ],heading,0.0
+IDMVehicle #816: [525.79022551   3.        ],history,"deque([], maxlen=30)"
+IDMVehicle #816: [525.79022551   3.        ],hit,False
+IDMVehicle #816: [525.79022551   3.        ],impact,
+IDMVehicle #816: [525.79022551   3.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95d00>
+IDMVehicle #816: [525.79022551   3.        ],lane_index,"('2', '3', 1)"
+IDMVehicle #816: [525.79022551   3.        ],lane_offset,[25.79022551 -1.          0.        ]
+IDMVehicle #816: [525.79022551   3.        ],log,[]
+IDMVehicle #816: [525.79022551   3.        ],on_road,True
+IDMVehicle #816: [525.79022551   3.        ],position,[525.79022551   3.        ]
+IDMVehicle #816: [525.79022551   3.        ],prediction_type,constant_steering
+IDMVehicle #816: [525.79022551   3.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #816: [525.79022551   3.        ],route,"[('2', '3', None)]"
+IDMVehicle #816: [525.79022551   3.        ],solid,True
+IDMVehicle #816: [525.79022551   3.        ],speed,9.879729180124685e-41
+IDMVehicle #816: [525.79022551   3.        ],target_lane_index,"('2', '3', 1)"
+IDMVehicle #816: [525.79022551   3.        ],target_speed,22.6
+IDMVehicle #816: [525.79022551   3.        ],timer,100.31375538819404
+IDMVehicle #816: [525.79022551   3.        ],velocity,[9.87972918e-41 0.00000000e+00]
+IDMVehicle #864: [423.33364977   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #864: [423.33364977   8.        ],position,[423.33364977   8.        ]
+IDMVehicle #864: [423.33364977   8.        ],ACC_MAX,8.0
+IDMVehicle #864: [423.33364977   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #864: [423.33364977   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #864: [423.33364977   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #864: [423.33364977   8.        ],DELTA,4.0
+IDMVehicle #864: [423.33364977   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #864: [423.33364977   8.        ],DELTA_SPEED,5
+IDMVehicle #864: [423.33364977   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #864: [423.33364977   8.        ],HISTORY_SIZE,30
+IDMVehicle #864: [423.33364977   8.        ],KP_A,1.6666666666666667
+IDMVehicle #864: [423.33364977   8.        ],KP_HEADING,5.0
+IDMVehicle #864: [423.33364977   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #864: [423.33364977   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #864: [423.33364977   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #864: [423.33364977   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #864: [423.33364977   8.        ],LENGTH,5.0
+IDMVehicle #864: [423.33364977   8.        ],MAX_SPEED,40.0
+IDMVehicle #864: [423.33364977   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #864: [423.33364977   8.        ],MIN_SPEED,-40.0
+IDMVehicle #864: [423.33364977   8.        ],POLITENESS,0.0
+IDMVehicle #864: [423.33364977   8.        ],TAU_ACC,0.6
+IDMVehicle #864: [423.33364977   8.        ],TAU_HEADING,0.2
+IDMVehicle #864: [423.33364977   8.        ],TAU_LATERAL,0.6
+IDMVehicle #864: [423.33364977   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #864: [423.33364977   8.        ],TIME_WANTED,1.5
+IDMVehicle #864: [423.33364977   8.        ],WIDTH,2.0
+IDMVehicle #864: [423.33364977   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #864: [423.33364977   8.        ],action,"{'steering': 0.0, 'acceleration': -1.8078462889320791e-40}"
+IDMVehicle #864: [423.33364977   8.        ],check_collisions,True
+IDMVehicle #864: [423.33364977   8.        ],collidable,True
+IDMVehicle #864: [423.33364977   8.        ],crashed,True
+IDMVehicle #864: [423.33364977   8.        ],destination,[1000.    0.]
+IDMVehicle #864: [423.33364977   8.        ],destination_direction,[ 0.99990379 -0.01387151]
+IDMVehicle #864: [423.33364977   8.        ],diagonal,5.385164807134504
+IDMVehicle #864: [423.33364977   8.        ],direction,[1. 0.]
+IDMVehicle #864: [423.33364977   8.        ],enable_lane_change,False
+IDMVehicle #864: [423.33364977   8.        ],heading,0.0
+IDMVehicle #864: [423.33364977   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #864: [423.33364977   8.        ],hit,False
+IDMVehicle #864: [423.33364977   8.        ],impact,[0. 0.]
+IDMVehicle #864: [423.33364977   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95b20>
+IDMVehicle #864: [423.33364977   8.        ],lane_index,"('1', '2', 2)"
+IDMVehicle #864: [423.33364977   8.        ],lane_offset,[23.33364977  0.          0.        ]
+IDMVehicle #864: [423.33364977   8.        ],log,[]
+IDMVehicle #864: [423.33364977   8.        ],on_road,True
+IDMVehicle #864: [423.33364977   8.        ],position,[423.33364977   8.        ]
+IDMVehicle #864: [423.33364977   8.        ],prediction_type,constant_steering
+IDMVehicle #864: [423.33364977   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #864: [423.33364977   8.        ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #864: [423.33364977   8.        ],solid,True
+IDMVehicle #864: [423.33364977   8.        ],speed,1.4462770311456633e-40
+IDMVehicle #864: [423.33364977   8.        ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #864: [423.33364977   8.        ],target_speed,19.2
+IDMVehicle #864: [423.33364977   8.        ],timer,100.20953480526461
+IDMVehicle #864: [423.33364977   8.        ],velocity,[1.44627703e-40 0.00000000e+00]
+IDMVehicle #768: [423.71582932   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #768: [423.71582932   8.        ],position,[423.71582932   8.        ]
+IDMVehicle #768: [423.71582932   8.        ],ACC_MAX,8.0
+IDMVehicle #768: [423.71582932   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #768: [423.71582932   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #768: [423.71582932   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #768: [423.71582932   8.        ],DELTA,4.0
+IDMVehicle #768: [423.71582932   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #768: [423.71582932   8.        ],DELTA_SPEED,5
+IDMVehicle #768: [423.71582932   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #768: [423.71582932   8.        ],HISTORY_SIZE,30
+IDMVehicle #768: [423.71582932   8.        ],KP_A,1.6666666666666667
+IDMVehicle #768: [423.71582932   8.        ],KP_HEADING,5.0
+IDMVehicle #768: [423.71582932   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #768: [423.71582932   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #768: [423.71582932   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #768: [423.71582932   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #768: [423.71582932   8.        ],LENGTH,5.0
+IDMVehicle #768: [423.71582932   8.        ],MAX_SPEED,40.0
+IDMVehicle #768: [423.71582932   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #768: [423.71582932   8.        ],MIN_SPEED,-40.0
+IDMVehicle #768: [423.71582932   8.        ],POLITENESS,0.0
+IDMVehicle #768: [423.71582932   8.        ],TAU_ACC,0.6
+IDMVehicle #768: [423.71582932   8.        ],TAU_HEADING,0.2
+IDMVehicle #768: [423.71582932   8.        ],TAU_LATERAL,0.6
+IDMVehicle #768: [423.71582932   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #768: [423.71582932   8.        ],TIME_WANTED,1.5
+IDMVehicle #768: [423.71582932   8.        ],WIDTH,2.0
+IDMVehicle #768: [423.71582932   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #768: [423.71582932   8.        ],action,"{'steering': 0.0, 'acceleration': -1.5516225820434938e-41}"
+IDMVehicle #768: [423.71582932   8.        ],check_collisions,True
+IDMVehicle #768: [423.71582932   8.        ],collidable,True
+IDMVehicle #768: [423.71582932   8.        ],crashed,True
+IDMVehicle #768: [423.71582932   8.        ],destination,[1000.    0.]
+IDMVehicle #768: [423.71582932   8.        ],destination_direction,[ 0.99990366 -0.0138807 ]
+IDMVehicle #768: [423.71582932   8.        ],diagonal,5.385164807134504
+IDMVehicle #768: [423.71582932   8.        ],direction,[1. 0.]
+IDMVehicle #768: [423.71582932   8.        ],enable_lane_change,False
+IDMVehicle #768: [423.71582932   8.        ],heading,0.0
+IDMVehicle #768: [423.71582932   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #768: [423.71582932   8.        ],hit,False
+IDMVehicle #768: [423.71582932   8.        ],impact,[0. 0.]
+IDMVehicle #768: [423.71582932   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95b20>
+IDMVehicle #768: [423.71582932   8.        ],lane_index,"('1', '2', 2)"
+IDMVehicle #768: [423.71582932   8.        ],lane_offset,[23.71582932  0.          0.        ]
+IDMVehicle #768: [423.71582932   8.        ],log,[]
+IDMVehicle #768: [423.71582932   8.        ],on_road,True
+IDMVehicle #768: [423.71582932   8.        ],position,[423.71582932   8.        ]
+IDMVehicle #768: [423.71582932   8.        ],prediction_type,constant_steering
+IDMVehicle #768: [423.71582932   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #768: [423.71582932   8.        ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #768: [423.71582932   8.        ],solid,True
+IDMVehicle #768: [423.71582932   8.        ],speed,1.241298065634795e-41
+IDMVehicle #768: [423.71582932   8.        ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #768: [423.71582932   8.        ],target_speed,19.2
+IDMVehicle #768: [423.71582932   8.        ],timer,100.37225648896637
+IDMVehicle #768: [423.71582932   8.        ],velocity,[1.24129807e-41 0.00000000e+00]
+IDMVehicle #480: [423.76362362   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #480: [423.76362362   8.        ],position,[423.76362362   8.        ]
+IDMVehicle #480: [423.76362362   8.        ],ACC_MAX,8.0
+IDMVehicle #480: [423.76362362   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #480: [423.76362362   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #480: [423.76362362   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #480: [423.76362362   8.        ],DELTA,4.0
+IDMVehicle #480: [423.76362362   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #480: [423.76362362   8.        ],DELTA_SPEED,5
+IDMVehicle #480: [423.76362362   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #480: [423.76362362   8.        ],HISTORY_SIZE,30
+IDMVehicle #480: [423.76362362   8.        ],KP_A,1.6666666666666667
+IDMVehicle #480: [423.76362362   8.        ],KP_HEADING,5.0
+IDMVehicle #480: [423.76362362   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #480: [423.76362362   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #480: [423.76362362   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #480: [423.76362362   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #480: [423.76362362   8.        ],LENGTH,5.0
+IDMVehicle #480: [423.76362362   8.        ],MAX_SPEED,40.0
+IDMVehicle #480: [423.76362362   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #480: [423.76362362   8.        ],MIN_SPEED,-40.0
+IDMVehicle #480: [423.76362362   8.        ],POLITENESS,0.0
+IDMVehicle #480: [423.76362362   8.        ],TAU_ACC,0.6
+IDMVehicle #480: [423.76362362   8.        ],TAU_HEADING,0.2
+IDMVehicle #480: [423.76362362   8.        ],TAU_LATERAL,0.6
+IDMVehicle #480: [423.76362362   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #480: [423.76362362   8.        ],TIME_WANTED,1.5
+IDMVehicle #480: [423.76362362   8.        ],WIDTH,2.0
+IDMVehicle #480: [423.76362362   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #480: [423.76362362   8.        ],action,"{'steering': 0.0, 'acceleration': -1.3300274128394032e-42}"
+IDMVehicle #480: [423.76362362   8.        ],check_collisions,True
+IDMVehicle #480: [423.76362362   8.        ],collidable,True
+IDMVehicle #480: [423.76362362   8.        ],crashed,True
+IDMVehicle #480: [423.76362362   8.        ],destination,[1000.    0.]
+IDMVehicle #480: [423.76362362   8.        ],destination_direction,[ 0.99990364 -0.01388185]
+IDMVehicle #480: [423.76362362   8.        ],diagonal,5.385164807134504
+IDMVehicle #480: [423.76362362   8.        ],direction,[1. 0.]
+IDMVehicle #480: [423.76362362   8.        ],enable_lane_change,False
+IDMVehicle #480: [423.76362362   8.        ],heading,0.0
+IDMVehicle #480: [423.76362362   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #480: [423.76362362   8.        ],hit,False
+IDMVehicle #480: [423.76362362   8.        ],impact,[0. 0.]
+IDMVehicle #480: [423.76362362   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95b20>
+IDMVehicle #480: [423.76362362   8.        ],lane_index,"('1', '2', 2)"
+IDMVehicle #480: [423.76362362   8.        ],lane_offset,[23.76362362  0.          0.        ]
+IDMVehicle #480: [423.76362362   8.        ],log,[]
+IDMVehicle #480: [423.76362362   8.        ],on_road,True
+IDMVehicle #480: [423.76362362   8.        ],position,[423.76362362   8.        ]
+IDMVehicle #480: [423.76362362   8.        ],prediction_type,constant_steering
+IDMVehicle #480: [423.76362362   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #480: [423.76362362   8.        ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #480: [423.76362362   8.        ],solid,True
+IDMVehicle #480: [423.76362362   8.        ],speed,1.0640219302715225e-42
+IDMVehicle #480: [423.76362362   8.        ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #480: [423.76362362   8.        ],target_speed,19.2
+IDMVehicle #480: [423.76362362   8.        ],timer,100.21406216153204
+IDMVehicle #480: [423.76362362   8.        ],velocity,[1.06402193e-42 0.00000000e+00]
+IDMVehicle #432: [422.97458968   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #432: [422.97458968   8.        ],position,[422.97458968   8.        ]
+IDMVehicle #432: [422.97458968   8.        ],ACC_MAX,8.0
+IDMVehicle #432: [422.97458968   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #432: [422.97458968   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #432: [422.97458968   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #432: [422.97458968   8.        ],DELTA,4.0
+IDMVehicle #432: [422.97458968   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #432: [422.97458968   8.        ],DELTA_SPEED,5
+IDMVehicle #432: [422.97458968   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #432: [422.97458968   8.        ],HISTORY_SIZE,30
+IDMVehicle #432: [422.97458968   8.        ],KP_A,1.6666666666666667
+IDMVehicle #432: [422.97458968   8.        ],KP_HEADING,5.0
+IDMVehicle #432: [422.97458968   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #432: [422.97458968   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #432: [422.97458968   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #432: [422.97458968   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #432: [422.97458968   8.        ],LENGTH,5.0
+IDMVehicle #432: [422.97458968   8.        ],MAX_SPEED,40.0
+IDMVehicle #432: [422.97458968   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #432: [422.97458968   8.        ],MIN_SPEED,-40.0
+IDMVehicle #432: [422.97458968   8.        ],POLITENESS,0.0
+IDMVehicle #432: [422.97458968   8.        ],TAU_ACC,0.6
+IDMVehicle #432: [422.97458968   8.        ],TAU_HEADING,0.2
+IDMVehicle #432: [422.97458968   8.        ],TAU_LATERAL,0.6
+IDMVehicle #432: [422.97458968   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #432: [422.97458968   8.        ],TIME_WANTED,1.5
+IDMVehicle #432: [422.97458968   8.        ],WIDTH,2.0
+IDMVehicle #432: [422.97458968   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #432: [422.97458968   8.        ],action,"{'steering': 0.0, 'acceleration': -1.1297119177467423e-43}"
+IDMVehicle #432: [422.97458968   8.        ],check_collisions,True
+IDMVehicle #432: [422.97458968   8.        ],collidable,True
+IDMVehicle #432: [422.97458968   8.        ],crashed,True
+IDMVehicle #432: [422.97458968   8.        ],destination,[1000.    0.]
+IDMVehicle #432: [422.97458968   8.        ],destination_direction,[ 0.99990391 -0.01386288]
+IDMVehicle #432: [422.97458968   8.        ],diagonal,5.385164807134504
+IDMVehicle #432: [422.97458968   8.        ],direction,[1. 0.]
+IDMVehicle #432: [422.97458968   8.        ],enable_lane_change,False
+IDMVehicle #432: [422.97458968   8.        ],heading,0.0
+IDMVehicle #432: [422.97458968   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #432: [422.97458968   8.        ],hit,False
+IDMVehicle #432: [422.97458968   8.        ],impact,[0. 0.]
+IDMVehicle #432: [422.97458968   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95b20>
+IDMVehicle #432: [422.97458968   8.        ],lane_index,"('1', '2', 2)"
+IDMVehicle #432: [422.97458968   8.        ],lane_offset,[22.97458968  0.          0.        ]
+IDMVehicle #432: [422.97458968   8.        ],log,[]
+IDMVehicle #432: [422.97458968   8.        ],on_road,True
+IDMVehicle #432: [422.97458968   8.        ],position,[422.97458968   8.        ]
+IDMVehicle #432: [422.97458968   8.        ],prediction_type,constant_steering
+IDMVehicle #432: [422.97458968   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #432: [422.97458968   8.        ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #432: [422.97458968   8.        ],solid,True
+IDMVehicle #432: [422.97458968   8.        ],speed,9.037695341973938e-44
+IDMVehicle #432: [422.97458968   8.        ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #432: [422.97458968   8.        ],target_speed,19.2
+IDMVehicle #432: [422.97458968   8.        ],timer,100.12506245753625
+IDMVehicle #432: [422.97458968   8.        ],velocity,[9.03769534e-44 0.00000000e+00]
+IDMVehicle #384: [422.19586078   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #384: [422.19586078   8.        ],position,[422.19586078   8.        ]
+IDMVehicle #384: [422.19586078   8.        ],ACC_MAX,8.0
+IDMVehicle #384: [422.19586078   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #384: [422.19586078   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #384: [422.19586078   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #384: [422.19586078   8.        ],DELTA,4.0
+IDMVehicle #384: [422.19586078   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #384: [422.19586078   8.        ],DELTA_SPEED,5
+IDMVehicle #384: [422.19586078   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #384: [422.19586078   8.        ],HISTORY_SIZE,30
+IDMVehicle #384: [422.19586078   8.        ],KP_A,1.6666666666666667
+IDMVehicle #384: [422.19586078   8.        ],KP_HEADING,5.0
+IDMVehicle #384: [422.19586078   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #384: [422.19586078   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #384: [422.19586078   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #384: [422.19586078   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #384: [422.19586078   8.        ],LENGTH,5.0
+IDMVehicle #384: [422.19586078   8.        ],MAX_SPEED,40.0
+IDMVehicle #384: [422.19586078   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #384: [422.19586078   8.        ],MIN_SPEED,-40.0
+IDMVehicle #384: [422.19586078   8.        ],POLITENESS,0.0
+IDMVehicle #384: [422.19586078   8.        ],TAU_ACC,0.6
+IDMVehicle #384: [422.19586078   8.        ],TAU_HEADING,0.2
+IDMVehicle #384: [422.19586078   8.        ],TAU_LATERAL,0.6
+IDMVehicle #384: [422.19586078   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #384: [422.19586078   8.        ],TIME_WANTED,1.5
+IDMVehicle #384: [422.19586078   8.        ],WIDTH,2.0
+IDMVehicle #384: [422.19586078   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #384: [422.19586078   8.        ],action,"{'steering': 0.0, 'acceleration': -1.0663873772836218e-44}"
+IDMVehicle #384: [422.19586078   8.        ],check_collisions,True
+IDMVehicle #384: [422.19586078   8.        ],collidable,True
+IDMVehicle #384: [422.19586078   8.        ],crashed,True
+IDMVehicle #384: [422.19586078   8.        ],destination,[1000.    0.]
+IDMVehicle #384: [422.19586078   8.        ],destination_direction,[ 0.99990416 -0.0138442 ]
+IDMVehicle #384: [422.19586078   8.        ],diagonal,5.385164807134504
+IDMVehicle #384: [422.19586078   8.        ],direction,[1. 0.]
+IDMVehicle #384: [422.19586078   8.        ],enable_lane_change,False
+IDMVehicle #384: [422.19586078   8.        ],heading,0.0
+IDMVehicle #384: [422.19586078   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #384: [422.19586078   8.        ],hit,False
+IDMVehicle #384: [422.19586078   8.        ],impact,[0. 0.]
+IDMVehicle #384: [422.19586078   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95b20>
+IDMVehicle #384: [422.19586078   8.        ],lane_index,"('1', '2', 2)"
+IDMVehicle #384: [422.19586078   8.        ],lane_offset,[22.19586078  0.          0.        ]
+IDMVehicle #384: [422.19586078   8.        ],log,[]
+IDMVehicle #384: [422.19586078   8.        ],on_road,True
+IDMVehicle #384: [422.19586078   8.        ],position,[422.19586078   8.        ]
+IDMVehicle #384: [422.19586078   8.        ],prediction_type,constant_steering
+IDMVehicle #384: [422.19586078   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #384: [422.19586078   8.        ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #384: [422.19586078   8.        ],solid,True
+IDMVehicle #384: [422.19586078   8.        ],speed,8.531099018268975e-45
+IDMVehicle #384: [422.19586078   8.        ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #384: [422.19586078   8.        ],target_speed,19.2
+IDMVehicle #384: [422.19586078   8.        ],timer,100.48649762117417
+IDMVehicle #384: [422.19586078   8.        ],velocity,[8.53109902e-45 0.00000000e+00]
+IDMVehicle #336: [506.09546103   5.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #336: [506.09546103   5.        ],position,[506.09546103   5.        ]
+IDMVehicle #336: [506.09546103   5.        ],ACC_MAX,8.0
+IDMVehicle #336: [506.09546103   5.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #336: [506.09546103   5.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #336: [506.09546103   5.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #336: [506.09546103   5.        ],DELTA,4.0
+IDMVehicle #336: [506.09546103   5.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #336: [506.09546103   5.        ],DELTA_SPEED,5
+IDMVehicle #336: [506.09546103   5.        ],DISTANCE_WANTED,10.0
+IDMVehicle #336: [506.09546103   5.        ],HISTORY_SIZE,30
+IDMVehicle #336: [506.09546103   5.        ],KP_A,1.6666666666666667
+IDMVehicle #336: [506.09546103   5.        ],KP_HEADING,5.0
+IDMVehicle #336: [506.09546103   5.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #336: [506.09546103   5.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #336: [506.09546103   5.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #336: [506.09546103   5.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #336: [506.09546103   5.        ],LENGTH,5.0
+IDMVehicle #336: [506.09546103   5.        ],MAX_SPEED,40.0
+IDMVehicle #336: [506.09546103   5.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #336: [506.09546103   5.        ],MIN_SPEED,-40.0
+IDMVehicle #336: [506.09546103   5.        ],POLITENESS,0.0
+IDMVehicle #336: [506.09546103   5.        ],TAU_ACC,0.6
+IDMVehicle #336: [506.09546103   5.        ],TAU_HEADING,0.2
+IDMVehicle #336: [506.09546103   5.        ],TAU_LATERAL,0.6
+IDMVehicle #336: [506.09546103   5.        ],TAU_PURSUIT,0.1
+IDMVehicle #336: [506.09546103   5.        ],TIME_WANTED,1.5
+IDMVehicle #336: [506.09546103   5.        ],WIDTH,2.0
+IDMVehicle #336: [506.09546103   5.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #336: [506.09546103   5.        ],action,"{'steering': 0.0, 'acceleration': 5.530624419169857e-41}"
+IDMVehicle #336: [506.09546103   5.        ],check_collisions,True
+IDMVehicle #336: [506.09546103   5.        ],collidable,True
+IDMVehicle #336: [506.09546103   5.        ],crashed,True
+IDMVehicle #336: [506.09546103   5.        ],destination,[1000.    0.]
+IDMVehicle #336: [506.09546103   5.        ],destination_direction,[ 0.99994876 -0.0101229 ]
+IDMVehicle #336: [506.09546103   5.        ],diagonal,5.385164807134504
+IDMVehicle #336: [506.09546103   5.        ],direction,[1. 0.]
+IDMVehicle #336: [506.09546103   5.        ],enable_lane_change,False
+IDMVehicle #336: [506.09546103   5.        ],heading,0.0
+IDMVehicle #336: [506.09546103   5.        ],history,"deque([], maxlen=30)"
+IDMVehicle #336: [506.09546103   5.        ],hit,False
+IDMVehicle #336: [506.09546103   5.        ],impact,
+IDMVehicle #336: [506.09546103   5.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95d00>
+IDMVehicle #336: [506.09546103   5.        ],lane_index,"('2', '3', 1)"
+IDMVehicle #336: [506.09546103   5.        ],lane_offset,[6.09546103 1.         0.        ]
+IDMVehicle #336: [506.09546103   5.        ],log,[]
+IDMVehicle #336: [506.09546103   5.        ],on_road,True
+IDMVehicle #336: [506.09546103   5.        ],position,[506.09546103   5.        ]
+IDMVehicle #336: [506.09546103   5.        ],prediction_type,constant_steering
+IDMVehicle #336: [506.09546103   5.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #336: [506.09546103   5.        ],route,"[('2', '3', None)]"
+IDMVehicle #336: [506.09546103   5.        ],solid,True
+IDMVehicle #336: [506.09546103   5.        ],speed,-4.424499535335886e-41
+IDMVehicle #336: [506.09546103   5.        ],target_lane_index,"('2', '3', 1)"
+IDMVehicle #336: [506.09546103   5.        ],target_speed,22.6
+IDMVehicle #336: [506.09546103   5.        ],timer,100.18568861086735
+IDMVehicle #336: [506.09546103   5.        ],velocity,[-4.42449954e-41 -0.00000000e+00]
+IDMVehicle #960: [2333.47154934    4.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #960: [2333.47154934    4.        ],position,[2333.47154934    4.        ]
+IDMVehicle #960: [2333.47154934    4.        ],ACC_MAX,8.0
+IDMVehicle #960: [2333.47154934    4.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #960: [2333.47154934    4.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #960: [2333.47154934    4.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #960: [2333.47154934    4.        ],DELTA,4.0
+IDMVehicle #960: [2333.47154934    4.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #960: [2333.47154934    4.        ],DELTA_SPEED,5
+IDMVehicle #960: [2333.47154934    4.        ],DISTANCE_WANTED,10.0
+IDMVehicle #960: [2333.47154934    4.        ],HISTORY_SIZE,30
+IDMVehicle #960: [2333.47154934    4.        ],KP_A,1.6666666666666667
+IDMVehicle #960: [2333.47154934    4.        ],KP_HEADING,5.0
+IDMVehicle #960: [2333.47154934    4.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #960: [2333.47154934    4.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #960: [2333.47154934    4.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #960: [2333.47154934    4.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #960: [2333.47154934    4.        ],LENGTH,5.0
+IDMVehicle #960: [2333.47154934    4.        ],MAX_SPEED,40.0
+IDMVehicle #960: [2333.47154934    4.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #960: [2333.47154934    4.        ],MIN_SPEED,-40.0
+IDMVehicle #960: [2333.47154934    4.        ],POLITENESS,0.0
+IDMVehicle #960: [2333.47154934    4.        ],TAU_ACC,0.6
+IDMVehicle #960: [2333.47154934    4.        ],TAU_HEADING,0.2
+IDMVehicle #960: [2333.47154934    4.        ],TAU_LATERAL,0.6
+IDMVehicle #960: [2333.47154934    4.        ],TAU_PURSUIT,0.1
+IDMVehicle #960: [2333.47154934    4.        ],TIME_WANTED,1.5
+IDMVehicle #960: [2333.47154934    4.        ],WIDTH,2.0
+IDMVehicle #960: [2333.47154934    4.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #960: [2333.47154934    4.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #960: [2333.47154934    4.        ],check_collisions,True
+IDMVehicle #960: [2333.47154934    4.        ],collidable,True
+IDMVehicle #960: [2333.47154934    4.        ],crashed,False
+IDMVehicle #960: [2333.47154934    4.        ],destination,[2333.47154934    4.        ]
+IDMVehicle #960: [2333.47154934    4.        ],destination_direction,[0. 0.]
+IDMVehicle #960: [2333.47154934    4.        ],diagonal,5.385164807134504
+IDMVehicle #960: [2333.47154934    4.        ],direction,[1. 0.]
+IDMVehicle #960: [2333.47154934    4.        ],enable_lane_change,False
+IDMVehicle #960: [2333.47154934    4.        ],heading,0.0
+IDMVehicle #960: [2333.47154934    4.        ],history,"deque([], maxlen=30)"
+IDMVehicle #960: [2333.47154934    4.        ],hit,False
+IDMVehicle #960: [2333.47154934    4.        ],impact,
+IDMVehicle #960: [2333.47154934    4.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95d00>
+IDMVehicle #960: [2333.47154934    4.        ],lane_index,"('2', '3', 1)"
+IDMVehicle #960: [2333.47154934    4.        ],lane_offset,[1833.47154934    0.            0.        ]
+IDMVehicle #960: [2333.47154934    4.        ],log,[]
+IDMVehicle #960: [2333.47154934    4.        ],on_road,False
+IDMVehicle #960: [2333.47154934    4.        ],position,[2333.47154934    4.        ]
+IDMVehicle #960: [2333.47154934    4.        ],prediction_type,constant_steering
+IDMVehicle #960: [2333.47154934    4.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #960: [2333.47154934    4.        ],route,[]
+IDMVehicle #960: [2333.47154934    4.        ],solid,True
+IDMVehicle #960: [2333.47154934    4.        ],speed,19.999999999999996
+IDMVehicle #960: [2333.47154934    4.        ],target_lane_index,"('2', '3', 1)"
+IDMVehicle #960: [2333.47154934    4.        ],target_speed,22.6
+IDMVehicle #960: [2333.47154934    4.        ],timer,100.02309972493933
+IDMVehicle #960: [2333.47154934    4.        ],velocity,[20.  0.]
+IDMVehicle #8: [419.25361977   6.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #8: [419.25361977   6.        ],position,[419.25361977   6.        ]
+IDMVehicle #8: [419.25361977   6.        ],ACC_MAX,8.0
+IDMVehicle #8: [419.25361977   6.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #8: [419.25361977   6.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #8: [419.25361977   6.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #8: [419.25361977   6.        ],DELTA,4.0
+IDMVehicle #8: [419.25361977   6.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #8: [419.25361977   6.        ],DELTA_SPEED,5
+IDMVehicle #8: [419.25361977   6.        ],DISTANCE_WANTED,10.0
+IDMVehicle #8: [419.25361977   6.        ],HISTORY_SIZE,30
+IDMVehicle #8: [419.25361977   6.        ],KP_A,1.6666666666666667
+IDMVehicle #8: [419.25361977   6.        ],KP_HEADING,5.0
+IDMVehicle #8: [419.25361977   6.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #8: [419.25361977   6.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #8: [419.25361977   6.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #8: [419.25361977   6.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #8: [419.25361977   6.        ],LENGTH,5.0
+IDMVehicle #8: [419.25361977   6.        ],MAX_SPEED,40.0
+IDMVehicle #8: [419.25361977   6.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #8: [419.25361977   6.        ],MIN_SPEED,-40.0
+IDMVehicle #8: [419.25361977   6.        ],POLITENESS,0.0
+IDMVehicle #8: [419.25361977   6.        ],TAU_ACC,0.6
+IDMVehicle #8: [419.25361977   6.        ],TAU_HEADING,0.2
+IDMVehicle #8: [419.25361977   6.        ],TAU_LATERAL,0.6
+IDMVehicle #8: [419.25361977   6.        ],TAU_PURSUIT,0.1
+IDMVehicle #8: [419.25361977   6.        ],TIME_WANTED,1.5
+IDMVehicle #8: [419.25361977   6.        ],WIDTH,2.0
+IDMVehicle #8: [419.25361977   6.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #8: [419.25361977   6.        ],action,"{'steering': 0.0, 'acceleration': -1.0400260091467136e-45}"
+IDMVehicle #8: [419.25361977   6.        ],check_collisions,True
+IDMVehicle #8: [419.25361977   6.        ],collidable,True
+IDMVehicle #8: [419.25361977   6.        ],crashed,True
+IDMVehicle #8: [419.25361977   6.        ],destination,[1000.    0.]
+IDMVehicle #8: [419.25361977   6.        ],destination_direction,[ 0.99994663 -0.01033098]
+IDMVehicle #8: [419.25361977   6.        ],diagonal,5.385164807134504
+IDMVehicle #8: [419.25361977   6.        ],direction,[1. 0.]
+IDMVehicle #8: [419.25361977   6.        ],enable_lane_change,False
+IDMVehicle #8: [419.25361977   6.        ],heading,0.0
+IDMVehicle #8: [419.25361977   6.        ],history,"deque([], maxlen=30)"
+IDMVehicle #8: [419.25361977   6.        ],hit,False
+IDMVehicle #8: [419.25361977   6.        ],impact,[-0. -0.]
+IDMVehicle #8: [419.25361977   6.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95910>
+IDMVehicle #8: [419.25361977   6.        ],lane_index,"('1', '2', 1)"
+IDMVehicle #8: [419.25361977   6.        ],lane_offset,[19.25361977  2.          0.        ]
+IDMVehicle #8: [419.25361977   6.        ],log,[]
+IDMVehicle #8: [419.25361977   6.        ],on_road,True
+IDMVehicle #8: [419.25361977   6.        ],position,[419.25361977   6.        ]
+IDMVehicle #8: [419.25361977   6.        ],prediction_type,constant_steering
+IDMVehicle #8: [419.25361977   6.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #8: [419.25361977   6.        ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #8: [419.25361977   6.        ],solid,True
+IDMVehicle #8: [419.25361977   6.        ],speed,8.32020807317371e-46
+IDMVehicle #8: [419.25361977   6.        ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #8: [419.25361977   6.        ],target_speed,19.2
+IDMVehicle #8: [419.25361977   6.        ],timer,100.07254873900703
+IDMVehicle #8: [419.25361977   6.        ],velocity,[8.32020807e-46 0.00000000e+00]
+IDMVehicle #56: [411.93348549   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #56: [411.93348549   8.        ],position,[411.93348549   8.        ]
+IDMVehicle #56: [411.93348549   8.        ],ACC_MAX,8.0
+IDMVehicle #56: [411.93348549   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #56: [411.93348549   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #56: [411.93348549   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #56: [411.93348549   8.        ],DELTA,4.0
+IDMVehicle #56: [411.93348549   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #56: [411.93348549   8.        ],DELTA_SPEED,5
+IDMVehicle #56: [411.93348549   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #56: [411.93348549   8.        ],HISTORY_SIZE,30
+IDMVehicle #56: [411.93348549   8.        ],KP_A,1.6666666666666667
+IDMVehicle #56: [411.93348549   8.        ],KP_HEADING,5.0
+IDMVehicle #56: [411.93348549   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #56: [411.93348549   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #56: [411.93348549   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #56: [411.93348549   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #56: [411.93348549   8.        ],LENGTH,5.0
+IDMVehicle #56: [411.93348549   8.        ],MAX_SPEED,40.0
+IDMVehicle #56: [411.93348549   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #56: [411.93348549   8.        ],MIN_SPEED,-40.0
+IDMVehicle #56: [411.93348549   8.        ],POLITENESS,0.0
+IDMVehicle #56: [411.93348549   8.        ],TAU_ACC,0.6
+IDMVehicle #56: [411.93348549   8.        ],TAU_HEADING,0.2
+IDMVehicle #56: [411.93348549   8.        ],TAU_LATERAL,0.6
+IDMVehicle #56: [411.93348549   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #56: [411.93348549   8.        ],TIME_WANTED,1.5
+IDMVehicle #56: [411.93348549   8.        ],WIDTH,2.0
+IDMVehicle #56: [411.93348549   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #56: [411.93348549   8.        ],action,"{'steering': 0.0, 'acceleration': 8.089489073336077e-48}"
+IDMVehicle #56: [411.93348549   8.        ],check_collisions,True
+IDMVehicle #56: [411.93348549   8.        ],collidable,True
+IDMVehicle #56: [411.93348549   8.        ],crashed,True
+IDMVehicle #56: [411.93348549   8.        ],destination,[1000.    0.]
+IDMVehicle #56: [411.93348549   8.        ],destination_direction,[ 0.99990748 -0.01360264]
+IDMVehicle #56: [411.93348549   8.        ],diagonal,5.385164807134504
+IDMVehicle #56: [411.93348549   8.        ],direction,[1. 0.]
+IDMVehicle #56: [411.93348549   8.        ],enable_lane_change,False
+IDMVehicle #56: [411.93348549   8.        ],heading,0.0
+IDMVehicle #56: [411.93348549   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #56: [411.93348549   8.        ],hit,False
+IDMVehicle #56: [411.93348549   8.        ],impact,[-0.  0.]
+IDMVehicle #56: [411.93348549   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95b20>
+IDMVehicle #56: [411.93348549   8.        ],lane_index,"('1', '2', 2)"
+IDMVehicle #56: [411.93348549   8.        ],lane_offset,[11.93348549  0.          0.        ]
+IDMVehicle #56: [411.93348549   8.        ],log,[]
+IDMVehicle #56: [411.93348549   8.        ],on_road,True
+IDMVehicle #56: [411.93348549   8.        ],position,[411.93348549   8.        ]
+IDMVehicle #56: [411.93348549   8.        ],prediction_type,constant_steering
+IDMVehicle #56: [411.93348549   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #56: [411.93348549   8.        ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #56: [411.93348549   8.        ],solid,True
+IDMVehicle #56: [411.93348549   8.        ],speed,-6.471591258668862e-48
+IDMVehicle #56: [411.93348549   8.        ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #56: [411.93348549   8.        ],target_speed,19.2
+IDMVehicle #56: [411.93348549   8.        ],timer,100.31111896816216
+IDMVehicle #56: [411.93348549   8.        ],velocity,[-6.47159126e-48 -0.00000000e+00]
+IDMVehicle #104: [416.93348549   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #104: [416.93348549   8.        ],position,[416.93348549   8.        ]
+IDMVehicle #104: [416.93348549   8.        ],ACC_MAX,8.0
+IDMVehicle #104: [416.93348549   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #104: [416.93348549   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #104: [416.93348549   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #104: [416.93348549   8.        ],DELTA,4.0
+IDMVehicle #104: [416.93348549   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #104: [416.93348549   8.        ],DELTA_SPEED,5
+IDMVehicle #104: [416.93348549   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #104: [416.93348549   8.        ],HISTORY_SIZE,30
+IDMVehicle #104: [416.93348549   8.        ],KP_A,1.6666666666666667
+IDMVehicle #104: [416.93348549   8.        ],KP_HEADING,5.0
+IDMVehicle #104: [416.93348549   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #104: [416.93348549   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #104: [416.93348549   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #104: [416.93348549   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #104: [416.93348549   8.        ],LENGTH,5.0
+IDMVehicle #104: [416.93348549   8.        ],MAX_SPEED,40.0
+IDMVehicle #104: [416.93348549   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #104: [416.93348549   8.        ],MIN_SPEED,-40.0
+IDMVehicle #104: [416.93348549   8.        ],POLITENESS,0.0
+IDMVehicle #104: [416.93348549   8.        ],TAU_ACC,0.6
+IDMVehicle #104: [416.93348549   8.        ],TAU_HEADING,0.2
+IDMVehicle #104: [416.93348549   8.        ],TAU_LATERAL,0.6
+IDMVehicle #104: [416.93348549   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #104: [416.93348549   8.        ],TIME_WANTED,1.5
+IDMVehicle #104: [416.93348549   8.        ],WIDTH,2.0
+IDMVehicle #104: [416.93348549   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #104: [416.93348549   8.        ],action,"{'steering': 0.0, 'acceleration': 2.882448504834956e-47}"
+IDMVehicle #104: [416.93348549   8.        ],check_collisions,True
+IDMVehicle #104: [416.93348549   8.        ],collidable,True
+IDMVehicle #104: [416.93348549   8.        ],crashed,True
+IDMVehicle #104: [416.93348549   8.        ],destination,[1000.    0.]
+IDMVehicle #104: [416.93348549   8.        ],destination_direction,[ 0.99990589 -0.01371927]
+IDMVehicle #104: [416.93348549   8.        ],diagonal,5.385164807134504
+IDMVehicle #104: [416.93348549   8.        ],direction,[1. 0.]
+IDMVehicle #104: [416.93348549   8.        ],enable_lane_change,False
+IDMVehicle #104: [416.93348549   8.        ],heading,0.0
+IDMVehicle #104: [416.93348549   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #104: [416.93348549   8.        ],hit,False
+IDMVehicle #104: [416.93348549   8.        ],impact,[ 0. -0.]
+IDMVehicle #104: [416.93348549   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95b20>
+IDMVehicle #104: [416.93348549   8.        ],lane_index,"('1', '2', 2)"
+IDMVehicle #104: [416.93348549   8.        ],lane_offset,[16.93348549  0.          0.        ]
+IDMVehicle #104: [416.93348549   8.        ],log,[]
+IDMVehicle #104: [416.93348549   8.        ],on_road,True
+IDMVehicle #104: [416.93348549   8.        ],position,[416.93348549   8.        ]
+IDMVehicle #104: [416.93348549   8.        ],prediction_type,constant_steering
+IDMVehicle #104: [416.93348549   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #104: [416.93348549   8.        ],route,"[('1', '2', None), ('2', '3', None)]"
+IDMVehicle #104: [416.93348549   8.        ],solid,True
+IDMVehicle #104: [416.93348549   8.        ],speed,-2.305958803867965e-47
+IDMVehicle #104: [416.93348549   8.        ],target_lane_index,"('1', '2', 2)"
+IDMVehicle #104: [416.93348549   8.        ],target_speed,19.2
+IDMVehicle #104: [416.93348549   8.        ],timer,100.30687683982839
+IDMVehicle #104: [416.93348549   8.        ],velocity,[-2.3059588e-47 -0.0000000e+00]
+IDMVehicle #152: [524.2227962   6.       ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #152: [524.2227962   6.       ],position,[524.2227962   6.       ]
+IDMVehicle #152: [524.2227962   6.       ],ACC_MAX,8.0
+IDMVehicle #152: [524.2227962   6.       ],COMFORT_ACC_MAX,8.0
+IDMVehicle #152: [524.2227962   6.       ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #152: [524.2227962   6.       ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #152: [524.2227962   6.       ],DELTA,4.0
+IDMVehicle #152: [524.2227962   6.       ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #152: [524.2227962   6.       ],DELTA_SPEED,5
+IDMVehicle #152: [524.2227962   6.       ],DISTANCE_WANTED,10.0
+IDMVehicle #152: [524.2227962   6.       ],HISTORY_SIZE,30
+IDMVehicle #152: [524.2227962   6.       ],KP_A,1.6666666666666667
+IDMVehicle #152: [524.2227962   6.       ],KP_HEADING,5.0
+IDMVehicle #152: [524.2227962   6.       ],KP_LATERAL,1.6666666666666667
+IDMVehicle #152: [524.2227962   6.       ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #152: [524.2227962   6.       ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #152: [524.2227962   6.       ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #152: [524.2227962   6.       ],LENGTH,5.0
+IDMVehicle #152: [524.2227962   6.       ],MAX_SPEED,40.0
+IDMVehicle #152: [524.2227962   6.       ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #152: [524.2227962   6.       ],MIN_SPEED,-40.0
+IDMVehicle #152: [524.2227962   6.       ],POLITENESS,0.0
+IDMVehicle #152: [524.2227962   6.       ],TAU_ACC,0.6
+IDMVehicle #152: [524.2227962   6.       ],TAU_HEADING,0.2
+IDMVehicle #152: [524.2227962   6.       ],TAU_LATERAL,0.6
+IDMVehicle #152: [524.2227962   6.       ],TAU_PURSUIT,0.1
+IDMVehicle #152: [524.2227962   6.       ],TIME_WANTED,1.5
+IDMVehicle #152: [524.2227962   6.       ],WIDTH,2.0
+IDMVehicle #152: [524.2227962   6.       ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #152: [524.2227962   6.       ],action,"{'steering': 0.0, 'acceleration': -9.442977089569223e-42}"
+IDMVehicle #152: [524.2227962   6.       ],check_collisions,True
+IDMVehicle #152: [524.2227962   6.       ],collidable,True
+IDMVehicle #152: [524.2227962   6.       ],crashed,True
+IDMVehicle #152: [524.2227962   6.       ],destination,[1000.    0.]
+IDMVehicle #152: [524.2227962   6.       ],destination_direction,[ 0.99992049 -0.01260994]
+IDMVehicle #152: [524.2227962   6.       ],diagonal,5.385164807134504
+IDMVehicle #152: [524.2227962   6.       ],direction,[1. 0.]
+IDMVehicle #152: [524.2227962   6.       ],enable_lane_change,False
+IDMVehicle #152: [524.2227962   6.       ],heading,0.0
+IDMVehicle #152: [524.2227962   6.       ],history,"deque([], maxlen=30)"
+IDMVehicle #152: [524.2227962   6.       ],hit,False
+IDMVehicle #152: [524.2227962   6.       ],impact,[-0. -0.]
+IDMVehicle #152: [524.2227962   6.       ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95d00>
+IDMVehicle #152: [524.2227962   6.       ],lane_index,"('2', '3', 1)"
+IDMVehicle #152: [524.2227962   6.       ],lane_offset,[24.2227962  2.         0.       ]
+IDMVehicle #152: [524.2227962   6.       ],log,[]
+IDMVehicle #152: [524.2227962   6.       ],on_road,True
+IDMVehicle #152: [524.2227962   6.       ],position,[524.2227962   6.       ]
+IDMVehicle #152: [524.2227962   6.       ],prediction_type,constant_steering
+IDMVehicle #152: [524.2227962   6.       ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #152: [524.2227962   6.       ],route,"[('2', '3', None)]"
+IDMVehicle #152: [524.2227962   6.       ],solid,True
+IDMVehicle #152: [524.2227962   6.       ],speed,7.554381671655379e-42
+IDMVehicle #152: [524.2227962   6.       ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #152: [524.2227962   6.       ],target_speed,19.2
+IDMVehicle #152: [524.2227962   6.       ],timer,100.38331034968789
+IDMVehicle #152: [524.2227962   6.       ],velocity,[7.55438167e-42 0.00000000e+00]
+IDMVehicle #896: [526.22695611   6.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #896: [526.22695611   6.        ],position,[526.22695611   6.        ]
+IDMVehicle #896: [526.22695611   6.        ],ACC_MAX,8.0
+IDMVehicle #896: [526.22695611   6.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #896: [526.22695611   6.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #896: [526.22695611   6.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #896: [526.22695611   6.        ],DELTA,4.0
+IDMVehicle #896: [526.22695611   6.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #896: [526.22695611   6.        ],DELTA_SPEED,5
+IDMVehicle #896: [526.22695611   6.        ],DISTANCE_WANTED,10.0
+IDMVehicle #896: [526.22695611   6.        ],HISTORY_SIZE,30
+IDMVehicle #896: [526.22695611   6.        ],KP_A,1.6666666666666667
+IDMVehicle #896: [526.22695611   6.        ],KP_HEADING,5.0
+IDMVehicle #896: [526.22695611   6.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #896: [526.22695611   6.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #896: [526.22695611   6.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #896: [526.22695611   6.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #896: [526.22695611   6.        ],LENGTH,5.0
+IDMVehicle #896: [526.22695611   6.        ],MAX_SPEED,40.0
+IDMVehicle #896: [526.22695611   6.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #896: [526.22695611   6.        ],MIN_SPEED,-40.0
+IDMVehicle #896: [526.22695611   6.        ],POLITENESS,0.0
+IDMVehicle #896: [526.22695611   6.        ],TAU_ACC,0.6
+IDMVehicle #896: [526.22695611   6.        ],TAU_HEADING,0.2
+IDMVehicle #896: [526.22695611   6.        ],TAU_LATERAL,0.6
+IDMVehicle #896: [526.22695611   6.        ],TAU_PURSUIT,0.1
+IDMVehicle #896: [526.22695611   6.        ],TIME_WANTED,1.5
+IDMVehicle #896: [526.22695611   6.        ],WIDTH,2.0
+IDMVehicle #896: [526.22695611   6.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #896: [526.22695611   6.        ],action,"{'steering': 0.0, 'acceleration': -1.0050915918005255e-42}"
+IDMVehicle #896: [526.22695611   6.        ],check_collisions,True
+IDMVehicle #896: [526.22695611   6.        ],collidable,True
+IDMVehicle #896: [526.22695611   6.        ],crashed,True
+IDMVehicle #896: [526.22695611   6.        ],destination,[1000.    0.]
+IDMVehicle #896: [526.22695611   6.        ],destination_direction,[ 0.99991982 -0.01266328]
+IDMVehicle #896: [526.22695611   6.        ],diagonal,5.385164807134504
+IDMVehicle #896: [526.22695611   6.        ],direction,[1. 0.]
+IDMVehicle #896: [526.22695611   6.        ],enable_lane_change,False
+IDMVehicle #896: [526.22695611   6.        ],heading,0.0
+IDMVehicle #896: [526.22695611   6.        ],history,"deque([], maxlen=30)"
+IDMVehicle #896: [526.22695611   6.        ],hit,False
+IDMVehicle #896: [526.22695611   6.        ],impact,[-0. -0.]
+IDMVehicle #896: [526.22695611   6.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95d00>
+IDMVehicle #896: [526.22695611   6.        ],lane_index,"('2', '3', 1)"
+IDMVehicle #896: [526.22695611   6.        ],lane_offset,[26.22695611  2.          0.        ]
+IDMVehicle #896: [526.22695611   6.        ],log,[]
+IDMVehicle #896: [526.22695611   6.        ],on_road,True
+IDMVehicle #896: [526.22695611   6.        ],position,[526.22695611   6.        ]
+IDMVehicle #896: [526.22695611   6.        ],prediction_type,constant_steering
+IDMVehicle #896: [526.22695611   6.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #896: [526.22695611   6.        ],route,"[('2', '3', None)]"
+IDMVehicle #896: [526.22695611   6.        ],solid,True
+IDMVehicle #896: [526.22695611   6.        ],speed,8.040732734404204e-43
+IDMVehicle #896: [526.22695611   6.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #896: [526.22695611   6.        ],target_speed,19.2
+IDMVehicle #896: [526.22695611   6.        ],timer,100.33901647201648
+IDMVehicle #896: [526.22695611   6.        ],velocity,[8.04073273e-43 0.00000000e+00]
+IDMVehicle #192: [525.33610233   6.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #192: [525.33610233   6.        ],position,[525.33610233   6.        ]
+IDMVehicle #192: [525.33610233   6.        ],ACC_MAX,8.0
+IDMVehicle #192: [525.33610233   6.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #192: [525.33610233   6.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #192: [525.33610233   6.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #192: [525.33610233   6.        ],DELTA,4.0
+IDMVehicle #192: [525.33610233   6.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #192: [525.33610233   6.        ],DELTA_SPEED,5
+IDMVehicle #192: [525.33610233   6.        ],DISTANCE_WANTED,10.0
+IDMVehicle #192: [525.33610233   6.        ],HISTORY_SIZE,30
+IDMVehicle #192: [525.33610233   6.        ],KP_A,1.6666666666666667
+IDMVehicle #192: [525.33610233   6.        ],KP_HEADING,5.0
+IDMVehicle #192: [525.33610233   6.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #192: [525.33610233   6.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #192: [525.33610233   6.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #192: [525.33610233   6.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #192: [525.33610233   6.        ],LENGTH,5.0
+IDMVehicle #192: [525.33610233   6.        ],MAX_SPEED,40.0
+IDMVehicle #192: [525.33610233   6.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #192: [525.33610233   6.        ],MIN_SPEED,-40.0
+IDMVehicle #192: [525.33610233   6.        ],POLITENESS,0.0
+IDMVehicle #192: [525.33610233   6.        ],TAU_ACC,0.6
+IDMVehicle #192: [525.33610233   6.        ],TAU_HEADING,0.2
+IDMVehicle #192: [525.33610233   6.        ],TAU_LATERAL,0.6
+IDMVehicle #192: [525.33610233   6.        ],TAU_PURSUIT,0.1
+IDMVehicle #192: [525.33610233   6.        ],TIME_WANTED,1.5
+IDMVehicle #192: [525.33610233   6.        ],WIDTH,2.0
+IDMVehicle #192: [525.33610233   6.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #192: [525.33610233   6.        ],action,"{'steering': 0.0, 'acceleration': -9.726096386455704e-44}"
+IDMVehicle #192: [525.33610233   6.        ],check_collisions,True
+IDMVehicle #192: [525.33610233   6.        ],collidable,True
+IDMVehicle #192: [525.33610233   6.        ],crashed,True
+IDMVehicle #192: [525.33610233   6.        ],destination,[1000.    0.]
+IDMVehicle #192: [525.33610233   6.        ],destination_direction,[ 0.99992012 -0.01263951]
+IDMVehicle #192: [525.33610233   6.        ],diagonal,5.385164807134504
+IDMVehicle #192: [525.33610233   6.        ],direction,[1. 0.]
+IDMVehicle #192: [525.33610233   6.        ],enable_lane_change,False
+IDMVehicle #192: [525.33610233   6.        ],heading,0.0
+IDMVehicle #192: [525.33610233   6.        ],history,"deque([], maxlen=30)"
+IDMVehicle #192: [525.33610233   6.        ],hit,False
+IDMVehicle #192: [525.33610233   6.        ],impact,[-0. -0.]
+IDMVehicle #192: [525.33610233   6.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95d00>
+IDMVehicle #192: [525.33610233   6.        ],lane_index,"('2', '3', 1)"
+IDMVehicle #192: [525.33610233   6.        ],lane_offset,[25.33610233  2.          0.        ]
+IDMVehicle #192: [525.33610233   6.        ],log,[]
+IDMVehicle #192: [525.33610233   6.        ],on_road,True
+IDMVehicle #192: [525.33610233   6.        ],position,[525.33610233   6.        ]
+IDMVehicle #192: [525.33610233   6.        ],prediction_type,constant_steering
+IDMVehicle #192: [525.33610233   6.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #192: [525.33610233   6.        ],route,"[('2', '3', None)]"
+IDMVehicle #192: [525.33610233   6.        ],solid,True
+IDMVehicle #192: [525.33610233   6.        ],speed,7.780877109164563e-44
+IDMVehicle #192: [525.33610233   6.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #192: [525.33610233   6.        ],target_speed,19.2
+IDMVehicle #192: [525.33610233   6.        ],timer,100.21194407830373
+IDMVehicle #192: [525.33610233   6.        ],velocity,[7.78087711e-44 0.00000000e+00]
+IDMVehicle #248: [518.12088589   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #248: [518.12088589   8.        ],position,[518.12088589   8.        ]
+IDMVehicle #248: [518.12088589   8.        ],ACC_MAX,8.0
+IDMVehicle #248: [518.12088589   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #248: [518.12088589   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #248: [518.12088589   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #248: [518.12088589   8.        ],DELTA,4.0
+IDMVehicle #248: [518.12088589   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #248: [518.12088589   8.        ],DELTA_SPEED,5
+IDMVehicle #248: [518.12088589   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #248: [518.12088589   8.        ],HISTORY_SIZE,30
+IDMVehicle #248: [518.12088589   8.        ],KP_A,1.6666666666666667
+IDMVehicle #248: [518.12088589   8.        ],KP_HEADING,5.0
+IDMVehicle #248: [518.12088589   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #248: [518.12088589   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #248: [518.12088589   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #248: [518.12088589   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #248: [518.12088589   8.        ],LENGTH,5.0
+IDMVehicle #248: [518.12088589   8.        ],MAX_SPEED,40.0
+IDMVehicle #248: [518.12088589   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #248: [518.12088589   8.        ],MIN_SPEED,-40.0
+IDMVehicle #248: [518.12088589   8.        ],POLITENESS,0.0
+IDMVehicle #248: [518.12088589   8.        ],TAU_ACC,0.6
+IDMVehicle #248: [518.12088589   8.        ],TAU_HEADING,0.2
+IDMVehicle #248: [518.12088589   8.        ],TAU_LATERAL,0.6
+IDMVehicle #248: [518.12088589   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #248: [518.12088589   8.        ],TIME_WANTED,1.5
+IDMVehicle #248: [518.12088589   8.        ],WIDTH,2.0
+IDMVehicle #248: [518.12088589   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #248: [518.12088589   8.        ],action,"{'steering': 0.0, 'acceleration': -8.183877182873087e-45}"
+IDMVehicle #248: [518.12088589   8.        ],check_collisions,True
+IDMVehicle #248: [518.12088589   8.        ],collidable,True
+IDMVehicle #248: [518.12088589   8.        ],crashed,True
+IDMVehicle #248: [518.12088589   8.        ],destination,[1000.    0.]
+IDMVehicle #248: [518.12088589   8.        ],destination_direction,[ 0.99986222 -0.01659939]
+IDMVehicle #248: [518.12088589   8.        ],diagonal,5.385164807134504
+IDMVehicle #248: [518.12088589   8.        ],direction,[1. 0.]
+IDMVehicle #248: [518.12088589   8.        ],enable_lane_change,False
+IDMVehicle #248: [518.12088589   8.        ],heading,0.0
+IDMVehicle #248: [518.12088589   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #248: [518.12088589   8.        ],hit,False
+IDMVehicle #248: [518.12088589   8.        ],impact,[-0.  0.]
+IDMVehicle #248: [518.12088589   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #248: [518.12088589   8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #248: [518.12088589   8.        ],lane_offset,[18.12088589  0.          0.        ]
+IDMVehicle #248: [518.12088589   8.        ],log,[]
+IDMVehicle #248: [518.12088589   8.        ],on_road,True
+IDMVehicle #248: [518.12088589   8.        ],position,[518.12088589   8.        ]
+IDMVehicle #248: [518.12088589   8.        ],prediction_type,constant_steering
+IDMVehicle #248: [518.12088589   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #248: [518.12088589   8.        ],route,"[('2', '3', None)]"
+IDMVehicle #248: [518.12088589   8.        ],solid,True
+IDMVehicle #248: [518.12088589   8.        ],speed,6.54710174629847e-45
+IDMVehicle #248: [518.12088589   8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #248: [518.12088589   8.        ],target_speed,19.2
+IDMVehicle #248: [518.12088589   8.        ],timer,100.12843911822435
+IDMVehicle #248: [518.12088589   8.        ],velocity,[6.54710175e-45 0.00000000e+00]
+IDMVehicle #296: [523.12088589   8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #296: [523.12088589   8.        ],position,[523.12088589   8.        ]
+IDMVehicle #296: [523.12088589   8.        ],ACC_MAX,8.0
+IDMVehicle #296: [523.12088589   8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #296: [523.12088589   8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #296: [523.12088589   8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #296: [523.12088589   8.        ],DELTA,4.0
+IDMVehicle #296: [523.12088589   8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #296: [523.12088589   8.        ],DELTA_SPEED,5
+IDMVehicle #296: [523.12088589   8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #296: [523.12088589   8.        ],HISTORY_SIZE,30
+IDMVehicle #296: [523.12088589   8.        ],KP_A,1.6666666666666667
+IDMVehicle #296: [523.12088589   8.        ],KP_HEADING,5.0
+IDMVehicle #296: [523.12088589   8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #296: [523.12088589   8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #296: [523.12088589   8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #296: [523.12088589   8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #296: [523.12088589   8.        ],LENGTH,5.0
+IDMVehicle #296: [523.12088589   8.        ],MAX_SPEED,40.0
+IDMVehicle #296: [523.12088589   8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #296: [523.12088589   8.        ],MIN_SPEED,-40.0
+IDMVehicle #296: [523.12088589   8.        ],POLITENESS,0.0
+IDMVehicle #296: [523.12088589   8.        ],TAU_ACC,0.6
+IDMVehicle #296: [523.12088589   8.        ],TAU_HEADING,0.2
+IDMVehicle #296: [523.12088589   8.        ],TAU_LATERAL,0.6
+IDMVehicle #296: [523.12088589   8.        ],TAU_PURSUIT,0.1
+IDMVehicle #296: [523.12088589   8.        ],TIME_WANTED,1.5
+IDMVehicle #296: [523.12088589   8.        ],WIDTH,2.0
+IDMVehicle #296: [523.12088589   8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #296: [523.12088589   8.        ],action,"{'steering': 0.0, 'acceleration': -2.390163495798706e-45}"
+IDMVehicle #296: [523.12088589   8.        ],check_collisions,True
+IDMVehicle #296: [523.12088589   8.        ],collidable,True
+IDMVehicle #296: [523.12088589   8.        ],crashed,True
+IDMVehicle #296: [523.12088589   8.        ],destination,[1000.    0.]
+IDMVehicle #296: [523.12088589   8.        ],destination_direction,[ 0.99985932 -0.01677338]
+IDMVehicle #296: [523.12088589   8.        ],diagonal,5.385164807134504
+IDMVehicle #296: [523.12088589   8.        ],direction,[1. 0.]
+IDMVehicle #296: [523.12088589   8.        ],enable_lane_change,False
+IDMVehicle #296: [523.12088589   8.        ],heading,0.0
+IDMVehicle #296: [523.12088589   8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #296: [523.12088589   8.        ],hit,False
+IDMVehicle #296: [523.12088589   8.        ],impact,[ 0. -0.]
+IDMVehicle #296: [523.12088589   8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #296: [523.12088589   8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #296: [523.12088589   8.        ],lane_offset,[23.12088589  0.          0.        ]
+IDMVehicle #296: [523.12088589   8.        ],log,[]
+IDMVehicle #296: [523.12088589   8.        ],on_road,True
+IDMVehicle #296: [523.12088589   8.        ],position,[523.12088589   8.        ]
+IDMVehicle #296: [523.12088589   8.        ],prediction_type,constant_steering
+IDMVehicle #296: [523.12088589   8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #296: [523.12088589   8.        ],route,"[('2', '3', None)]"
+IDMVehicle #296: [523.12088589   8.        ],solid,True
+IDMVehicle #296: [523.12088589   8.        ],speed,1.9121307966389647e-45
+IDMVehicle #296: [523.12088589   8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #296: [523.12088589   8.        ],target_speed,19.2
+IDMVehicle #296: [523.12088589   8.        ],timer,100.2087858561965
+IDMVehicle #296: [523.12088589   8.        ],velocity,[1.9121308e-45 0.0000000e+00]
+IDMVehicle #344: [2076.15825176    8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #344: [2076.15825176    8.        ],position,[2076.15825176    8.        ]
+IDMVehicle #344: [2076.15825176    8.        ],ACC_MAX,8.0
+IDMVehicle #344: [2076.15825176    8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #344: [2076.15825176    8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #344: [2076.15825176    8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #344: [2076.15825176    8.        ],DELTA,4.0
+IDMVehicle #344: [2076.15825176    8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #344: [2076.15825176    8.        ],DELTA_SPEED,5
+IDMVehicle #344: [2076.15825176    8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #344: [2076.15825176    8.        ],HISTORY_SIZE,30
+IDMVehicle #344: [2076.15825176    8.        ],KP_A,1.6666666666666667
+IDMVehicle #344: [2076.15825176    8.        ],KP_HEADING,5.0
+IDMVehicle #344: [2076.15825176    8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #344: [2076.15825176    8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #344: [2076.15825176    8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #344: [2076.15825176    8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #344: [2076.15825176    8.        ],LENGTH,5.0
+IDMVehicle #344: [2076.15825176    8.        ],MAX_SPEED,40.0
+IDMVehicle #344: [2076.15825176    8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #344: [2076.15825176    8.        ],MIN_SPEED,-40.0
+IDMVehicle #344: [2076.15825176    8.        ],POLITENESS,0.0
+IDMVehicle #344: [2076.15825176    8.        ],TAU_ACC,0.6
+IDMVehicle #344: [2076.15825176    8.        ],TAU_HEADING,0.2
+IDMVehicle #344: [2076.15825176    8.        ],TAU_LATERAL,0.6
+IDMVehicle #344: [2076.15825176    8.        ],TAU_PURSUIT,0.1
+IDMVehicle #344: [2076.15825176    8.        ],TIME_WANTED,1.5
+IDMVehicle #344: [2076.15825176    8.        ],WIDTH,2.0
+IDMVehicle #344: [2076.15825176    8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #344: [2076.15825176    8.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #344: [2076.15825176    8.        ],check_collisions,True
+IDMVehicle #344: [2076.15825176    8.        ],collidable,True
+IDMVehicle #344: [2076.15825176    8.        ],crashed,False
+IDMVehicle #344: [2076.15825176    8.        ],destination,[2076.15825176    8.        ]
+IDMVehicle #344: [2076.15825176    8.        ],destination_direction,[0. 0.]
+IDMVehicle #344: [2076.15825176    8.        ],diagonal,5.385164807134504
+IDMVehicle #344: [2076.15825176    8.        ],direction,[1. 0.]
+IDMVehicle #344: [2076.15825176    8.        ],enable_lane_change,False
+IDMVehicle #344: [2076.15825176    8.        ],heading,0.0
+IDMVehicle #344: [2076.15825176    8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #344: [2076.15825176    8.        ],hit,False
+IDMVehicle #344: [2076.15825176    8.        ],impact,
+IDMVehicle #344: [2076.15825176    8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #344: [2076.15825176    8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #344: [2076.15825176    8.        ],lane_offset,[1576.15825176    0.            0.        ]
+IDMVehicle #344: [2076.15825176    8.        ],log,[]
+IDMVehicle #344: [2076.15825176    8.        ],on_road,False
+IDMVehicle #344: [2076.15825176    8.        ],position,[2076.15825176    8.        ]
+IDMVehicle #344: [2076.15825176    8.        ],prediction_type,constant_steering
+IDMVehicle #344: [2076.15825176    8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #344: [2076.15825176    8.        ],route,[]
+IDMVehicle #344: [2076.15825176    8.        ],solid,True
+IDMVehicle #344: [2076.15825176    8.        ],speed,19.199999999999996
+IDMVehicle #344: [2076.15825176    8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #344: [2076.15825176    8.        ],target_speed,19.2
+IDMVehicle #344: [2076.15825176    8.        ],timer,100.20874766936114
+IDMVehicle #344: [2076.15825176    8.        ],velocity,[19.2  0. ]
+IDMVehicle #392: [2127.96300102    8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #392: [2127.96300102    8.        ],position,[2127.96300102    8.        ]
+IDMVehicle #392: [2127.96300102    8.        ],ACC_MAX,8.0
+IDMVehicle #392: [2127.96300102    8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #392: [2127.96300102    8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #392: [2127.96300102    8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #392: [2127.96300102    8.        ],DELTA,4.0
+IDMVehicle #392: [2127.96300102    8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #392: [2127.96300102    8.        ],DELTA_SPEED,5
+IDMVehicle #392: [2127.96300102    8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #392: [2127.96300102    8.        ],HISTORY_SIZE,30
+IDMVehicle #392: [2127.96300102    8.        ],KP_A,1.6666666666666667
+IDMVehicle #392: [2127.96300102    8.        ],KP_HEADING,5.0
+IDMVehicle #392: [2127.96300102    8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #392: [2127.96300102    8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #392: [2127.96300102    8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #392: [2127.96300102    8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #392: [2127.96300102    8.        ],LENGTH,5.0
+IDMVehicle #392: [2127.96300102    8.        ],MAX_SPEED,40.0
+IDMVehicle #392: [2127.96300102    8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #392: [2127.96300102    8.        ],MIN_SPEED,-40.0
+IDMVehicle #392: [2127.96300102    8.        ],POLITENESS,0.0
+IDMVehicle #392: [2127.96300102    8.        ],TAU_ACC,0.6
+IDMVehicle #392: [2127.96300102    8.        ],TAU_HEADING,0.2
+IDMVehicle #392: [2127.96300102    8.        ],TAU_LATERAL,0.6
+IDMVehicle #392: [2127.96300102    8.        ],TAU_PURSUIT,0.1
+IDMVehicle #392: [2127.96300102    8.        ],TIME_WANTED,1.5
+IDMVehicle #392: [2127.96300102    8.        ],WIDTH,2.0
+IDMVehicle #392: [2127.96300102    8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #392: [2127.96300102    8.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #392: [2127.96300102    8.        ],check_collisions,True
+IDMVehicle #392: [2127.96300102    8.        ],collidable,True
+IDMVehicle #392: [2127.96300102    8.        ],crashed,False
+IDMVehicle #392: [2127.96300102    8.        ],destination,[2127.96300102    8.        ]
+IDMVehicle #392: [2127.96300102    8.        ],destination_direction,[0. 0.]
+IDMVehicle #392: [2127.96300102    8.        ],diagonal,5.385164807134504
+IDMVehicle #392: [2127.96300102    8.        ],direction,[1. 0.]
+IDMVehicle #392: [2127.96300102    8.        ],enable_lane_change,False
+IDMVehicle #392: [2127.96300102    8.        ],heading,0.0
+IDMVehicle #392: [2127.96300102    8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #392: [2127.96300102    8.        ],hit,False
+IDMVehicle #392: [2127.96300102    8.        ],impact,
+IDMVehicle #392: [2127.96300102    8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #392: [2127.96300102    8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #392: [2127.96300102    8.        ],lane_offset,[1627.96300102    0.            0.        ]
+IDMVehicle #392: [2127.96300102    8.        ],log,[]
+IDMVehicle #392: [2127.96300102    8.        ],on_road,False
+IDMVehicle #392: [2127.96300102    8.        ],position,[2127.96300102    8.        ]
+IDMVehicle #392: [2127.96300102    8.        ],prediction_type,constant_steering
+IDMVehicle #392: [2127.96300102    8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #392: [2127.96300102    8.        ],route,[]
+IDMVehicle #392: [2127.96300102    8.        ],solid,True
+IDMVehicle #392: [2127.96300102    8.        ],speed,19.199999999999996
+IDMVehicle #392: [2127.96300102    8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #392: [2127.96300102    8.        ],target_speed,19.2
+IDMVehicle #392: [2127.96300102    8.        ],timer,100.15331049416929
+IDMVehicle #392: [2127.96300102    8.        ],velocity,[19.2  0. ]
+IDMVehicle #440: [2455.01328132    4.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #440: [2455.01328132    4.        ],position,[2455.01328132    4.        ]
+IDMVehicle #440: [2455.01328132    4.        ],ACC_MAX,8.0
+IDMVehicle #440: [2455.01328132    4.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #440: [2455.01328132    4.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #440: [2455.01328132    4.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #440: [2455.01328132    4.        ],DELTA,4.0
+IDMVehicle #440: [2455.01328132    4.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #440: [2455.01328132    4.        ],DELTA_SPEED,5
+IDMVehicle #440: [2455.01328132    4.        ],DISTANCE_WANTED,10.0
+IDMVehicle #440: [2455.01328132    4.        ],HISTORY_SIZE,30
+IDMVehicle #440: [2455.01328132    4.        ],KP_A,1.6666666666666667
+IDMVehicle #440: [2455.01328132    4.        ],KP_HEADING,5.0
+IDMVehicle #440: [2455.01328132    4.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #440: [2455.01328132    4.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #440: [2455.01328132    4.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #440: [2455.01328132    4.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #440: [2455.01328132    4.        ],LENGTH,5.0
+IDMVehicle #440: [2455.01328132    4.        ],MAX_SPEED,40.0
+IDMVehicle #440: [2455.01328132    4.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #440: [2455.01328132    4.        ],MIN_SPEED,-40.0
+IDMVehicle #440: [2455.01328132    4.        ],POLITENESS,0.0
+IDMVehicle #440: [2455.01328132    4.        ],TAU_ACC,0.6
+IDMVehicle #440: [2455.01328132    4.        ],TAU_HEADING,0.2
+IDMVehicle #440: [2455.01328132    4.        ],TAU_LATERAL,0.6
+IDMVehicle #440: [2455.01328132    4.        ],TAU_PURSUIT,0.1
+IDMVehicle #440: [2455.01328132    4.        ],TIME_WANTED,1.5
+IDMVehicle #440: [2455.01328132    4.        ],WIDTH,2.0
+IDMVehicle #440: [2455.01328132    4.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #440: [2455.01328132    4.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #440: [2455.01328132    4.        ],check_collisions,True
+IDMVehicle #440: [2455.01328132    4.        ],collidable,True
+IDMVehicle #440: [2455.01328132    4.        ],crashed,False
+IDMVehicle #440: [2455.01328132    4.        ],destination,[2455.01328132    4.        ]
+IDMVehicle #440: [2455.01328132    4.        ],destination_direction,[0. 0.]
+IDMVehicle #440: [2455.01328132    4.        ],diagonal,5.385164807134504
+IDMVehicle #440: [2455.01328132    4.        ],direction,[1. 0.]
+IDMVehicle #440: [2455.01328132    4.        ],enable_lane_change,False
+IDMVehicle #440: [2455.01328132    4.        ],heading,0.0
+IDMVehicle #440: [2455.01328132    4.        ],history,"deque([], maxlen=30)"
+IDMVehicle #440: [2455.01328132    4.        ],hit,False
+IDMVehicle #440: [2455.01328132    4.        ],impact,
+IDMVehicle #440: [2455.01328132    4.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95d00>
+IDMVehicle #440: [2455.01328132    4.        ],lane_index,"('2', '3', 1)"
+IDMVehicle #440: [2455.01328132    4.        ],lane_offset,[1955.01328132    0.            0.        ]
+IDMVehicle #440: [2455.01328132    4.        ],log,[]
+IDMVehicle #440: [2455.01328132    4.        ],on_road,False
+IDMVehicle #440: [2455.01328132    4.        ],position,[2455.01328132    4.        ]
+IDMVehicle #440: [2455.01328132    4.        ],prediction_type,constant_steering
+IDMVehicle #440: [2455.01328132    4.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #440: [2455.01328132    4.        ],route,[]
+IDMVehicle #440: [2455.01328132    4.        ],solid,True
+IDMVehicle #440: [2455.01328132    4.        ],speed,19.999999999999996
+IDMVehicle #440: [2455.01328132    4.        ],target_lane_index,"('2', '3', 1)"
+IDMVehicle #440: [2455.01328132    4.        ],target_speed,22.6
+IDMVehicle #440: [2455.01328132    4.        ],timer,100.38057843277667
+IDMVehicle #440: [2455.01328132    4.        ],velocity,[20.  0.]
+IDMVehicle #320: [2180.03854441    8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #320: [2180.03854441    8.        ],position,[2180.03854441    8.        ]
+IDMVehicle #320: [2180.03854441    8.        ],ACC_MAX,8.0
+IDMVehicle #320: [2180.03854441    8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #320: [2180.03854441    8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #320: [2180.03854441    8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #320: [2180.03854441    8.        ],DELTA,4.0
+IDMVehicle #320: [2180.03854441    8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #320: [2180.03854441    8.        ],DELTA_SPEED,5
+IDMVehicle #320: [2180.03854441    8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #320: [2180.03854441    8.        ],HISTORY_SIZE,30
+IDMVehicle #320: [2180.03854441    8.        ],KP_A,1.6666666666666667
+IDMVehicle #320: [2180.03854441    8.        ],KP_HEADING,5.0
+IDMVehicle #320: [2180.03854441    8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #320: [2180.03854441    8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #320: [2180.03854441    8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #320: [2180.03854441    8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #320: [2180.03854441    8.        ],LENGTH,5.0
+IDMVehicle #320: [2180.03854441    8.        ],MAX_SPEED,40.0
+IDMVehicle #320: [2180.03854441    8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #320: [2180.03854441    8.        ],MIN_SPEED,-40.0
+IDMVehicle #320: [2180.03854441    8.        ],POLITENESS,0.0
+IDMVehicle #320: [2180.03854441    8.        ],TAU_ACC,0.6
+IDMVehicle #320: [2180.03854441    8.        ],TAU_HEADING,0.2
+IDMVehicle #320: [2180.03854441    8.        ],TAU_LATERAL,0.6
+IDMVehicle #320: [2180.03854441    8.        ],TAU_PURSUIT,0.1
+IDMVehicle #320: [2180.03854441    8.        ],TIME_WANTED,1.5
+IDMVehicle #320: [2180.03854441    8.        ],WIDTH,2.0
+IDMVehicle #320: [2180.03854441    8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #320: [2180.03854441    8.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #320: [2180.03854441    8.        ],check_collisions,True
+IDMVehicle #320: [2180.03854441    8.        ],collidable,True
+IDMVehicle #320: [2180.03854441    8.        ],crashed,False
+IDMVehicle #320: [2180.03854441    8.        ],destination,[2180.03854441    8.        ]
+IDMVehicle #320: [2180.03854441    8.        ],destination_direction,[0. 0.]
+IDMVehicle #320: [2180.03854441    8.        ],diagonal,5.385164807134504
+IDMVehicle #320: [2180.03854441    8.        ],direction,[1. 0.]
+IDMVehicle #320: [2180.03854441    8.        ],enable_lane_change,False
+IDMVehicle #320: [2180.03854441    8.        ],heading,0.0
+IDMVehicle #320: [2180.03854441    8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #320: [2180.03854441    8.        ],hit,False
+IDMVehicle #320: [2180.03854441    8.        ],impact,
+IDMVehicle #320: [2180.03854441    8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #320: [2180.03854441    8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #320: [2180.03854441    8.        ],lane_offset,[1680.03854441    0.            0.        ]
+IDMVehicle #320: [2180.03854441    8.        ],log,[]
+IDMVehicle #320: [2180.03854441    8.        ],on_road,False
+IDMVehicle #320: [2180.03854441    8.        ],position,[2180.03854441    8.        ]
+IDMVehicle #320: [2180.03854441    8.        ],prediction_type,constant_steering
+IDMVehicle #320: [2180.03854441    8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #320: [2180.03854441    8.        ],route,[]
+IDMVehicle #320: [2180.03854441    8.        ],solid,True
+IDMVehicle #320: [2180.03854441    8.        ],speed,19.199999999999996
+IDMVehicle #320: [2180.03854441    8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #320: [2180.03854441    8.        ],target_speed,19.2
+IDMVehicle #320: [2180.03854441    8.        ],timer,100.39055334645147
+IDMVehicle #320: [2180.03854441    8.        ],velocity,[19.2  0. ]
+IDMVehicle #200: [2233.54751853    8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #200: [2233.54751853    8.        ],position,[2233.54751853    8.        ]
+IDMVehicle #200: [2233.54751853    8.        ],ACC_MAX,8.0
+IDMVehicle #200: [2233.54751853    8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #200: [2233.54751853    8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #200: [2233.54751853    8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #200: [2233.54751853    8.        ],DELTA,4.0
+IDMVehicle #200: [2233.54751853    8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #200: [2233.54751853    8.        ],DELTA_SPEED,5
+IDMVehicle #200: [2233.54751853    8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #200: [2233.54751853    8.        ],HISTORY_SIZE,30
+IDMVehicle #200: [2233.54751853    8.        ],KP_A,1.6666666666666667
+IDMVehicle #200: [2233.54751853    8.        ],KP_HEADING,5.0
+IDMVehicle #200: [2233.54751853    8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #200: [2233.54751853    8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #200: [2233.54751853    8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #200: [2233.54751853    8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #200: [2233.54751853    8.        ],LENGTH,5.0
+IDMVehicle #200: [2233.54751853    8.        ],MAX_SPEED,40.0
+IDMVehicle #200: [2233.54751853    8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #200: [2233.54751853    8.        ],MIN_SPEED,-40.0
+IDMVehicle #200: [2233.54751853    8.        ],POLITENESS,0.0
+IDMVehicle #200: [2233.54751853    8.        ],TAU_ACC,0.6
+IDMVehicle #200: [2233.54751853    8.        ],TAU_HEADING,0.2
+IDMVehicle #200: [2233.54751853    8.        ],TAU_LATERAL,0.6
+IDMVehicle #200: [2233.54751853    8.        ],TAU_PURSUIT,0.1
+IDMVehicle #200: [2233.54751853    8.        ],TIME_WANTED,1.5
+IDMVehicle #200: [2233.54751853    8.        ],WIDTH,2.0
+IDMVehicle #200: [2233.54751853    8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #200: [2233.54751853    8.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #200: [2233.54751853    8.        ],check_collisions,True
+IDMVehicle #200: [2233.54751853    8.        ],collidable,True
+IDMVehicle #200: [2233.54751853    8.        ],crashed,False
+IDMVehicle #200: [2233.54751853    8.        ],destination,[2233.54751853    8.        ]
+IDMVehicle #200: [2233.54751853    8.        ],destination_direction,[0. 0.]
+IDMVehicle #200: [2233.54751853    8.        ],diagonal,5.385164807134504
+IDMVehicle #200: [2233.54751853    8.        ],direction,[1. 0.]
+IDMVehicle #200: [2233.54751853    8.        ],enable_lane_change,False
+IDMVehicle #200: [2233.54751853    8.        ],heading,0.0
+IDMVehicle #200: [2233.54751853    8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #200: [2233.54751853    8.        ],hit,False
+IDMVehicle #200: [2233.54751853    8.        ],impact,
+IDMVehicle #200: [2233.54751853    8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #200: [2233.54751853    8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #200: [2233.54751853    8.        ],lane_offset,[1733.54751853    0.            0.        ]
+IDMVehicle #200: [2233.54751853    8.        ],log,[]
+IDMVehicle #200: [2233.54751853    8.        ],on_road,False
+IDMVehicle #200: [2233.54751853    8.        ],position,[2233.54751853    8.        ]
+IDMVehicle #200: [2233.54751853    8.        ],prediction_type,constant_steering
+IDMVehicle #200: [2233.54751853    8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #200: [2233.54751853    8.        ],route,[]
+IDMVehicle #200: [2233.54751853    8.        ],solid,True
+IDMVehicle #200: [2233.54751853    8.        ],speed,19.199999999999996
+IDMVehicle #200: [2233.54751853    8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #200: [2233.54751853    8.        ],target_speed,19.2
+IDMVehicle #200: [2233.54751853    8.        ],timer,100.00974403243251
+IDMVehicle #200: [2233.54751853    8.        ],velocity,[19.2  0. ]
+IDMVehicle #488: [2532.11033385    4.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #488: [2532.11033385    4.        ],position,[2532.11033385    4.        ]
+IDMVehicle #488: [2532.11033385    4.        ],ACC_MAX,8.0
+IDMVehicle #488: [2532.11033385    4.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #488: [2532.11033385    4.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #488: [2532.11033385    4.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #488: [2532.11033385    4.        ],DELTA,4.0
+IDMVehicle #488: [2532.11033385    4.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #488: [2532.11033385    4.        ],DELTA_SPEED,5
+IDMVehicle #488: [2532.11033385    4.        ],DISTANCE_WANTED,10.0
+IDMVehicle #488: [2532.11033385    4.        ],HISTORY_SIZE,30
+IDMVehicle #488: [2532.11033385    4.        ],KP_A,1.6666666666666667
+IDMVehicle #488: [2532.11033385    4.        ],KP_HEADING,5.0
+IDMVehicle #488: [2532.11033385    4.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #488: [2532.11033385    4.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #488: [2532.11033385    4.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #488: [2532.11033385    4.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #488: [2532.11033385    4.        ],LENGTH,5.0
+IDMVehicle #488: [2532.11033385    4.        ],MAX_SPEED,40.0
+IDMVehicle #488: [2532.11033385    4.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #488: [2532.11033385    4.        ],MIN_SPEED,-40.0
+IDMVehicle #488: [2532.11033385    4.        ],POLITENESS,0.0
+IDMVehicle #488: [2532.11033385    4.        ],TAU_ACC,0.6
+IDMVehicle #488: [2532.11033385    4.        ],TAU_HEADING,0.2
+IDMVehicle #488: [2532.11033385    4.        ],TAU_LATERAL,0.6
+IDMVehicle #488: [2532.11033385    4.        ],TAU_PURSUIT,0.1
+IDMVehicle #488: [2532.11033385    4.        ],TIME_WANTED,1.5
+IDMVehicle #488: [2532.11033385    4.        ],WIDTH,2.0
+IDMVehicle #488: [2532.11033385    4.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #488: [2532.11033385    4.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #488: [2532.11033385    4.        ],check_collisions,True
+IDMVehicle #488: [2532.11033385    4.        ],collidable,True
+IDMVehicle #488: [2532.11033385    4.        ],crashed,False
+IDMVehicle #488: [2532.11033385    4.        ],destination,[2532.11033385    4.        ]
+IDMVehicle #488: [2532.11033385    4.        ],destination_direction,[0. 0.]
+IDMVehicle #488: [2532.11033385    4.        ],diagonal,5.385164807134504
+IDMVehicle #488: [2532.11033385    4.        ],direction,[1. 0.]
+IDMVehicle #488: [2532.11033385    4.        ],enable_lane_change,False
+IDMVehicle #488: [2532.11033385    4.        ],heading,0.0
+IDMVehicle #488: [2532.11033385    4.        ],history,"deque([], maxlen=30)"
+IDMVehicle #488: [2532.11033385    4.        ],hit,False
+IDMVehicle #488: [2532.11033385    4.        ],impact,
+IDMVehicle #488: [2532.11033385    4.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95d00>
+IDMVehicle #488: [2532.11033385    4.        ],lane_index,"('2', '3', 1)"
+IDMVehicle #488: [2532.11033385    4.        ],lane_offset,[2032.11033385    0.            0.        ]
+IDMVehicle #488: [2532.11033385    4.        ],log,[]
+IDMVehicle #488: [2532.11033385    4.        ],on_road,False
+IDMVehicle #488: [2532.11033385    4.        ],position,[2532.11033385    4.        ]
+IDMVehicle #488: [2532.11033385    4.        ],prediction_type,constant_steering
+IDMVehicle #488: [2532.11033385    4.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #488: [2532.11033385    4.        ],route,[]
+IDMVehicle #488: [2532.11033385    4.        ],solid,True
+IDMVehicle #488: [2532.11033385    4.        ],speed,19.999999999999996
+IDMVehicle #488: [2532.11033385    4.        ],target_lane_index,"('2', '3', 1)"
+IDMVehicle #488: [2532.11033385    4.        ],target_speed,22.6
+IDMVehicle #488: [2532.11033385    4.        ],timer,100.45554060996777
+IDMVehicle #488: [2532.11033385    4.        ],velocity,[20.  0.]
+IDMVehicle #536: [2287.66085074    8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #536: [2287.66085074    8.        ],position,[2287.66085074    8.        ]
+IDMVehicle #536: [2287.66085074    8.        ],ACC_MAX,8.0
+IDMVehicle #536: [2287.66085074    8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #536: [2287.66085074    8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #536: [2287.66085074    8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #536: [2287.66085074    8.        ],DELTA,4.0
+IDMVehicle #536: [2287.66085074    8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #536: [2287.66085074    8.        ],DELTA_SPEED,5
+IDMVehicle #536: [2287.66085074    8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #536: [2287.66085074    8.        ],HISTORY_SIZE,30
+IDMVehicle #536: [2287.66085074    8.        ],KP_A,1.6666666666666667
+IDMVehicle #536: [2287.66085074    8.        ],KP_HEADING,5.0
+IDMVehicle #536: [2287.66085074    8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #536: [2287.66085074    8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #536: [2287.66085074    8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #536: [2287.66085074    8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #536: [2287.66085074    8.        ],LENGTH,5.0
+IDMVehicle #536: [2287.66085074    8.        ],MAX_SPEED,40.0
+IDMVehicle #536: [2287.66085074    8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #536: [2287.66085074    8.        ],MIN_SPEED,-40.0
+IDMVehicle #536: [2287.66085074    8.        ],POLITENESS,0.0
+IDMVehicle #536: [2287.66085074    8.        ],TAU_ACC,0.6
+IDMVehicle #536: [2287.66085074    8.        ],TAU_HEADING,0.2
+IDMVehicle #536: [2287.66085074    8.        ],TAU_LATERAL,0.6
+IDMVehicle #536: [2287.66085074    8.        ],TAU_PURSUIT,0.1
+IDMVehicle #536: [2287.66085074    8.        ],TIME_WANTED,1.5
+IDMVehicle #536: [2287.66085074    8.        ],WIDTH,2.0
+IDMVehicle #536: [2287.66085074    8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #536: [2287.66085074    8.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #536: [2287.66085074    8.        ],check_collisions,True
+IDMVehicle #536: [2287.66085074    8.        ],collidable,True
+IDMVehicle #536: [2287.66085074    8.        ],crashed,False
+IDMVehicle #536: [2287.66085074    8.        ],destination,[2287.66085074    8.        ]
+IDMVehicle #536: [2287.66085074    8.        ],destination_direction,[0. 0.]
+IDMVehicle #536: [2287.66085074    8.        ],diagonal,5.385164807134504
+IDMVehicle #536: [2287.66085074    8.        ],direction,[1. 0.]
+IDMVehicle #536: [2287.66085074    8.        ],enable_lane_change,False
+IDMVehicle #536: [2287.66085074    8.        ],heading,0.0
+IDMVehicle #536: [2287.66085074    8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #536: [2287.66085074    8.        ],hit,False
+IDMVehicle #536: [2287.66085074    8.        ],impact,
+IDMVehicle #536: [2287.66085074    8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #536: [2287.66085074    8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #536: [2287.66085074    8.        ],lane_offset,[1787.66085074    0.            0.        ]
+IDMVehicle #536: [2287.66085074    8.        ],log,[]
+IDMVehicle #536: [2287.66085074    8.        ],on_road,False
+IDMVehicle #536: [2287.66085074    8.        ],position,[2287.66085074    8.        ]
+IDMVehicle #536: [2287.66085074    8.        ],prediction_type,constant_steering
+IDMVehicle #536: [2287.66085074    8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #536: [2287.66085074    8.        ],route,[]
+IDMVehicle #536: [2287.66085074    8.        ],solid,True
+IDMVehicle #536: [2287.66085074    8.        ],speed,19.199999999999996
+IDMVehicle #536: [2287.66085074    8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #536: [2287.66085074    8.        ],target_speed,19.2
+IDMVehicle #536: [2287.66085074    8.        ],timer,100.43678362245599
+IDMVehicle #536: [2287.66085074    8.        ],velocity,[19.2  0. ]
+IDMVehicle #584: [2343.62575492    8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #584: [2343.62575492    8.        ],position,[2343.62575492    8.        ]
+IDMVehicle #584: [2343.62575492    8.        ],ACC_MAX,8.0
+IDMVehicle #584: [2343.62575492    8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #584: [2343.62575492    8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #584: [2343.62575492    8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #584: [2343.62575492    8.        ],DELTA,4.0
+IDMVehicle #584: [2343.62575492    8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #584: [2343.62575492    8.        ],DELTA_SPEED,5
+IDMVehicle #584: [2343.62575492    8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #584: [2343.62575492    8.        ],HISTORY_SIZE,30
+IDMVehicle #584: [2343.62575492    8.        ],KP_A,1.6666666666666667
+IDMVehicle #584: [2343.62575492    8.        ],KP_HEADING,5.0
+IDMVehicle #584: [2343.62575492    8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #584: [2343.62575492    8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #584: [2343.62575492    8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #584: [2343.62575492    8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #584: [2343.62575492    8.        ],LENGTH,5.0
+IDMVehicle #584: [2343.62575492    8.        ],MAX_SPEED,40.0
+IDMVehicle #584: [2343.62575492    8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #584: [2343.62575492    8.        ],MIN_SPEED,-40.0
+IDMVehicle #584: [2343.62575492    8.        ],POLITENESS,0.0
+IDMVehicle #584: [2343.62575492    8.        ],TAU_ACC,0.6
+IDMVehicle #584: [2343.62575492    8.        ],TAU_HEADING,0.2
+IDMVehicle #584: [2343.62575492    8.        ],TAU_LATERAL,0.6
+IDMVehicle #584: [2343.62575492    8.        ],TAU_PURSUIT,0.1
+IDMVehicle #584: [2343.62575492    8.        ],TIME_WANTED,1.5
+IDMVehicle #584: [2343.62575492    8.        ],WIDTH,2.0
+IDMVehicle #584: [2343.62575492    8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #584: [2343.62575492    8.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #584: [2343.62575492    8.        ],check_collisions,True
+IDMVehicle #584: [2343.62575492    8.        ],collidable,True
+IDMVehicle #584: [2343.62575492    8.        ],crashed,False
+IDMVehicle #584: [2343.62575492    8.        ],destination,[2343.62575492    8.        ]
+IDMVehicle #584: [2343.62575492    8.        ],destination_direction,[0. 0.]
+IDMVehicle #584: [2343.62575492    8.        ],diagonal,5.385164807134504
+IDMVehicle #584: [2343.62575492    8.        ],direction,[1. 0.]
+IDMVehicle #584: [2343.62575492    8.        ],enable_lane_change,False
+IDMVehicle #584: [2343.62575492    8.        ],heading,0.0
+IDMVehicle #584: [2343.62575492    8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #584: [2343.62575492    8.        ],hit,False
+IDMVehicle #584: [2343.62575492    8.        ],impact,
+IDMVehicle #584: [2343.62575492    8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #584: [2343.62575492    8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #584: [2343.62575492    8.        ],lane_offset,[1843.62575492    0.            0.        ]
+IDMVehicle #584: [2343.62575492    8.        ],log,[]
+IDMVehicle #584: [2343.62575492    8.        ],on_road,False
+IDMVehicle #584: [2343.62575492    8.        ],position,[2343.62575492    8.        ]
+IDMVehicle #584: [2343.62575492    8.        ],prediction_type,constant_steering
+IDMVehicle #584: [2343.62575492    8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #584: [2343.62575492    8.        ],route,[]
+IDMVehicle #584: [2343.62575492    8.        ],solid,True
+IDMVehicle #584: [2343.62575492    8.        ],speed,19.199999999999996
+IDMVehicle #584: [2343.62575492    8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #584: [2343.62575492    8.        ],target_speed,19.2
+IDMVehicle #584: [2343.62575492    8.        ],timer,100.17554361069071
+IDMVehicle #584: [2343.62575492    8.        ],velocity,[19.2  0. ]
+IDMVehicle #632: [2402.3202518    8.       ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #632: [2402.3202518    8.       ],position,[2402.3202518    8.       ]
+IDMVehicle #632: [2402.3202518    8.       ],ACC_MAX,8.0
+IDMVehicle #632: [2402.3202518    8.       ],COMFORT_ACC_MAX,8.0
+IDMVehicle #632: [2402.3202518    8.       ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #632: [2402.3202518    8.       ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #632: [2402.3202518    8.       ],DELTA,4.0
+IDMVehicle #632: [2402.3202518    8.       ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #632: [2402.3202518    8.       ],DELTA_SPEED,5
+IDMVehicle #632: [2402.3202518    8.       ],DISTANCE_WANTED,10.0
+IDMVehicle #632: [2402.3202518    8.       ],HISTORY_SIZE,30
+IDMVehicle #632: [2402.3202518    8.       ],KP_A,1.6666666666666667
+IDMVehicle #632: [2402.3202518    8.       ],KP_HEADING,5.0
+IDMVehicle #632: [2402.3202518    8.       ],KP_LATERAL,1.6666666666666667
+IDMVehicle #632: [2402.3202518    8.       ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #632: [2402.3202518    8.       ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #632: [2402.3202518    8.       ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #632: [2402.3202518    8.       ],LENGTH,5.0
+IDMVehicle #632: [2402.3202518    8.       ],MAX_SPEED,40.0
+IDMVehicle #632: [2402.3202518    8.       ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #632: [2402.3202518    8.       ],MIN_SPEED,-40.0
+IDMVehicle #632: [2402.3202518    8.       ],POLITENESS,0.0
+IDMVehicle #632: [2402.3202518    8.       ],TAU_ACC,0.6
+IDMVehicle #632: [2402.3202518    8.       ],TAU_HEADING,0.2
+IDMVehicle #632: [2402.3202518    8.       ],TAU_LATERAL,0.6
+IDMVehicle #632: [2402.3202518    8.       ],TAU_PURSUIT,0.1
+IDMVehicle #632: [2402.3202518    8.       ],TIME_WANTED,1.5
+IDMVehicle #632: [2402.3202518    8.       ],WIDTH,2.0
+IDMVehicle #632: [2402.3202518    8.       ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #632: [2402.3202518    8.       ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #632: [2402.3202518    8.       ],check_collisions,True
+IDMVehicle #632: [2402.3202518    8.       ],collidable,True
+IDMVehicle #632: [2402.3202518    8.       ],crashed,False
+IDMVehicle #632: [2402.3202518    8.       ],destination,[2402.3202518    8.       ]
+IDMVehicle #632: [2402.3202518    8.       ],destination_direction,[0. 0.]
+IDMVehicle #632: [2402.3202518    8.       ],diagonal,5.385164807134504
+IDMVehicle #632: [2402.3202518    8.       ],direction,[1. 0.]
+IDMVehicle #632: [2402.3202518    8.       ],enable_lane_change,False
+IDMVehicle #632: [2402.3202518    8.       ],heading,0.0
+IDMVehicle #632: [2402.3202518    8.       ],history,"deque([], maxlen=30)"
+IDMVehicle #632: [2402.3202518    8.       ],hit,False
+IDMVehicle #632: [2402.3202518    8.       ],impact,
+IDMVehicle #632: [2402.3202518    8.       ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #632: [2402.3202518    8.       ],lane_index,"('2', '3', 2)"
+IDMVehicle #632: [2402.3202518    8.       ],lane_offset,[1902.3202518    0.           0.       ]
+IDMVehicle #632: [2402.3202518    8.       ],log,[]
+IDMVehicle #632: [2402.3202518    8.       ],on_road,False
+IDMVehicle #632: [2402.3202518    8.       ],position,[2402.3202518    8.       ]
+IDMVehicle #632: [2402.3202518    8.       ],prediction_type,constant_steering
+IDMVehicle #632: [2402.3202518    8.       ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #632: [2402.3202518    8.       ],route,[]
+IDMVehicle #632: [2402.3202518    8.       ],solid,True
+IDMVehicle #632: [2402.3202518    8.       ],speed,19.199999999999996
+IDMVehicle #632: [2402.3202518    8.       ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #632: [2402.3202518    8.       ],target_speed,19.2
+IDMVehicle #632: [2402.3202518    8.       ],timer,100.3958144291648
+IDMVehicle #632: [2402.3202518    8.       ],velocity,[19.2  0. ]
+IDMVehicle #680: [2465.12618649    8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #680: [2465.12618649    8.        ],position,[2465.12618649    8.        ]
+IDMVehicle #680: [2465.12618649    8.        ],ACC_MAX,8.0
+IDMVehicle #680: [2465.12618649    8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #680: [2465.12618649    8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #680: [2465.12618649    8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #680: [2465.12618649    8.        ],DELTA,4.0
+IDMVehicle #680: [2465.12618649    8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #680: [2465.12618649    8.        ],DELTA_SPEED,5
+IDMVehicle #680: [2465.12618649    8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #680: [2465.12618649    8.        ],HISTORY_SIZE,30
+IDMVehicle #680: [2465.12618649    8.        ],KP_A,1.6666666666666667
+IDMVehicle #680: [2465.12618649    8.        ],KP_HEADING,5.0
+IDMVehicle #680: [2465.12618649    8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #680: [2465.12618649    8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #680: [2465.12618649    8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #680: [2465.12618649    8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #680: [2465.12618649    8.        ],LENGTH,5.0
+IDMVehicle #680: [2465.12618649    8.        ],MAX_SPEED,40.0
+IDMVehicle #680: [2465.12618649    8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #680: [2465.12618649    8.        ],MIN_SPEED,-40.0
+IDMVehicle #680: [2465.12618649    8.        ],POLITENESS,0.0
+IDMVehicle #680: [2465.12618649    8.        ],TAU_ACC,0.6
+IDMVehicle #680: [2465.12618649    8.        ],TAU_HEADING,0.2
+IDMVehicle #680: [2465.12618649    8.        ],TAU_LATERAL,0.6
+IDMVehicle #680: [2465.12618649    8.        ],TAU_PURSUIT,0.1
+IDMVehicle #680: [2465.12618649    8.        ],TIME_WANTED,1.5
+IDMVehicle #680: [2465.12618649    8.        ],WIDTH,2.0
+IDMVehicle #680: [2465.12618649    8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #680: [2465.12618649    8.        ],action,"{'steering': 0.0, 'acceleration': 7.105427357601002e-15}"
+IDMVehicle #680: [2465.12618649    8.        ],check_collisions,True
+IDMVehicle #680: [2465.12618649    8.        ],collidable,True
+IDMVehicle #680: [2465.12618649    8.        ],crashed,False
+IDMVehicle #680: [2465.12618649    8.        ],destination,[2465.12618649    8.        ]
+IDMVehicle #680: [2465.12618649    8.        ],destination_direction,[0. 0.]
+IDMVehicle #680: [2465.12618649    8.        ],diagonal,5.385164807134504
+IDMVehicle #680: [2465.12618649    8.        ],direction,[1. 0.]
+IDMVehicle #680: [2465.12618649    8.        ],enable_lane_change,False
+IDMVehicle #680: [2465.12618649    8.        ],heading,0.0
+IDMVehicle #680: [2465.12618649    8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #680: [2465.12618649    8.        ],hit,False
+IDMVehicle #680: [2465.12618649    8.        ],impact,
+IDMVehicle #680: [2465.12618649    8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #680: [2465.12618649    8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #680: [2465.12618649    8.        ],lane_offset,[1965.12618649    0.            0.        ]
+IDMVehicle #680: [2465.12618649    8.        ],log,[]
+IDMVehicle #680: [2465.12618649    8.        ],on_road,False
+IDMVehicle #680: [2465.12618649    8.        ],position,[2465.12618649    8.        ]
+IDMVehicle #680: [2465.12618649    8.        ],prediction_type,constant_steering
+IDMVehicle #680: [2465.12618649    8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #680: [2465.12618649    8.        ],route,[]
+IDMVehicle #680: [2465.12618649    8.        ],solid,True
+IDMVehicle #680: [2465.12618649    8.        ],speed,19.199999999999996
+IDMVehicle #680: [2465.12618649    8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #680: [2465.12618649    8.        ],target_speed,19.2
+IDMVehicle #680: [2465.12618649    8.        ],timer,100.22417366388069
+IDMVehicle #680: [2465.12618649    8.        ],velocity,[19.2  0. ]
+IDMVehicle #728: [2537.75466626    8.        ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #728: [2537.75466626    8.        ],position,[2537.75466626    8.        ]
+IDMVehicle #728: [2537.75466626    8.        ],ACC_MAX,8.0
+IDMVehicle #728: [2537.75466626    8.        ],COMFORT_ACC_MAX,8.0
+IDMVehicle #728: [2537.75466626    8.        ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #728: [2537.75466626    8.        ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #728: [2537.75466626    8.        ],DELTA,4.0
+IDMVehicle #728: [2537.75466626    8.        ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #728: [2537.75466626    8.        ],DELTA_SPEED,5
+IDMVehicle #728: [2537.75466626    8.        ],DISTANCE_WANTED,10.0
+IDMVehicle #728: [2537.75466626    8.        ],HISTORY_SIZE,30
+IDMVehicle #728: [2537.75466626    8.        ],KP_A,1.6666666666666667
+IDMVehicle #728: [2537.75466626    8.        ],KP_HEADING,5.0
+IDMVehicle #728: [2537.75466626    8.        ],KP_LATERAL,1.6666666666666667
+IDMVehicle #728: [2537.75466626    8.        ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #728: [2537.75466626    8.        ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #728: [2537.75466626    8.        ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #728: [2537.75466626    8.        ],LENGTH,5.0
+IDMVehicle #728: [2537.75466626    8.        ],MAX_SPEED,40.0
+IDMVehicle #728: [2537.75466626    8.        ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #728: [2537.75466626    8.        ],MIN_SPEED,-40.0
+IDMVehicle #728: [2537.75466626    8.        ],POLITENESS,0.0
+IDMVehicle #728: [2537.75466626    8.        ],TAU_ACC,0.6
+IDMVehicle #728: [2537.75466626    8.        ],TAU_HEADING,0.2
+IDMVehicle #728: [2537.75466626    8.        ],TAU_LATERAL,0.6
+IDMVehicle #728: [2537.75466626    8.        ],TAU_PURSUIT,0.1
+IDMVehicle #728: [2537.75466626    8.        ],TIME_WANTED,1.5
+IDMVehicle #728: [2537.75466626    8.        ],WIDTH,2.0
+IDMVehicle #728: [2537.75466626    8.        ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #728: [2537.75466626    8.        ],action,"{'steering': 0.0, 'acceleration': 0.0}"
+IDMVehicle #728: [2537.75466626    8.        ],check_collisions,True
+IDMVehicle #728: [2537.75466626    8.        ],collidable,True
+IDMVehicle #728: [2537.75466626    8.        ],crashed,False
+IDMVehicle #728: [2537.75466626    8.        ],destination,[2537.75466626    8.        ]
+IDMVehicle #728: [2537.75466626    8.        ],destination_direction,[0. 0.]
+IDMVehicle #728: [2537.75466626    8.        ],diagonal,5.385164807134504
+IDMVehicle #728: [2537.75466626    8.        ],direction,[1. 0.]
+IDMVehicle #728: [2537.75466626    8.        ],enable_lane_change,False
+IDMVehicle #728: [2537.75466626    8.        ],heading,0.0
+IDMVehicle #728: [2537.75466626    8.        ],history,"deque([], maxlen=30)"
+IDMVehicle #728: [2537.75466626    8.        ],hit,False
+IDMVehicle #728: [2537.75466626    8.        ],impact,
+IDMVehicle #728: [2537.75466626    8.        ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95bb0>
+IDMVehicle #728: [2537.75466626    8.        ],lane_index,"('2', '3', 2)"
+IDMVehicle #728: [2537.75466626    8.        ],lane_offset,[2037.75466626    0.            0.        ]
+IDMVehicle #728: [2537.75466626    8.        ],log,[]
+IDMVehicle #728: [2537.75466626    8.        ],on_road,False
+IDMVehicle #728: [2537.75466626    8.        ],position,[2537.75466626    8.        ]
+IDMVehicle #728: [2537.75466626    8.        ],prediction_type,constant_steering
+IDMVehicle #728: [2537.75466626    8.        ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #728: [2537.75466626    8.        ],route,[]
+IDMVehicle #728: [2537.75466626    8.        ],solid,True
+IDMVehicle #728: [2537.75466626    8.        ],speed,19.2
+IDMVehicle #728: [2537.75466626    8.        ],target_lane_index,"('2', '3', 2)"
+IDMVehicle #728: [2537.75466626    8.        ],target_speed,19.2
+IDMVehicle #728: [2537.75466626    8.        ],timer,100.36626247763203
+IDMVehicle #728: [2537.75466626    8.        ],velocity,[19.2  0. ]
+IDMVehicle #776: [2635.2300543    4.       ],class,<class 'MixTrafficSimulation.vehicle.behavior.IDMVehicle'>
+IDMVehicle #776: [2635.2300543    4.       ],position,[2635.2300543    4.       ]
+IDMVehicle #776: [2635.2300543    4.       ],ACC_MAX,8.0
+IDMVehicle #776: [2635.2300543    4.       ],COMFORT_ACC_MAX,8.0
+IDMVehicle #776: [2635.2300543    4.       ],COMFORT_ACC_MIN,-5.0
+IDMVehicle #776: [2635.2300543    4.       ],DEFAULT_INITIAL_SPEEDS,"[23, 25]"
+IDMVehicle #776: [2635.2300543    4.       ],DELTA,4.0
+IDMVehicle #776: [2635.2300543    4.       ],DELTA_RANGE,"[3.5, 4.5]"
+IDMVehicle #776: [2635.2300543    4.       ],DELTA_SPEED,5
+IDMVehicle #776: [2635.2300543    4.       ],DISTANCE_WANTED,10.0
+IDMVehicle #776: [2635.2300543    4.       ],HISTORY_SIZE,30
+IDMVehicle #776: [2635.2300543    4.       ],KP_A,1.6666666666666667
+IDMVehicle #776: [2635.2300543    4.       ],KP_HEADING,5.0
+IDMVehicle #776: [2635.2300543    4.       ],KP_LATERAL,1.6666666666666667
+IDMVehicle #776: [2635.2300543    4.       ],LANE_CHANGE_DELAY,0.5
+IDMVehicle #776: [2635.2300543    4.       ],LANE_CHANGE_MAX_BRAKING_IMPOSED,2.0
+IDMVehicle #776: [2635.2300543    4.       ],LANE_CHANGE_MIN_ACC_GAIN,0.1
+IDMVehicle #776: [2635.2300543    4.       ],LENGTH,5.0
+IDMVehicle #776: [2635.2300543    4.       ],MAX_SPEED,40.0
+IDMVehicle #776: [2635.2300543    4.       ],MAX_STEERING_ANGLE,1.0471975511965976
+IDMVehicle #776: [2635.2300543    4.       ],MIN_SPEED,-40.0
+IDMVehicle #776: [2635.2300543    4.       ],POLITENESS,0.0
+IDMVehicle #776: [2635.2300543    4.       ],TAU_ACC,0.6
+IDMVehicle #776: [2635.2300543    4.       ],TAU_HEADING,0.2
+IDMVehicle #776: [2635.2300543    4.       ],TAU_LATERAL,0.6
+IDMVehicle #776: [2635.2300543    4.       ],TAU_PURSUIT,0.1
+IDMVehicle #776: [2635.2300543    4.       ],TIME_WANTED,1.5
+IDMVehicle #776: [2635.2300543    4.       ],WIDTH,2.0
+IDMVehicle #776: [2635.2300543    4.       ],_abc_impl,<_abc._abc_data object at 0x14c528780>
+IDMVehicle #776: [2635.2300543    4.       ],action,"{'steering': 0.0, 'acceleration': -7.105427357601002e-15}"
+IDMVehicle #776: [2635.2300543    4.       ],check_collisions,True
+IDMVehicle #776: [2635.2300543    4.       ],collidable,True
+IDMVehicle #776: [2635.2300543    4.       ],crashed,False
+IDMVehicle #776: [2635.2300543    4.       ],destination,[2635.2300543    4.       ]
+IDMVehicle #776: [2635.2300543    4.       ],destination_direction,[0. 0.]
+IDMVehicle #776: [2635.2300543    4.       ],diagonal,5.385164807134504
+IDMVehicle #776: [2635.2300543    4.       ],direction,[1. 0.]
+IDMVehicle #776: [2635.2300543    4.       ],enable_lane_change,False
+IDMVehicle #776: [2635.2300543    4.       ],heading,0.0
+IDMVehicle #776: [2635.2300543    4.       ],history,"deque([], maxlen=30)"
+IDMVehicle #776: [2635.2300543    4.       ],hit,False
+IDMVehicle #776: [2635.2300543    4.       ],impact,
+IDMVehicle #776: [2635.2300543    4.       ],lane,<MixTrafficSimulation.road.lane.StraightLane object at 0x14dd95d00>
+IDMVehicle #776: [2635.2300543    4.       ],lane_index,"('2', '3', 1)"
+IDMVehicle #776: [2635.2300543    4.       ],lane_offset,[2135.2300543    0.           0.       ]
+IDMVehicle #776: [2635.2300543    4.       ],log,[]
+IDMVehicle #776: [2635.2300543    4.       ],on_road,False
+IDMVehicle #776: [2635.2300543    4.       ],position,[2635.2300543    4.       ]
+IDMVehicle #776: [2635.2300543    4.       ],prediction_type,constant_steering
+IDMVehicle #776: [2635.2300543    4.       ],road,"[IDMVehicle #288: [2188.62874821    0.        ], IDMVehicle #720: [422.5431907   8.       ], IDMVehicle #912: [423.65562254   8.        ], IDMVehicle #816: [525.79022551   3.        ], IDMVehicle #864: [423.33364977   8.        ], IDMVehicle #768: [423.71582932   8.        ], IDMVehicle #480: [423.76362362   8.        ], IDMVehicle #432: [422.97458968   8.        ], IDMVehicle #384: [422.19586078   8.        ], IDMVehicle #336: [506.09546103   5.        ], IDMVehicle #960: [2333.47154934    4.        ], IDMVehicle #8: [419.25361977   6.        ], IDMVehicle #56: [411.93348549   8.        ], IDMVehicle #104: [416.93348549   8.        ], IDMVehicle #152: [524.2227962   6.       ], IDMVehicle #896: [526.22695611   6.        ], IDMVehicle #192: [525.33610233   6.        ], IDMVehicle #248: [518.12088589   8.        ], IDMVehicle #296: [523.12088589   8.        ], IDMVehicle #344: [2076.15825176    8.        ], IDMVehicle #392: [2127.96300102    8.        ], IDMVehicle #440: [2455.01328132    4.        ], IDMVehicle #320: [2180.03854441    8.        ], IDMVehicle #200: [2233.54751853    8.        ], IDMVehicle #488: [2532.11033385    4.        ], IDMVehicle #536: [2287.66085074    8.        ], IDMVehicle #584: [2343.62575492    8.        ], IDMVehicle #632: [2402.3202518    8.       ], IDMVehicle #680: [2465.12618649    8.        ], IDMVehicle #728: [2537.75466626    8.        ], IDMVehicle #776: [2635.2300543    4.       ]]"
+IDMVehicle #776: [2635.2300543    4.       ],route,[]
+IDMVehicle #776: [2635.2300543    4.       ],solid,True
+IDMVehicle #776: [2635.2300543    4.       ],speed,20.000000000000004
+IDMVehicle #776: [2635.2300543    4.       ],target_lane_index,"('2', '3', 1)"
+IDMVehicle #776: [2635.2300543    4.       ],target_speed,22.6
+IDMVehicle #776: [2635.2300543    4.       ],timer,100.15709684226337
+IDMVehicle #776: [2635.2300543    4.       ],velocity,[20.  0.]

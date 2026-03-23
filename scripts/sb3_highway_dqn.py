@@ -1,15 +1,22 @@
 import gymnasium as gym
 from gymnasium.wrappers import RecordVideo
 from stable_baselines3 import DQN
+from pathlib import Path
+import sys
 
-import highway_env  # noqa: F401
+# Allow running from scripts/ while importing local package.
+package_parent = Path(__file__).resolve().parents[2]
+if str(package_parent) not in sys.path:
+    sys.path.insert(0, str(package_parent))
+
+import MixTrafficSimulation  # noqa: F401
 
 
 TRAIN = True
 
 if __name__ == "__main__":
     # Create the environment
-    env = gym.make("highway-fast-v0", render_mode="rgb_array")
+    env = gym.make("highway-v0", render_mode="rgb_array")
     obs, info = env.reset()
 
     # Create the model

@@ -2,8 +2,15 @@ import gymnasium as gym
 from stable_baselines3 import PPO
 from stable_baselines3.common.env_util import make_vec_env
 from stable_baselines3.common.vec_env import SubprocVecEnv
+from pathlib import Path
+import sys
 
-import highway_env  # noqa: F401
+# Allow running from scripts/ while importing local package.
+package_parent = Path(__file__).resolve().parents[2]
+if str(package_parent) not in sys.path:
+    sys.path.insert(0, str(package_parent))
+
+import MixTrafficSimulation  # noqa: F401
 
 
 # ==================================
@@ -15,7 +22,7 @@ if __name__ == "__main__":
     if train:
         n_cpu = 6
         batch_size = 64
-        env = make_vec_env("highway-fast-v0", n_envs=n_cpu, vec_env_cls=SubprocVecEnv)
+        env = make_vec_env("highway-v0", n_envs=n_cpu, vec_env_cls=SubprocVecEnv)
         model = PPO(
             "MlpPolicy",
             env,
@@ -34,7 +41,7 @@ if __name__ == "__main__":
         model.save("highway_ppo/model")
 
     model = PPO.load("highway_ppo/model")
-    env = gym.make("highway-fast-v0")
+    env = gym.make("highway-v0")
     for _ in range(5):
         obs, info = env.reset()
         done = truncated = False
